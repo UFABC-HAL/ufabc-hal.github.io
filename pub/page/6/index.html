@@ -1,0 +1,435 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+    
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+ <!-- 
+      loads the http over https ssl - 
+      welcome to my website! 
+
+	this theme is based off the Ice & Fire theme created by Lucas Gatsas
+      https://www.twitter.com/LucasGatsas
+      www.lucasgatsas.ch - switzerland. 
+                                                    --> 
+
+<!--
+<script type="text/javascript">
+var host = "https://katychuang.me/";
+if ((host == window.location.host) && (window.location.protocol != "https:"))
+    window.location.protocol = "https";
+</script>
+-->
+<!-- Microsoft Internet Explorer documentMode compatMode setting IE Modus --> 
+<script type="text/javascript">
+var IE = null;
+if (window.navigator.appName == "Microsoft Internet Explorer") {
+  if (document.documentMode) {
+  
+    IE = document.documentMode; 
+    } else {
+   
+        IE = 5; 
+          if (document.compatMode) {
+      if (document.compatMode == "CSS1Compat")
+      IE = 11; 
+      }
+    }
+  }
+</script>
+
+    <meta charset="utf-8">
+    <!-- X-UA --> 
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="X-UA-Compatible" content="IE=11" />
+    <link rel="author" title="Katy Chuang" href="https://plus.google.com/u/0/111391719267336703432/posts" />
+
+
+    <meta name="google" content="notranslate" />
+    <!-- Viewport --> 
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- index ROBOTS follow --> 
+    <meta name="robots" content="index, follow" />
+    <!-- Site Desciption --> 
+    <meta name="description" content="Heuristics, Analysis and Learning Laboratory (HAL)">
+        <!-- Site Desciption --> 
+    <meta name="keywords" content="Katy Chuang, katychuang, data science, Web Developer, Front End Engineer">
+    <!-- Favicon --> 
+    <link rel="shortcut icon" href="https://ufabc-hal.github.io/static/img/ico.png" type="image/x-icon" />
+    <!-- Blog Title -->
+    <title>HAL Research Group</title>
+
+    <!--     <title>{% if page.title %}{{ page.title }} - {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
+--> 
+    <!-- Property Metas --> 
+    <meta property="og:image" content="https://ufabc-hal.github.io/static/img/ix.png" />
+    <meta property="og:title" content="Heuristics, Analysis and Learning Laboratory (HAL)" />
+    <meta property="og:site_name" content="Heuristics, Analysis and Learning Laboratory (HAL)" />
+    <!-- Canonical -->
+    <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
+    <!-- StyleSheet -->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://ufabc-hal.github.io/static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://ufabc-hal.github.io/static/css/spaceg.stylesheets.css">
+    <link rel="stylesheet" href="https://ufabc-hal.github.io/static/css/syntax.css">
+    <link rel="stylesheet" href="../../../static/css/custom.css">
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic" rel="stylesheet" type="text/css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900,400italic,700italic,900italic" rel="stylesheet" type="text/css">    
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style>
+	#preloader {position:fixed;top:0;left:0;right:0;bottom:0;background-color:#fff; /* change if the mask should have another color then white */z-index:99; /* makes sure it stays on top */}
+	#status {width:200px;height:200px;position:absolute;left:50%; /* centers the loading animation horizontally one the screen */top:50%; /* centers the loading animation vertically one the screen */background-image:url("/static/img/preloader.gif"); /* path to your loading animation */background-repeat:no-repeat;background-position:center;margin:-100px 0 0 -100px; /* is width and height divided by two */}
+	ul, ol {margin-top: 0;margin-bottom: 10px;}
+	.navbar-inverse {background-color: #FFF;border-color: #FFFFFF;}
+</style> 
+<!--link rel="stylesheet" href="https://ufabc-hal.github.io/static/css/prettify.css"-->
+<style>
+	header.intro-header {background: #6f5499;background: no-repeat center center;background-attachment: scroll;-webkit-background-size: cover;-moz-background-size: cover;background-size: cover;-o-background-size: cover;}
+	/* Preloader */#preloader {position:fixed;top:0;left:0;right:0;bottom:0;background-color:#fff; /* change if the mask should have another color then white */z-index:99; /* makes sure it stays on top */}
+	#status {width:200px;height:200px;position:absolute;left:50%; /* centers the loading animation horizontally one the screen */top:50%; /* centers the loading animation vertically one the screen */background-image:; /* path to your loading animation */background-repeat:no-repeat;background-position:center;margin:-100px 0 0 -100px; /* is width and height divided by two */} 
+	li {list-style: none;}
+            body.modal-open 
+            {overflow: hidden;padding-right: 0px;
+        }
+	article li {list-style: inherit;}
+	article .figure {text-align: center}
+    </style>
+    <!-- end Loading front stylesheet here --> 
+    </head>
+
+    <body>
+	<div id="preloader">
+	    <div id="status">
+
+	    </div>
+
+	</div>  
+	<!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="https://ufabc-hal.github.io" id="blog-title-left-top">HAL</a>                        
+        </div>   
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+               
+                <li><a href="https://ufabc-hal.github.io/people.html">People</a></li>
+                <li><a href="https://ufabc-hal.github.io/pub/page/1/index.html">Publications</a></li>
+                <li><a href="https://ufabc-hal.github.io/projects.html">Projects</a></li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+
+
+
+        <div id="content">
+            <!-- Main Content -->
+<div class="container front-end">
+	<div class="row">
+		<div class="posts">
+        <article>
+            <header class="intro-header" style="background-image: url('https://ufabc-hal.github.io/static/img/sky.jpg')">  
+                <div class="post-meta"> 
+                </div>
+                <h1 class="post-title"><a href="#" id="post-title-h1" rel="bookmark" title="link" itemprop="url">Heuristics, Analysis and Learning Laboratory (HAL)</a></h1>
+            </header>
+
+            </article>
+            
+<div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <img src="https://ufabc-hal.github.io/static/img/pubs.png" width="50%"><img src="https://ufabc-hal.github.io/static/img/cites.png" width="50%">
+            </div>
+        </div>
+</div>
+            
+<div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
+
+
+<ul>
+
+
+<li>
+
+<a data-toggle="collapse" data-parent="#accordion" href="#prati2013extending">
+   <h3>Extending features for multilabel classification with swarm biclustering</h3>
+</a>
+<h4>Ronaldo C. Prati, Fabricio Olivetti de Franca</h4>
+
+<div id="prati2013extending" class="collapse">
+<h4>Publication date: June 21, 2017</h4>
+<h4>Journal/Conference: 2013 IEEE Congress on Evolutionary Computation</h4>
+  <p><p>In some data mining applications the analyzed data can be classified as simultaneously belonging to more than one class, this characterizes the multi-label classification problem. Numerous methods for dealing with this problem are based on decomposition, which essentially treats labels (or some subsets of labels) independently and ignores interactions between them. This fact might be a problem, as some labels may be correlated to local patterns in the data. In this paper, we propose to enhance multi-label classifiers with the aid of biclusters, which are capable of finding the correlation between subsets of objects, features and labels. We then construct binary features from these patterns that can be interpreted as local correlations (in terms of subset of features and instances) in the data. These features are used as input for multi-label classifiers. We experimentally show that using such constructed features can improve the classification performance of some decompositive multi-label learning techniques.</p></p>
+
+More info: <a href="http://dx.doi.org/10.1109/cec.2013.6557930">http://dx.doi.org/10.1109/cec.2013.6557930</a>
+
+
+</div>
+
+</li>
+
+<li>
+
+<a data-toggle="collapse" data-parent="#accordion" href="#franca2012scalable">
+   <h3>Scalable Overlapping Co-clustering of Word-Document Data</h3>
+</a>
+<h4>Fabricio Olivetti De Franca</h4>
+
+<div id="franca2012scalable" class="collapse">
+<h4>Publication date: June 21, 2017</h4>
+<h4>Journal/Conference: 2012 11th International Conference on Machine Learning and Applications</h4>
+  <p><p>Text clustering is used on a variety of applications such as content-based recommendation, categorization, summarization, information retrieval and automatic topic extraction. Since most pair of documents usually shares just a small percentage of words, the dataset representation tends to become very sparse, thus the need of using a similarity metric capable of a partial matching of a set of features. The technique known as Co-Clustering is capable of finding several clusters inside a dataset with each cluster composed of just a subset of the object and feature sets. In word-document data this can be useful to identify the clusters of documents pertaining to the same topic, even though they share just a small fraction of words. In this paper a scalable co-clustering algorithm is proposed using the Locality-sensitive hashing technique in order to find co-clusters of documents. The proposed algorithm will be tested against other co-clustering and traditional algorithms in well known datasets. The results show that this algorithm is capable of finding clusters more accurately than other approaches while maintaining a linear complexity.</p></p>
+
+More info: <a href="http://dx.doi.org/10.1109/icmla.2012.84">http://dx.doi.org/10.1109/icmla.2012.84</a>
+
+
+</div>
+
+</li>
+
+<li>
+
+<a data-toggle="collapse" data-parent="#accordion" href="#de2013predicting">
+   <h3>Predicting missing values with biclustering: A coherence-based approach</h3>
+</a>
+<h4>F.O. de França, G.P. Coelho, F.J. Von Zuben</h4>
+
+<div id="de2013predicting" class="collapse">
+<h4>Publication date: June 21, 2017</h4>
+<h4>Journal/Conference: Pattern Recognition</h4>
+  <p><p>In this work, a novel biclustering-based approach to data imputation is proposed. This approach is based on the Mean Squared Residue metric, used to evaluate the degree of coherence among objects of a dataset, and presents an algebraic development that allows the modeling of the predictor as a quadratic programming problem. The proposed methodology is positioned in the field of missing data, its theoretical aspects are discussed and artificial and real-case scenarios are simulated to evaluate the performance of the …</p></p>
+
+More info: <a href="http://dx.doi.org/10.1016/j.patcog.2012.10.022">http://dx.doi.org/10.1016/j.patcog.2012.10.022</a>
+
+
+</div>
+
+</li>
+
+<li>
+
+<a data-toggle="collapse" data-parent="#accordion" href="#de2013identifying">
+   <h3>Identifying overlapping communities in complex networks with multimodal optimization</h3>
+</a>
+<h4>Fabricio Olivetti de Franca, Guilherme Palermo Coelho</h4>
+
+<div id="de2013identifying" class="collapse">
+<h4>Publication date: June 21, 2017</h4>
+<h4>Journal/Conference: 2013 IEEE Congress on Evolutionary Computation</h4>
+  <p><p>The analysis of complex networks is an important research topic that helps us understand the underlying behavior of complex systems and the interactions of their components. One particularly relevant analysis is the detection of communities formed by such interactions. Most community detection algorithms work as optimization tools that minimize a given quality function, while assuming that each node belongs to a single community. However, most complex networks contain nodes that belong to two or more communities, which are …</p></p>
+
+More info: <a href="http://dx.doi.org/10.1109/cec.2013.6557580">http://dx.doi.org/10.1109/cec.2013.6557580</a>
+
+
+</div>
+
+</li>
+
+<li>
+
+<a data-toggle="collapse" data-parent="#accordion" href="#covoes2013unsupervised">
+   <h3>Unsupervised learning of Gaussian Mixture Models: Evolutionary Create and Eliminate for Expectation Maximization algorithm</h3>
+</a>
+<h4>Thiago F. Covoes, Eduardo R. Hruschka</h4>
+
+<div id="covoes2013unsupervised" class="collapse">
+<h4>Publication date: June 21, 2017</h4>
+<h4>Journal/Conference: 2013 IEEE Congress on Evolutionary Computation</h4>
+  <p><p>This paper describes the Evolutionary Create &amp; Eliminate for Expectation Maximization algorithm (ECE-EM) for learning finite Gaussian Mixture Models (GMMs). The proposed algorithm is a variant of the recently proposed Evolutionary Split &amp; Merge for Expectation Maximization algorithm (ESM-EM). ECE-EM uses simpler guiding functions and mutation operators compared to ESM-EM, while keeping the appealing properties of its counterpart. As an additional contribution of our work, we compare, in eighteen datasets, both ECE-EM …</p></p>
+
+More info: <a href="http://dx.doi.org/10.1109/cec.2013.6557962">http://dx.doi.org/10.1109/cec.2013.6557962</a>
+
+
+</div>
+
+</li>
+
+<li>
+
+<a data-toggle="collapse" data-parent="#accordion" href="#batista2012experimental">
+   <h3>An Experimental Design to Evaluate Class Imbalance Treatment Methods</h3>
+</a>
+<h4>Gustavo Batista, Diego Furtado Silva, Ronaldo Cristiano Prati</h4>
+
+<div id="batista2012experimental" class="collapse">
+<h4>Publication date: June 21, 2017</h4>
+<h4>Journal/Conference: 2012 11th International Conference on Machine Learning and Applications</h4>
+  <p><p>In the last decade, class imbalance has attracted a huge amount of attention from researchers and practitioners. Class imbalance is ubiquitous in Machine Learning, Data Mining and Pattern Recognition applications; therefore, these research communities have responded to such interest with literally dozens of methods and techniques. Surprisingly, there are still many fundamental open-ended questions such as&quot; Are all learning paradigms equally affected by class imbalance?“,” What is the expected performance loss for different …</p></p>
+
+More info: <a href="http://dx.doi.org/10.1109/icmla.2012.162">http://dx.doi.org/10.1109/icmla.2012.162</a>
+
+
+</div>
+
+</li>
+
+<li>
+
+<a data-toggle="collapse" data-parent="#accordion" href="#JBCS2013">
+   <h3>A systematic review on keystroke dynamics</h3>
+</a>
+<h4>Paulo Henrique Pisani, Ana Carolina Lorena</h4>
+
+<div id="JBCS2013" class="collapse">
+<h4>Publication date: June 21, 2017</h4>
+<h4>Journal/Conference: Journal of the Brazilian Computer Society</h4>
+  <p><p>Computing and communication systems have improved our way of life, but have also contributed to an increased data exposure and, consequently, to identity theft. A possible way to overcome this issue is by the use of biometric technologies for user authentication. Among the possible technologies to be analysed, this work focuses on keystroke dynamics, which attempts to recognize users by their typing rhythm. In order to guide future researches in this area, a systematic review on keystroke dynamics was conducted and presented here …</p></p>
+
+More info: <a href="http://dx.doi.org/10.1007/s13173-013-0117-7">http://dx.doi.org/10.1007/s13173-013-0117-7</a>
+
+
+</div>
+
+</li>
+
+<li>
+
+<a data-toggle="collapse" data-parent="#accordion" href="#veroneze2011assessing">
+   <h3>Assessing the performance of a swarm-based biclustering technique for data imputation</h3>
+</a>
+<h4>Rosana Veroneze, Fabricio O. de Franca, Fernando J. Von Zuben</h4>
+
+<div id="veroneze2011assessing" class="collapse">
+<h4>Publication date: June 20, 2017</h4>
+<h4>Journal/Conference: 2011 IEEE Congress of Evolutionary Computation (CEC)</h4>
+  <p><p>Although the missing data problem has been studied for many years, it is still a relevant and challenging problem nowadays. Data can be missing for a variety of reasons, and there are several techniques capable of processing missing data. A parcel of them tries to estimate the missing values. This technique is called imputation. Recently, it was proposed a biclustering algorithm, based on Swarm Intelligence, named SwarmBCluster, to impute missing data. As it is a novel and promising algorithm, this paper intends to investigate the influence of its parameters on the performance. To achieve this objective, this paper will compare SwarmBCluster with other two imputation algorithms and, after that, it will perform a sensitivity analysis. The quality of the imputations is measured with the Root Mean Squared Error (RMSE). The experiments showed that SwarmBCluster presents good results concerning the RMSE metric and that the proper choice of parameters can considerably improve the performance of the algorithm.</p></p>
+
+More info: <a href="http://dx.doi.org/10.1109/cec.2011.5949644">http://dx.doi.org/10.1109/cec.2011.5949644</a>
+
+
+</div>
+
+</li>
+
+<li>
+
+<a data-toggle="collapse" data-parent="#accordion" href="#prati2012combining">
+   <h3>Combining feature ranking algorithms through rank aggregation</h3>
+</a>
+<h4>Ronaldo C. Prati</h4>
+
+<div id="prati2012combining" class="collapse">
+<h4>Publication date: June 20, 2017</h4>
+<h4>Journal/Conference: The 2012 International Joint Conference on Neural Networks (IJCNN)</h4>
+  <p><p>The problem of combining multiple feature rankings into a more robust ranking is investigated. A general framework for ensemble feature ranking is proposed, alongside four instantiations of this framework using different ranking aggregation methods. An empirical evaluation using 39 UCI datasets, three different learning algorithms and three different performance measures enable us to reach a compelling conclusion: ensemble feature ranking do improve the quality of feature rankings. Furthermore, one of the proposed methods was able to achieve results statistically significantly better than the others.</p></p>
+
+More info: <a href="http://dx.doi.org/10.1109/ijcnn.2012.6252467">http://dx.doi.org/10.1109/ijcnn.2012.6252467</a>
+
+
+</div>
+
+</li>
+
+<li>
+
+<a data-toggle="collapse" data-parent="#accordion" href="#prati2010improving">
+   <h3>Combining feature ranking algorithms through rank aggregation</h3>
+</a>
+<h4>Ronaldo C. Prati</h4>
+
+<div id="prati2010improving" class="collapse">
+<h4>Publication date: June 20, 2017</h4>
+<h4>Journal/Conference: The 2012 International Joint Conference on Neural Networks (IJCNN)</h4>
+  <p><p>The problem of combining multiple feature rankings into a more robust ranking is investigated. A general framework for ensemble feature ranking is proposed, alongside four instantiations of this framework using different ranking aggregation methods. An empirical evaluation using 39 UCI datasets, three different learning algorithms and three different performance measures enable us to reach a compelling conclusion: ensemble feature ranking do improve the quality of feature rankings. Furthermore, one of the proposed methods was able to achieve results statistically significantly better than the others.</p></p>
+
+More info: <a href="http://dx.doi.org/10.1109/ijcnn.2012.6252467">http://dx.doi.org/10.1109/ijcnn.2012.6252467</a>
+
+
+</div>
+
+</li>
+
+</ul>
+
+<div class="story twocol-story newer">
+
+<a href="../../../pub/page/5/index.html">◀ Previous</a>
+&nbsp;
+</div>
+<div class="story twocol-story older" style="text-align:right;">
+
+<a href="../../../pub/page/7/index.html">Next ▶</a>
+&nbsp;
+</div>
+
+</div></div></div>
+		</div>
+
+        
+	</div>
+</div>
+
+
+
+<hr>
+
+        </div>
+        <div id="footer">
+        </div>
+      <!-- Footer -->
+<footer>
+    Phone contact: (11) 3356-7689<br>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    <li>
+                        <a class="navbar-brand" href="http://www.ufabc.edu.br/" id="blog-title-left-top"><img src="../../../static/img/Logo_UFABC.jpg" height="160" width="120"></a>
+                           
+                    </li>
+                    <li>
+                        <a class="navbar-brand" href="http://cmcc.ufabc.edu.br/" id="blog-title-left-top"><img src="../../../static/img/logotipo.jpg" height="80" width="290"></a>
+                    </li>
+		   
+                </ul>
+                <br>
+<div class="col-md-12">
+     <p class="copyright text-muted">
+            Site generated by
+            <a href="http://jaspervdj.be/hakyll">Hakyll</a>. Modified theme by &copy; katychuang 2015 and inspired by
+      <!-- ICE AND FIRE THEME https://github.com/SpaceG/iceandfire -->
+      <a href="https://github.com/SpaceG/CleanMagicMedium-Jekyll">CleanMagic.</a> available from <a href="http://katychuang.com/hakyll-themes/">Hakyll Themes</a> </p>
+    </div>
+    
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="https://ufabc-hal.github.io/static/js/jquery.min.js"></script>
+<script src="https://ufabc-hal.github.io/static/js/spaceg.stylesheets.min.js"></script> 
+<script src="https://ufabc-hal.github.io/static/js/bootstrap.min.js"></script>
+<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+<script src="https://ufabc-hal.github.io/static/js/scripts.js"></script>
+
+
+
+    </body>
+</html>

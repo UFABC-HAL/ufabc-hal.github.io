@@ -1,0 +1,109 @@
+/* customizado */
+h3.monobold-header {
+    font-size: .75em;
+    text-align: left;
+    margin-top: 10px
+}
+
+h3.monobold-header .big {
+    font-size: 1.25rem;
+    line-height: 1.3;
+    letter-spacing: 2.2px
+}
+
+h3.monobold-header.tag {
+    background-color: #fff;
+    border: 1px solid #cecece;
+    display: inline-block;
+    line-height: 1;
+    padding: 4px 4px 3px 5px
+}
+
+.topic { /* Text and background colour, blue on light gray */
+   color:white;
+   background-color: #004A22;
+   display: inline;
+   clear:both;
+   padding-top: 5px;
+   padding-right: 9px;
+   padding-bottom: 5px;
+   padding-left: 9px;
+}
+
+h3.topic {
+  display: inline;
+}
+
+
+fieldset.topic { 
+    display: inline;
+    background-color: white;
+    margin-left: 2px;
+    margin-right: 2px;
+    padding-top: 0.35em;
+    padding-bottom: 0.625em;
+    padding-left: 0.75em;
+    padding-right: 0.75em;
+    border: 2px groove;
+    border-color: green;
+    line-height: 3.0;
+    text-align: center;
+}
+
+legend.topic {
+    border: none;
+    color:#002D15;
+    background-color: white;
+    display: inline;
+}
+
+.collapsible {
+    background-color: #777;
+    color: white;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+}
+
+.active, .collapsible:hover {
+    background-color: #555;
+}
+
+
+
+.single-technology {
+	float: left;
+	width: 490px;
+	margin-right: 22px;
+	margin-bottom: 10px;
+}
+.single-technology img {
+	float: left;
+	margin-right: 20px;
+	width: 60px;
+	height: auto;
+}
+.single-technology div {
+	float: left;
+	height: 160px;
+}
+.single-technology h4 {
+	margin: 0px;
+	line-height: 14px;
+}
+.person-text {
+	width: 310px;
+}
+#main-text .single-technology h4 a {
+	color: #0577D1;
+	font-size: 18px;
+}
+#main-text .single-technology p {
+	font-size: 12px;
+	line-height: 17px;
+	margin-top: 5px;
+}

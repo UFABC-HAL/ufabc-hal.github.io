@@ -1,0 +1,435 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+    
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+ <!-- 
+      loads the http over https ssl - 
+      welcome to my website! 
+
+	this theme is based off the Ice & Fire theme created by Lucas Gatsas
+      https://www.twitter.com/LucasGatsas
+      www.lucasgatsas.ch - switzerland. 
+                                                    --> 
+
+<!--
+<script type="text/javascript">
+var host = "https://katychuang.me/";
+if ((host == window.location.host) && (window.location.protocol != "https:"))
+    window.location.protocol = "https";
+</script>
+-->
+<!-- Microsoft Internet Explorer documentMode compatMode setting IE Modus --> 
+<script type="text/javascript">
+var IE = null;
+if (window.navigator.appName == "Microsoft Internet Explorer") {
+  if (document.documentMode) {
+  
+    IE = document.documentMode; 
+    } else {
+   
+        IE = 5; 
+          if (document.compatMode) {
+      if (document.compatMode == "CSS1Compat")
+      IE = 11; 
+      }
+    }
+  }
+</script>
+
+    <meta charset="utf-8">
+    <!-- X-UA --> 
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="X-UA-Compatible" content="IE=11" />
+    <link rel="author" title="Katy Chuang" href="https://plus.google.com/u/0/111391719267336703432/posts" />
+
+
+    <meta name="google" content="notranslate" />
+    <!-- Viewport --> 
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- index ROBOTS follow --> 
+    <meta name="robots" content="index, follow" />
+    <!-- Site Desciption --> 
+    <meta name="description" content="Heuristics, Analysis and Learning Laboratory (HAL)">
+        <!-- Site Desciption --> 
+    <meta name="keywords" content="Katy Chuang, katychuang, data science, Web Developer, Front End Engineer">
+    <!-- Favicon --> 
+    <link rel="shortcut icon" href="https://ufabc-hal.github.io/static/img/ico.png" type="image/x-icon" />
+    <!-- Blog Title -->
+    <title>HAL Research Group</title>
+
+    <!--     <title>{% if page.title %}{{ page.title }} - {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
+--> 
+    <!-- Property Metas --> 
+    <meta property="og:image" content="https://ufabc-hal.github.io/static/img/ix.png" />
+    <meta property="og:title" content="Heuristics, Analysis and Learning Laboratory (HAL)" />
+    <meta property="og:site_name" content="Heuristics, Analysis and Learning Laboratory (HAL)" />
+    <!-- Canonical -->
+    <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
+    <!-- StyleSheet -->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://ufabc-hal.github.io/static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://ufabc-hal.github.io/static/css/spaceg.stylesheets.css">
+    <link rel="stylesheet" href="https://ufabc-hal.github.io/static/css/syntax.css">
+    <link rel="stylesheet" href="../../../static/css/custom.css">
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic" rel="stylesheet" type="text/css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900,400italic,700italic,900italic" rel="stylesheet" type="text/css">    
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style>
+	#preloader {position:fixed;top:0;left:0;right:0;bottom:0;background-color:#fff; /* change if the mask should have another color then white */z-index:99; /* makes sure it stays on top */}
+	#status {width:200px;height:200px;position:absolute;left:50%; /* centers the loading animation horizontally one the screen */top:50%; /* centers the loading animation vertically one the screen */background-image:url("/static/img/preloader.gif"); /* path to your loading animation */background-repeat:no-repeat;background-position:center;margin:-100px 0 0 -100px; /* is width and height divided by two */}
+	ul, ol {margin-top: 0;margin-bottom: 10px;}
+	.navbar-inverse {background-color: #FFF;border-color: #FFFFFF;}
+</style> 
+<!--link rel="stylesheet" href="https://ufabc-hal.github.io/static/css/prettify.css"-->
+<style>
+	header.intro-header {background: #6f5499;background: no-repeat center center;background-attachment: scroll;-webkit-background-size: cover;-moz-background-size: cover;background-size: cover;-o-background-size: cover;}
+	/* Preloader */#preloader {position:fixed;top:0;left:0;right:0;bottom:0;background-color:#fff; /* change if the mask should have another color then white */z-index:99; /* makes sure it stays on top */}
+	#status {width:200px;height:200px;position:absolute;left:50%; /* centers the loading animation horizontally one the screen */top:50%; /* centers the loading animation vertically one the screen */background-image:; /* path to your loading animation */background-repeat:no-repeat;background-position:center;margin:-100px 0 0 -100px; /* is width and height divided by two */} 
+	li {list-style: none;}
+            body.modal-open 
+            {overflow: hidden;padding-right: 0px;
+        }
+	article li {list-style: inherit;}
+	article .figure {text-align: center}
+    </style>
+    <!-- end Loading front stylesheet here --> 
+    </head>
+
+    <body>
+	<div id="preloader">
+	    <div id="status">
+
+	    </div>
+
+	</div>  
+	<!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="https://ufabc-hal.github.io" id="blog-title-left-top">HAL</a>                        
+        </div>   
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+               
+                <li><a href="https://ufabc-hal.github.io/people.html">People</a></li>
+                <li><a href="https://ufabc-hal.github.io/pub/page/1/index.html">Publications</a></li>
+                <li><a href="https://ufabc-hal.github.io/projects.html">Projects</a></li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+
+
+
+        <div id="content">
+            <!-- Main Content -->
+<div class="container front-end">
+	<div class="row">
+		<div class="posts">
+        <article>
+            <header class="intro-header" style="background-image: url('https://ufabc-hal.github.io/static/img/sky.jpg')">  
+                <div class="post-meta"> 
+                </div>
+                <h1 class="post-title"><a href="#" id="post-title-h1" rel="bookmark" title="link" itemprop="url">Heuristics, Analysis and Learning Laboratory (HAL)</a></h1>
+            </header>
+
+            </article>
+            
+<div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <img src="https://ufabc-hal.github.io/static/img/pubs.png" width="50%"><img src="https://ufabc-hal.github.io/static/img/cites.png" width="50%">
+            </div>
+        </div>
+</div>
+            
+<div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
+
+
+<ul>
+
+
+<li>
+
+<a data-toggle="collapse" data-parent="#accordion" href="#prati2003method">
+   <h3>Looking for exceptions on knowledge rules induced from HIV cleavage data set</h3>
+</a>
+<h4>Ronaldo Cristiano Prati, Maria Carolina Monard, André C. P. L. F. de Carvalho</h4>
+
+<div id="prati2003method" class="collapse">
+<h4>Publication date: May 25, 2017</h4>
+<h4>Journal/Conference: Genetics and Molecular Biology</h4>
+  <p><p>The aim of data mining is to find useful knowledge inout of databases. In order to extract such knowledge, several methods can be used, among them machine learning (ML) algorithms. In this work we focus on ML algorithms that express the extracted knowledge in a symbolic form, such as rules. This representation may allow us to ‘’explain’’ the data. Rule learning algorithms are mainly designed to induce classification rules that can predict new cases with high accuracy. However, these sorts of rules generally express common sense knowledge, resulting in many interesting and useful rules not being discovered. Furthermore, the domain independent biases, especially those related to the language used to express the induced knowledge, could induce rules that are difficult to understand. Exceptions might be used in order to overcome these drawbacks. Exceptions are defined as rules that contradict common believebeliefs. This kind of rules can play an important role in the process of understanding the underlying data as well as in making critical decisions. By contradicting the user’s common beliefves, exceptions are bound to be interesting. This work proposes a method to find exceptions. In order to illustrate the potential of our approach, we apply the method in a real world data set to discover rules and exceptions in the HIV virus protein cleavage process. A good understanding of the process that generates this data plays an important role oin the research of cleavage inhibitors. We consider believe that the proposed approach may help the domain expert to further understand this process.</p></p>
+
+More info: <a href="http://dx.doi.org/10.1590/s1415-47572004000400027">http://dx.doi.org/10.1590/s1415-47572004000400027</a>
+
+
+</div>
+
+</li>
+
+<li>
+
+<a data-toggle="collapse" data-parent="#accordion" href="#prati2003integrated">
+   <h3>Looking for exceptions on knowledge rules induced from HIV cleavage data set</h3>
+</a>
+<h4>Ronaldo Cristiano Prati, Maria Carolina Monard, André C. P. L. F. de Carvalho</h4>
+
+<div id="prati2003integrated" class="collapse">
+<h4>Publication date: May 25, 2017</h4>
+<h4>Journal/Conference: Genetics and Molecular Biology</h4>
+  <p><p>The aim of data mining is to find useful knowledge inout of databases. In order to extract such knowledge, several methods can be used, among them machine learning (ML) algorithms. In this work we focus on ML algorithms that express the extracted knowledge in a symbolic form, such as rules. This representation may allow us to ‘’explain’’ the data. Rule learning algorithms are mainly designed to induce classification rules that can predict new cases with high accuracy. However, these sorts of rules generally express common sense knowledge, resulting in many interesting and useful rules not being discovered. Furthermore, the domain independent biases, especially those related to the language used to express the induced knowledge, could induce rules that are difficult to understand. Exceptions might be used in order to overcome these drawbacks. Exceptions are defined as rules that contradict common believebeliefs. This kind of rules can play an important role in the process of understanding the underlying data as well as in making critical decisions. By contradicting the user’s common beliefves, exceptions are bound to be interesting. This work proposes a method to find exceptions. In order to illustrate the potential of our approach, we apply the method in a real world data set to discover rules and exceptions in the HIV virus protein cleavage process. A good understanding of the process that generates this data plays an important role oin the research of cleavage inhibitors. We consider believe that the proposed approach may help the domain expert to further understand this process.</p></p>
+
+More info: <a href="http://dx.doi.org/10.1590/s1415-47572004000400027">http://dx.doi.org/10.1590/s1415-47572004000400027</a>
+
+
+</div>
+
+</li>
+
+<li>
+
+<a data-toggle="collapse" data-parent="#accordion" href="#szabo2015proposal">
+   <h3>The proposal of dynamic thresholds in an immune algorithm for fuzzy clustering</h3>
+</a>
+<h4>Alexandre Szabo, Fabricio Olivetti de Franca</h4>
+
+<div id="szabo2015proposal" class="collapse">
+<h4>Publication date: March 25, 2017</h4>
+<h4>Journal/Conference: 2015 IEEE International Conference on Fuzzy Systems (FUZZ-IEEE)</h4>
+  <p><p>Most datasets obtained in real-world applications are typically unlabeled, requiring a manual labor of classifying a sample of such data or the application of unsupervised learning. Clustering is typically used to devise how data are grouped together before sampling the data to be labeled. Most clustering algorithms often assumes that the number of clusters is known and that a given instance from the dataset belongs to only one cluster. The Fainet algorithm is a bioinspired fuzzy clustering algorithm that finds fuzzy partitions and dynamically estimates the number of clusters. The results from the literature showed that, given a correct parameters set, this algorithm can outperform most clustering methods from the literature. However, in order to obtain such optimal set, a typical user should first acquire a knowledge of the dataset being studied. This work proposes dynamic rules to finetune the parameters set on-the-fly. The advantages of the proposed method is that the parameters not only adapts to the dataset characteristics but also to how close the solutions are from the optima. The results show that the method greatly improves the prototypes representativeness while optimizing the estimated number of clusters.</p></p>
+
+More info: <a href="http://dx.doi.org/10.1109/fuzz-ieee.2015.7338021">http://dx.doi.org/10.1109/fuzz-ieee.2015.7338021</a>
+
+
+</div>
+
+</li>
+
+<li>
+
+<a data-toggle="collapse" data-parent="#accordion" href="#prati2015fuzzy">
+   <h3>Fuzzy rule classifiers for multi-label classification</h3>
+</a>
+<h4>Ronaldo C. Prati</h4>
+
+<div id="prati2015fuzzy" class="collapse">
+<h4>Publication date: March 25, 2017</h4>
+<h4>Journal/Conference: 2015 IEEE International Conference on Fuzzy Systems (FUZZ-IEEE)</h4>
+  <p><p>In this paper we investigate the use of fuzzy rule-based classifiers for multi-label classification. This classification task deals with problems where more than one label could be assigned simultaneously to a given instance. We concentrate on problem transformation methods, which use different strategies to transform a multi-label problem into a different single-label classification problems. This transformation make it possible to use almost any single label learner as base-classifiers, thus benefiting from the rich miscellany of algorithms available for this task. Fuzzy rules provide both interpretability and flexibility to model the vagueness among different labels. Empirical results using six datasets, four different problem transformation methods, eight base-classifiers, and five different performance measure shows the suitability of fuzzy rules for this task.</p></p>
+
+More info: <a href="http://dx.doi.org/10.1109/fuzz-ieee.2015.7337815">http://dx.doi.org/10.1109/fuzz-ieee.2015.7337815</a>
+
+
+</div>
+
+</li>
+
+<li>
+
+<a data-toggle="collapse" data-parent="#accordion" href="#fantinato2014multivariate">
+   <h3>Multivariate PDF matching via kernel density estimation</h3>
+</a>
+<h4>Denis G. Fantinato, Levy Boccato, Romis Attux, Aline Neves</h4>
+
+<div id="fantinato2014multivariate" class="collapse">
+<h4>Publication date: March 24, 2017</h4>
+<h4>Journal/Conference: 2014 IEEE Symposium on Computational Intelligence for Multimedia, Signal and Vision Processing (CIMSIVP)</h4>
+  <p><p>In this work, a measure of similarity based on the matching of multivariate probability density functions (PDFs) is proposed. In consonance with the information theoretic learning (ITL) framework, the affinity comparison between the joint PDFs is performed using a quadratic distance, estimated with the aid of the Parzen window method with Gaussian kernels. The motivation underlying this proposal is to introduce a criterion capable of quantifying, to a significant extent, the statistical dependence present on information sources endowed with …</p></p>
+
+More info: <a href="http://dx.doi.org/10.1109/cimsivp.2014.7013285">http://dx.doi.org/10.1109/cimsivp.2014.7013285</a>
+
+
+</div>
+
+</li>
+
+<li>
+
+<a data-toggle="collapse" data-parent="#accordion" href="#boccato2014comparative">
+   <h3>A comparative study of non-MSE criteria in nonlinear equalization</h3>
+</a>
+<h4>Levy Boccato, Daniel G. Silva, Denis Fantinato, Rafael Ferrari, Romis Attux</h4>
+
+<div id="boccato2014comparative" class="collapse">
+<h4>Publication date: March 24, 2017</h4>
+<h4>Journal/Conference: 2014 International Telecommunications Symposium (ITS)</h4>
+  <p><p>This work studies the application of non-MSE criteria to adapt the linear readout of Extreme Learning Machines (ELMs) in the context of communication channel equalization. A qualitative and experimental analysis is performed, in terms of bit error rate, optimization surface and decision boundary. The results reached by the ELM-based equalizer, considering three different noise models, did not reveal clear advantages of using criteria based on the concepts of error entropy, correntropy, and the L 1-norm of the error …</p></p>
+
+More info: <a href="http://dx.doi.org/10.1109/its.2014.6947953">http://dx.doi.org/10.1109/its.2014.6947953</a>
+
+
+</div>
+
+</li>
+
+<li>
+
+<a data-toggle="collapse" data-parent="#accordion" href="#fantinato2013blind">
+   <h3>Blind separation of convolutive mixtures over Galois fields</h3>
+</a>
+<h4>Denis G. Fantinato, Daniel G. Silva, Everton Z. Nadalin, Romis Attux, Joao M. T. Romano, Aline Neves, Jugurta Montalvao</h4>
+
+<div id="fantinato2013blind" class="collapse">
+<h4>Publication date: March 23, 2017</h4>
+<h4>Journal/Conference: 2013 IEEE International Workshop on Machine Learning for Signal Processing (MLSP)</h4>
+  <p><p>The efforts of Yeredor, Gutch, Gruber and Theis have established a theory of blind source separation (BSS) over finite fields that can be applied to linear and instantaneous mixing models. In this work, the problem is treated for the case of convolutive mixtures, for which the process of BSS must be understood in terms of space-time processing. A method based on minimum entropy and deflation is proposed, and structural conditions for perfect signal recovery are defined, establishing interesting points of contact with canonical MIMO …</p></p>
+
+More info: <a href="http://dx.doi.org/10.1109/mlsp.2013.6661908">http://dx.doi.org/10.1109/mlsp.2013.6661908</a>
+
+
+</div>
+
+</li>
+
+<li>
+
+<a data-toggle="collapse" data-parent="#accordion" href="#sestaro2012semi">
+   <h3>A Semi-supervised Approach to Estimate the Number of Clusters per Class</h3>
+</a>
+<h4>Davidson M. Sestaro, Thiago F. Covoes, Eduardo R. Hruschka</h4>
+
+<div id="sestaro2012semi" class="collapse">
+<h4>Publication date: March 22, 2017</h4>
+<h4>Journal/Conference: 2012 Brazilian Symposium on Neural Networks</h4>
+  <p><p>The disparity between the available amount of unlabeled and labeled data in several applications made semi-supervised learning become an active research topic. Most studies on semi-supervised clustering assume that the number of classes is equal to the number of clusters. This paper introduces a semi-supervised clustering algorithm, named Multiple Clusters per Class k-means (MCCK), which estimates the number of clusters per class via pair wise constraints generated from class labels. Experiments with eight datasets indicate …</p></p>
+
+More info: <a href="http://dx.doi.org/10.1109/sbrn.2012.31">http://dx.doi.org/10.1109/sbrn.2012.31</a>
+
+
+</div>
+
+</li>
+
+<li>
+
+<a data-toggle="collapse" data-parent="#accordion" href="#covoes2013competitive">
+   <h3>Competitive Learning With Pairwise Constraints</h3>
+</a>
+<h4>T. F. Covoes, E. R. Hruschka, J. Ghosh</h4>
+
+<div id="covoes2013competitive" class="collapse">
+<h4>Publication date: March 22, 2017</h4>
+<h4>Journal/Conference: IEEE Transactions on Neural Networks and Learning Systems</h4>
+  <p><p>Constrained clustering has been an active research topic since the last decade. Most studies focus on batch-mode algorithms. This brief introduces two algorithms for on-line constrained learning, named on-line linear constrained vector quantization error (O-LCVQE) and constrained rival penalized competitive learning (C-RPCL). The former is a variant of the LCVQE algorithm for on-line settings, whereas the latter is an adaptation of the (on-line) RPCL algorithm to deal with constrained clustering. The accuracy results-in terms of the …</p></p>
+
+More info: <a href="http://dx.doi.org/10.1109/tnnls.2012.2227064">http://dx.doi.org/10.1109/tnnls.2012.2227064</a>
+
+
+</div>
+
+</li>
+
+<li>
+
+<a data-toggle="collapse" data-parent="#accordion" href="#coelho2011concentration">
+   <h3>A Concentration-based Artificial Immune Network for combinatorial optimization</h3>
+</a>
+<h4>Guilherme P. Coelho, Fabricio O. de Franca, Fernando J. Von Zuben</h4>
+
+<div id="coelho2011concentration" class="collapse">
+<h4>Publication date: March 21, 2017</h4>
+<h4>Journal/Conference: 2011 IEEE Congress of Evolutionary Computation (CEC)</h4>
+  <p><p>Diversity maintenance is an important aspect in population-based metaheuristics for optimization, as it tends to allow a better exploration of the search space, thus reducing the susceptibility to local optima in multimodal optimization problems. In this context, metaheuristics based on the Artificial Immune System (AIS) framework, especially those inspired by the Immune Network theory, are known to be capable of stimulating the generation of diverse sets of solutions for a given problem, even though generally …</p></p>
+
+More info: <a href="http://dx.doi.org/10.1109/cec.2011.5949758">http://dx.doi.org/10.1109/cec.2011.5949758</a>
+
+
+</div>
+
+</li>
+
+</ul>
+
+<div class="story twocol-story newer">
+
+<a href="../../../pub/page/8/index.html">◀ Previous</a>
+&nbsp;
+</div>
+<div class="story twocol-story older" style="text-align:right;">
+
+<a href="../../../pub/page/10/index.html">Next ▶</a>
+&nbsp;
+</div>
+
+</div></div></div>
+		</div>
+
+        
+	</div>
+</div>
+
+
+
+<hr>
+
+        </div>
+        <div id="footer">
+        </div>
+      <!-- Footer -->
+<footer>
+    Phone contact: (11) 3356-7689<br>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    <li>
+                        <a class="navbar-brand" href="http://www.ufabc.edu.br/" id="blog-title-left-top"><img src="../../../static/img/Logo_UFABC.jpg" height="160" width="120"></a>
+                           
+                    </li>
+                    <li>
+                        <a class="navbar-brand" href="http://cmcc.ufabc.edu.br/" id="blog-title-left-top"><img src="../../../static/img/logotipo.jpg" height="80" width="290"></a>
+                    </li>
+		   
+                </ul>
+                <br>
+<div class="col-md-12">
+     <p class="copyright text-muted">
+            Site generated by
+            <a href="http://jaspervdj.be/hakyll">Hakyll</a>. Modified theme by &copy; katychuang 2015 and inspired by
+      <!-- ICE AND FIRE THEME https://github.com/SpaceG/iceandfire -->
+      <a href="https://github.com/SpaceG/CleanMagicMedium-Jekyll">CleanMagic.</a> available from <a href="http://katychuang.com/hakyll-themes/">Hakyll Themes</a> </p>
+    </div>
+    
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="https://ufabc-hal.github.io/static/js/jquery.min.js"></script>
+<script src="https://ufabc-hal.github.io/static/js/spaceg.stylesheets.min.js"></script> 
+<script src="https://ufabc-hal.github.io/static/js/bootstrap.min.js"></script>
+<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+<script src="https://ufabc-hal.github.io/static/js/scripts.js"></script>
+
+
+
+    </body>
+</html>

@@ -1,0 +1,435 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+    
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+ <!-- 
+      loads the http over https ssl - 
+      welcome to my website! 
+
+	this theme is based off the Ice & Fire theme created by Lucas Gatsas
+      https://www.twitter.com/LucasGatsas
+      www.lucasgatsas.ch - switzerland. 
+                                                    --> 
+
+<!--
+<script type="text/javascript">
+var host = "https://katychuang.me/";
+if ((host == window.location.host) && (window.location.protocol != "https:"))
+    window.location.protocol = "https";
+</script>
+-->
+<!-- Microsoft Internet Explorer documentMode compatMode setting IE Modus --> 
+<script type="text/javascript">
+var IE = null;
+if (window.navigator.appName == "Microsoft Internet Explorer") {
+  if (document.documentMode) {
+  
+    IE = document.documentMode; 
+    } else {
+   
+        IE = 5; 
+          if (document.compatMode) {
+      if (document.compatMode == "CSS1Compat")
+      IE = 11; 
+      }
+    }
+  }
+</script>
+
+    <meta charset="utf-8">
+    <!-- X-UA --> 
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="X-UA-Compatible" content="IE=11" />
+    <link rel="author" title="Katy Chuang" href="https://plus.google.com/u/0/111391719267336703432/posts" />
+
+
+    <meta name="google" content="notranslate" />
+    <!-- Viewport --> 
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- index ROBOTS follow --> 
+    <meta name="robots" content="index, follow" />
+    <!-- Site Desciption --> 
+    <meta name="description" content="Heuristics, Analysis and Learning Laboratory (HAL)">
+        <!-- Site Desciption --> 
+    <meta name="keywords" content="Katy Chuang, katychuang, data science, Web Developer, Front End Engineer">
+    <!-- Favicon --> 
+    <link rel="shortcut icon" href="https://ufabc-hal.github.io/static/img/ico.png" type="image/x-icon" />
+    <!-- Blog Title -->
+    <title>HAL Research Group</title>
+
+    <!--     <title>{% if page.title %}{{ page.title }} - {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
+--> 
+    <!-- Property Metas --> 
+    <meta property="og:image" content="https://ufabc-hal.github.io/static/img/ix.png" />
+    <meta property="og:title" content="Heuristics, Analysis and Learning Laboratory (HAL)" />
+    <meta property="og:site_name" content="Heuristics, Analysis and Learning Laboratory (HAL)" />
+    <!-- Canonical -->
+    <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
+    <!-- StyleSheet -->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://ufabc-hal.github.io/static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://ufabc-hal.github.io/static/css/spaceg.stylesheets.css">
+    <link rel="stylesheet" href="https://ufabc-hal.github.io/static/css/syntax.css">
+    <link rel="stylesheet" href="../../../static/css/custom.css">
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic" rel="stylesheet" type="text/css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900,400italic,700italic,900italic" rel="stylesheet" type="text/css">    
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style>
+	#preloader {position:fixed;top:0;left:0;right:0;bottom:0;background-color:#fff; /* change if the mask should have another color then white */z-index:99; /* makes sure it stays on top */}
+	#status {width:200px;height:200px;position:absolute;left:50%; /* centers the loading animation horizontally one the screen */top:50%; /* centers the loading animation vertically one the screen */background-image:url("/static/img/preloader.gif"); /* path to your loading animation */background-repeat:no-repeat;background-position:center;margin:-100px 0 0 -100px; /* is width and height divided by two */}
+	ul, ol {margin-top: 0;margin-bottom: 10px;}
+	.navbar-inverse {background-color: #FFF;border-color: #FFFFFF;}
+</style> 
+<!--link rel="stylesheet" href="https://ufabc-hal.github.io/static/css/prettify.css"-->
+<style>
+	header.intro-header {background: #6f5499;background: no-repeat center center;background-attachment: scroll;-webkit-background-size: cover;-moz-background-size: cover;background-size: cover;-o-background-size: cover;}
+	/* Preloader */#preloader {position:fixed;top:0;left:0;right:0;bottom:0;background-color:#fff; /* change if the mask should have another color then white */z-index:99; /* makes sure it stays on top */}
+	#status {width:200px;height:200px;position:absolute;left:50%; /* centers the loading animation horizontally one the screen */top:50%; /* centers the loading animation vertically one the screen */background-image:; /* path to your loading animation */background-repeat:no-repeat;background-position:center;margin:-100px 0 0 -100px; /* is width and height divided by two */} 
+	li {list-style: none;}
+            body.modal-open 
+            {overflow: hidden;padding-right: 0px;
+        }
+	article li {list-style: inherit;}
+	article .figure {text-align: center}
+    </style>
+    <!-- end Loading front stylesheet here --> 
+    </head>
+
+    <body>
+	<div id="preloader">
+	    <div id="status">
+
+	    </div>
+
+	</div>  
+	<!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="https://ufabc-hal.github.io" id="blog-title-left-top">HAL</a>                        
+        </div>   
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+               
+                <li><a href="https://ufabc-hal.github.io/people.html">People</a></li>
+                <li><a href="https://ufabc-hal.github.io/pub/page/1/index.html">Publications</a></li>
+                <li><a href="https://ufabc-hal.github.io/projects.html">Projects</a></li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+
+
+
+        <div id="content">
+            <!-- Main Content -->
+<div class="container front-end">
+	<div class="row">
+		<div class="posts">
+        <article>
+            <header class="intro-header" style="background-image: url('https://ufabc-hal.github.io/static/img/sky.jpg')">  
+                <div class="post-meta"> 
+                </div>
+                <h1 class="post-title"><a href="#" id="post-title-h1" rel="bookmark" title="link" itemprop="url">Heuristics, Analysis and Learning Laboratory (HAL)</a></h1>
+            </header>
+
+            </article>
+            
+<div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <img src="https://ufabc-hal.github.io/static/img/pubs.png" width="50%"><img src="https://ufabc-hal.github.io/static/img/cites.png" width="50%">
+            </div>
+        </div>
+</div>
+            
+<div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
+
+
+<ul>
+
+
+<li>
+
+<a data-toggle="collapse" data-parent="#accordion" href="#fantinatoquadratic">
+   <h3>A Quadratic Divergence-Based Independence Measure Applied to Linear-Quadratic Mixtures</h3>
+</a>
+<h4>Denis G. Fantinato, Rafael A. Ando, Aline Neves, Leonardo T. Duarte, Christian Jutten, Romis Attux</h4>
+
+<div id="fantinatoquadratic" class="collapse">
+<h4>Publication date: June 20, 2017</h4>
+<h4>Journal/Conference: XXXIV Simpósio Brasileiro de Telecomunicações</h4>
+  <p><p>In the context of the Blind Source Separation (BSS) problem, the use of Mutual Information (MI) as an independence measure can be very effective, even for certain types of nonlinear mixtures. However, in this case, it is generally necessary to estimate the joint and the marginal distributions associated with the random variables of interest. In this work, we consider the kernel methods for distribution estimation allied to a convenient metric as alternative to classical MI: the quadratic divergence. The proposed method is applied to the problem of Linear-Quadratic mixtures, using a recurrent network for separation and an evolutionary algorithm, the opt-aiNet, for parameter optimization. Its performance is analyzed and compared with the classical MI estimated via histogram in three different scenarios including synthetic and real data. The results are favorable to the proposal, especially for small data sets.</p></p>
+
+More info: <a href="https://www.researchgate.net/publication/308116911_A_Quadratic_Divergence-Based_Independence_Measure_Applied_to_Linear-Quadratic_Mixtures">https://www.researchgate.net/publication/308116911_A_Quadratic_Divergence-Based_Independence_Measure_Applied_to_Linear-Quadratic_Mixtures</a>
+
+
+</div>
+
+</li>
+
+<li>
+
+<a data-toggle="collapse" data-parent="#accordion" href="#de2011extracting">
+   <h3>Extracting additive and multiplicative coherent biclusters with swarm intelligence</h3>
+</a>
+<h4>Fabricio O. de Franca, Fernando J. Von Zuben</h4>
+
+<div id="de2011extracting" class="collapse">
+<h4>Publication date: June 20, 2017</h4>
+<h4>Journal/Conference: 2011 IEEE Congress of Evolutionary Computation (CEC)</h4>
+  <p><p>Biclustering is usually referred to as the process of finding subsets of rows and columns from a given dataset expressing a relationship. Each subset is a bicluster and corresponds to a sub-matrix whose elements tend to present a high degree of coherence with each other, that may lead to novel discoveries regarding the objects in the dataset. This coherence leads to the possibility of obtaining representative values for rows (subset of objects) and columns (subset of attributes) of each bicluster. In the literature, it is usually studied the additive …</p></p>
+
+More info: <a href="http://dx.doi.org/10.1109/cec.2011.5949678">http://dx.doi.org/10.1109/cec.2011.5949678</a>
+
+
+</div>
+
+</li>
+
+<li>
+
+<a data-toggle="collapse" data-parent="#accordion" href="#covoes2011towards">
+   <h3>Towards improving cluster-based feature selection with a simplified silhouette filter</h3>
+</a>
+<h4>Thiago F. Covões, Eduardo R. Hruschka</h4>
+
+<div id="covoes2011towards" class="collapse">
+<h4>Publication date: June 20, 2017</h4>
+<h4>Journal/Conference: Information Sciences</h4>
+  <p><p>This paper proposes a filter-based algorithm for feature selection. The filter is based on the partitioning of the set of features into clusters. The number of clusters, and consequently the cardinality of the subset of selected features, is automatically estimated from data. The computational complexity of the proposed algorithm is also investigated. A variant of this filter that considers feature-class correlations is also proposed for classification problems. Empirical results involving ten datasets illustrate the performance of the developed …</p></p>
+
+More info: <a href="http://dx.doi.org/10.1016/j.ins.2011.04.050">http://dx.doi.org/10.1016/j.ins.2011.04.050</a>
+
+
+</div>
+
+</li>
+
+<li>
+
+<a data-toggle="collapse" data-parent="#accordion" href="#covoes2011splitting">
+   <h3>Splitting and Merging Gaussian Mixture Model Components: An Evolutionary Approach</h3>
+</a>
+<h4>Thiago F. Covões, Eduardo R. Hruschka</h4>
+
+<div id="covoes2011splitting" class="collapse">
+<h4>Publication date: June 20, 2017</h4>
+<h4>Journal/Conference: 2011 10th International Conference on Machine Learning and Applications and Workshops</h4>
+  <p><p>This paper introduces an evolutionary algorithm, named ESM-EM (Evolutionary Split &amp; Merge for Expectation Maximization), for estimating both the number of components and parameters of Gaussian Mixture Models. ESM-EM is based on splitting and merging operations, which are applied to the components of the mixture model. By combining such operations with random search procedures, an evolutionary algorithm potentially capable of escaping from local optima can be designed. In our experiments, we compare ESM-EM with …</p></p>
+
+More info: <a href="http://dx.doi.org/10.1109/icmla.2011.132">http://dx.doi.org/10.1109/icmla.2011.132</a>
+
+
+</div>
+
+</li>
+
+<li>
+
+<a data-toggle="collapse" data-parent="#accordion" href="#jaskowiak2010comparative">
+   <h3>A Comparative Study on the Use of Correlation Coefficients for Redundant Feature Elimination</h3>
+</a>
+<h4>P A Jaskowiak, R J G B Campello, Thiago F Covoes, E R Hruschka</h4>
+
+<div id="jaskowiak2010comparative" class="collapse">
+<h4>Publication date: June 19, 2017</h4>
+<h4>Journal/Conference: 2010 Eleventh Brazilian Symposium on Neural Networks</h4>
+  <p><p>Simplified Silhouette Filter (SSF) is a recently introduced feature selection method that automatically estimates the number of features to be selected. To do so, a sampling strategy is combined with a clustering algorithm that seeks clusters of correlated (potentially redundant) features. It is well known that the choice of a similarity measure may have great impact in clustering results. As a consequence, in this application scenario, this choice may have great impact in the feature subset to be selected. In this paper we study six correlation …</p></p>
+
+More info: <a href="http://dx.doi.org/10.1109/sbrn.2010.11">http://dx.doi.org/10.1109/sbrn.2010.11</a>
+
+
+</div>
+
+</li>
+
+<li>
+
+<a data-toggle="collapse" data-parent="#accordion" href="#de2010finding">
+   <h3>Finding a high coverage set of 5-biclusters with swarm intelligence</h3>
+</a>
+<h4>Fabricio O. de Franca, Fernando J. Von Zuben</h4>
+
+<div id="de2010finding" class="collapse">
+<h4>Publication date: June 19, 2017</h4>
+<h4>Journal/Conference: IEEE Congress on Evolutionary Computation</h4>
+  <p><p>Biclustering is usually referred to as the process of finding subsets of rows and columns from a given dataset. Each subset is a bicluster and corresponds to a sub-matrix whose elements tend to present a high degree of coherence with each other. In order to find such structures, the δ-biclustering problem was formulated, being denoted as the problem of finding a set of biclusters limited by a maximum degree of coherence, measured by a mean-squared residue, while maximizing the bicluster total size. Additionally, it is expected a reduced …</p></p>
+
+More info: <a href="http://dx.doi.org/10.1109/cec.2010.5586116">http://dx.doi.org/10.1109/cec.2010.5586116</a>
+
+
+</div>
+
+</li>
+
+<li>
+
+<a data-toggle="collapse" data-parent="#accordion" href="#de2009coherent">
+   <h3>Improving a multi-objective multipopulation artificial immune network for biclustering</h3>
+</a>
+<h4>Guilherme Palermo Coelho, Fabricio Olivetti de Franca, Fernando J. Von Zuben</h4>
+
+<div id="de2009coherent" class="collapse">
+<h4>Publication date: June 19, 2017</h4>
+<h4>Journal/Conference: 2009 IEEE Congress on Evolutionary Computation</h4>
+  <p><p>The biclustering technique was developed to avoid some of the drawbacks presented by standard clustering techniques. Given that biclustering requires the optimization of at least two conflicting objectives and that multiple independent solutions are desirable as the outcome, a few multi-objective evolutionary algorithms for biclustering were proposed in the literature. However, apart from the individual characteristics of the biclusters that should be optimized during their construction, several other global aspects should also be considered …</p></p>
+
+More info: <a href="http://dx.doi.org/10.1109/cec.2009.4983287">http://dx.doi.org/10.1109/cec.2009.4983287</a>
+
+
+</div>
+
+</li>
+
+<li>
+
+<a data-toggle="collapse" data-parent="#accordion" href="#covoes2013study">
+   <h3>An Experimental Study on Unsupervised Clustering-Based Feature Selection Methods</h3>
+</a>
+<h4>Thiago F. Covões, Eduardo R. Hruschka</h4>
+
+<div id="covoes2013study" class="collapse">
+<h4>Publication date: June 19, 2017</h4>
+<h4>Journal/Conference: 2009 Ninth International Conference on Intelligent Systems Design and Applications</h4>
+  <p><p>Feature selection is an essential task in data mining because it makes it possible not only to reduce computational times and storage requirements, but also to favor model improvement and better data understanding. In this work, we analyze three methods for unsupervised feature selection that are based on the clustering of features for redundancy removal. We report experimental results obtained in ten datasets that illustrate practical scenarios of particular interest, in which one method may be preferred over another. In order to provide …</p></p>
+
+More info: <a href="http://dx.doi.org/10.1109/isda.2009.79">http://dx.doi.org/10.1109/isda.2009.79</a>
+
+
+</div>
+
+</li>
+
+<li>
+
+<a data-toggle="collapse" data-parent="#accordion" href="#covoes2009experimental">
+   <h3>An Experimental Study on Unsupervised Clustering-Based Feature Selection Methods</h3>
+</a>
+<h4>Thiago F. Covões, Eduardo R. Hruschka</h4>
+
+<div id="covoes2009experimental" class="collapse">
+<h4>Publication date: June 19, 2017</h4>
+<h4>Journal/Conference: 2009 Ninth International Conference on Intelligent Systems Design and Applications</h4>
+  <p><p>Feature selection is an essential task in data mining because it makes it possible not only to reduce computational times and storage requirements, but also to favor model improvement and better data understanding. In this work, we analyze three methods for unsupervised feature selection that are based on the clustering of features for redundancy removal. We report experimental results obtained in ten datasets that illustrate practical scenarios of particular interest, in which one method may be preferred over another. In order to provide …</p></p>
+
+More info: <a href="http://dx.doi.org/10.1109/isda.2009.79">http://dx.doi.org/10.1109/isda.2009.79</a>
+
+
+</div>
+
+</li>
+
+<li>
+
+<a data-toggle="collapse" data-parent="#accordion" href="#coletta2010fuzzy">
+   <h3>Fuzzy Clustering-Based Filter</h3>
+</a>
+<h4>Luiz F. S. Coletta, Eduardo R. Hruschka, Thiago F. Covoes, Ricardo J. G. B. Campello</h4>
+
+<div id="coletta2010fuzzy" class="collapse">
+<h4>Publication date: June 19, 2017</h4>
+<h4>Journal/Conference: Communications in Computer and Information Science</h4>
+  <p><p>This paper introduces a filter, named FCF (Fuzzy Clustering-based Filter), for removing redundant features, thus making it possible to improve the efficacy and the efficiency of data mining algorithms. FCF is based on the fuzzy partitioning of features into clusters. The …</p></p>
+
+More info: <a href="http://dx.doi.org/10.1007/978-3-642-14055-6_42">http://dx.doi.org/10.1007/978-3-642-14055-6_42</a>
+
+
+</div>
+
+</li>
+
+</ul>
+
+<div class="story twocol-story newer">
+
+<a href="../../../pub/page/6/index.html">◀ Previous</a>
+&nbsp;
+</div>
+<div class="story twocol-story older" style="text-align:right;">
+
+<a href="../../../pub/page/8/index.html">Next ▶</a>
+&nbsp;
+</div>
+
+</div></div></div>
+		</div>
+
+        
+	</div>
+</div>
+
+
+
+<hr>
+
+        </div>
+        <div id="footer">
+        </div>
+      <!-- Footer -->
+<footer>
+    Phone contact: (11) 3356-7689<br>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    <li>
+                        <a class="navbar-brand" href="http://www.ufabc.edu.br/" id="blog-title-left-top"><img src="../../../static/img/Logo_UFABC.jpg" height="160" width="120"></a>
+                           
+                    </li>
+                    <li>
+                        <a class="navbar-brand" href="http://cmcc.ufabc.edu.br/" id="blog-title-left-top"><img src="../../../static/img/logotipo.jpg" height="80" width="290"></a>
+                    </li>
+		   
+                </ul>
+                <br>
+<div class="col-md-12">
+     <p class="copyright text-muted">
+            Site generated by
+            <a href="http://jaspervdj.be/hakyll">Hakyll</a>. Modified theme by &copy; katychuang 2015 and inspired by
+      <!-- ICE AND FIRE THEME https://github.com/SpaceG/iceandfire -->
+      <a href="https://github.com/SpaceG/CleanMagicMedium-Jekyll">CleanMagic.</a> available from <a href="http://katychuang.com/hakyll-themes/">Hakyll Themes</a> </p>
+    </div>
+    
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="https://ufabc-hal.github.io/static/js/jquery.min.js"></script>
+<script src="https://ufabc-hal.github.io/static/js/spaceg.stylesheets.min.js"></script> 
+<script src="https://ufabc-hal.github.io/static/js/bootstrap.min.js"></script>
+<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+<script src="https://ufabc-hal.github.io/static/js/scripts.js"></script>
+
+
+
+    </body>
+</html>

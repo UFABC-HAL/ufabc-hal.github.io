@@ -1,0 +1,435 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+    
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+ <!-- 
+      loads the http over https ssl - 
+      welcome to my website! 
+
+	this theme is based off the Ice & Fire theme created by Lucas Gatsas
+      https://www.twitter.com/LucasGatsas
+      www.lucasgatsas.ch - switzerland. 
+                                                    --> 
+
+<!--
+<script type="text/javascript">
+var host = "https://katychuang.me/";
+if ((host == window.location.host) && (window.location.protocol != "https:"))
+    window.location.protocol = "https";
+</script>
+-->
+<!-- Microsoft Internet Explorer documentMode compatMode setting IE Modus --> 
+<script type="text/javascript">
+var IE = null;
+if (window.navigator.appName == "Microsoft Internet Explorer") {
+  if (document.documentMode) {
+  
+    IE = document.documentMode; 
+    } else {
+   
+        IE = 5; 
+          if (document.compatMode) {
+      if (document.compatMode == "CSS1Compat")
+      IE = 11; 
+      }
+    }
+  }
+</script>
+
+    <meta charset="utf-8">
+    <!-- X-UA --> 
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="X-UA-Compatible" content="IE=11" />
+    <link rel="author" title="Katy Chuang" href="https://plus.google.com/u/0/111391719267336703432/posts" />
+
+
+    <meta name="google" content="notranslate" />
+    <!-- Viewport --> 
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- index ROBOTS follow --> 
+    <meta name="robots" content="index, follow" />
+    <!-- Site Desciption --> 
+    <meta name="description" content="Heuristics, Analysis and Learning Laboratory (HAL)">
+        <!-- Site Desciption --> 
+    <meta name="keywords" content="Katy Chuang, katychuang, data science, Web Developer, Front End Engineer">
+    <!-- Favicon --> 
+    <link rel="shortcut icon" href="https://ufabc-hal.github.io/static/img/ico.png" type="image/x-icon" />
+    <!-- Blog Title -->
+    <title>HAL Research Group</title>
+
+    <!--     <title>{% if page.title %}{{ page.title }} - {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
+--> 
+    <!-- Property Metas --> 
+    <meta property="og:image" content="https://ufabc-hal.github.io/static/img/ix.png" />
+    <meta property="og:title" content="Heuristics, Analysis and Learning Laboratory (HAL)" />
+    <meta property="og:site_name" content="Heuristics, Analysis and Learning Laboratory (HAL)" />
+    <!-- Canonical -->
+    <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
+    <!-- StyleSheet -->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://ufabc-hal.github.io/static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://ufabc-hal.github.io/static/css/spaceg.stylesheets.css">
+    <link rel="stylesheet" href="https://ufabc-hal.github.io/static/css/syntax.css">
+    <link rel="stylesheet" href="../../../static/css/custom.css">
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic" rel="stylesheet" type="text/css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900,400italic,700italic,900italic" rel="stylesheet" type="text/css">    
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style>
+	#preloader {position:fixed;top:0;left:0;right:0;bottom:0;background-color:#fff; /* change if the mask should have another color then white */z-index:99; /* makes sure it stays on top */}
+	#status {width:200px;height:200px;position:absolute;left:50%; /* centers the loading animation horizontally one the screen */top:50%; /* centers the loading animation vertically one the screen */background-image:url("/static/img/preloader.gif"); /* path to your loading animation */background-repeat:no-repeat;background-position:center;margin:-100px 0 0 -100px; /* is width and height divided by two */}
+	ul, ol {margin-top: 0;margin-bottom: 10px;}
+	.navbar-inverse {background-color: #FFF;border-color: #FFFFFF;}
+</style> 
+<!--link rel="stylesheet" href="https://ufabc-hal.github.io/static/css/prettify.css"-->
+<style>
+	header.intro-header {background: #6f5499;background: no-repeat center center;background-attachment: scroll;-webkit-background-size: cover;-moz-background-size: cover;background-size: cover;-o-background-size: cover;}
+	/* Preloader */#preloader {position:fixed;top:0;left:0;right:0;bottom:0;background-color:#fff; /* change if the mask should have another color then white */z-index:99; /* makes sure it stays on top */}
+	#status {width:200px;height:200px;position:absolute;left:50%; /* centers the loading animation horizontally one the screen */top:50%; /* centers the loading animation vertically one the screen */background-image:; /* path to your loading animation */background-repeat:no-repeat;background-position:center;margin:-100px 0 0 -100px; /* is width and height divided by two */} 
+	li {list-style: none;}
+            body.modal-open 
+            {overflow: hidden;padding-right: 0px;
+        }
+	article li {list-style: inherit;}
+	article .figure {text-align: center}
+    </style>
+    <!-- end Loading front stylesheet here --> 
+    </head>
+
+    <body>
+	<div id="preloader">
+	    <div id="status">
+
+	    </div>
+
+	</div>  
+	<!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="https://ufabc-hal.github.io" id="blog-title-left-top">HAL</a>                        
+        </div>   
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+               
+                <li><a href="https://ufabc-hal.github.io/people.html">People</a></li>
+                <li><a href="https://ufabc-hal.github.io/pub/page/1/index.html">Publications</a></li>
+                <li><a href="https://ufabc-hal.github.io/projects.html">Projects</a></li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+
+
+
+        <div id="content">
+            <!-- Main Content -->
+<div class="container front-end">
+	<div class="row">
+		<div class="posts">
+        <article>
+            <header class="intro-header" style="background-image: url('https://ufabc-hal.github.io/static/img/sky.jpg')">  
+                <div class="post-meta"> 
+                </div>
+                <h1 class="post-title"><a href="#" id="post-title-h1" rel="bookmark" title="link" itemprop="url">Heuristics, Analysis and Learning Laboratory (HAL)</a></h1>
+            </header>
+
+            </article>
+            
+<div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <img src="https://ufabc-hal.github.io/static/img/pubs.png" width="50%"><img src="https://ufabc-hal.github.io/static/img/cites.png" width="50%">
+            </div>
+        </div>
+</div>
+            
+<div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
+
+
+<ul>
+
+
+<li>
+
+<a data-toggle="collapse" data-parent="#accordion" href="#coelho2016enhancing">
+   <h3>         Enhancing perceptrons with contrastive biclusters      </h3>
+</a>
+<h4>A.L.V. Coelho, F.O. de França</h4>
+
+<div id="coelho2016enhancing" class="collapse">
+<h4>Publication date: November 24, 2016</h4>
+<h4>Journal/Conference:  Electronics Letters</h4>
+  <p><p>An enhanced perceptron model, referred to as BicNeuron (BN), which is based on the novel concept of contrastive biclusters is investigated. According to this viewpoint, a coherent bicluster (ie a subset of data patterns showing high similarity across a particular subset of features) belonging to one class is required to show high discrimination from the nearest patterns of the other class when projected on the same feature set. On each local subspace associated with a different pair of contrastive biclusters a perceptron is induced and the …</p></p>
+
+More info: <a href="http://dx.doi.org/10.1049/el.2016.3067">http://dx.doi.org/10.1049/el.2016.3067</a>
+
+
+</div>
+
+</li>
+
+<li>
+
+<a data-toggle="collapse" data-parent="#accordion" href="#de2016people">
+   <h3>The People Have Spoken: Conflicting Brazilian Protests on Twitter</h3>
+</a>
+<h4>Cassia de Souza Carvalho, Fabricio Olivetti de Franca, Denise Hideko Goya, Claudio Luis de Camargo Penteado</h4>
+
+<div id="de2016people" class="collapse">
+<h4>Publication date: September 30, 2016</h4>
+<h4>Journal/Conference: 2016 49th Hawaii International Conference on System Sciences (HICSS)</h4>
+  <p><p>Despite having won the Brazilian elections in 2014 the president Dilma Rousseff faced a wave of protests in 2015 asking for her impeachment. This sentiment of dissatisfaction was reinforced by the tight results together with accusations of corruption. Protests were organized and reported chiefly with the use of Social Networks. Two main protests occurred on March in a two day interval, one supporting the elected government and the other against it. There were multiple requests coming from the protesters. In this work we perform an exploratory analysis of these protests by using two topic modeling algorithms. We analyze how the protesters organized themselves into groups, how they acted, and present a summary of their main demands and opinions. We could identify the groups, the multiple subjects of each group and the tactics used by the supporters to disqualify the opposition.</p></p>
+
+More info: <a href="http://dx.doi.org/10.1109/hicss.2016.250">http://dx.doi.org/10.1109/hicss.2016.250</a>
+
+
+</div>
+
+</li>
+
+<li>
+
+<a data-toggle="collapse" data-parent="#accordion" href="#de2016influence">
+   <h3>The Influence of Retweeting Robots During Brazilian Protests</h3>
+</a>
+<h4>Eric Tadeu Camacho de Oliveira, Fabricio Olivetti de Franca, Denise Hideko Goya, Claudio Luis de Camargo Penteado</h4>
+
+<div id="de2016influence" class="collapse">
+<h4>Publication date: September 30, 2016</h4>
+<h4>Journal/Conference: 2016 49th Hawaii International Conference on System Sciences (HICSS)</h4>
+  <p><p>Online Social Networks have been adopted by political groups in order to improve the reachability of protest movements. As such, these networks give us a rich data source for estimating the impact and participation on these events. In some situations, though, the organizers employ the use of bots to inflate the real impact of the event. These bots promote ideas while being disconnected from the political group social network. In this paper we investigate the dynamics of message sharing on the Twitter network during two contrastive …</p></p>
+
+More info: <a href="http://dx.doi.org/10.1109/hicss.2016.260">http://dx.doi.org/10.1109/hicss.2016.260</a>
+
+
+</div>
+
+</li>
+
+<li>
+
+<a data-toggle="collapse" data-parent="#accordion" href="#de2015message">
+   <h3>The People Have Spoken: Conflicting Brazilian Protests on Twitter</h3>
+</a>
+<h4>Cassia de Souza Carvalho, Fabricio Olivetti de Franca, Denise Hideko Goya, Claudio Luis de Camargo Penteado</h4>
+
+<div id="de2015message" class="collapse">
+<h4>Publication date: September 30, 2016</h4>
+<h4>Journal/Conference: 2016 49th Hawaii International Conference on System Sciences (HICSS)</h4>
+  <p><p>Despite having won the Brazilian elections in 2014 the president Dilma Rousseff faced a wave of protests in 2015 asking for her impeachment. This sentiment of dissatisfaction was reinforced by the tight results together with accusations of corruption. Protests were organized and reported chiefly with the use of Social Networks. Two main protests occurred on March in a two day interval, one supporting the elected government and the other against it. There were multiple requests coming from the protesters. In this work we perform an …</p></p>
+
+More info: <a href="http://dx.doi.org/10.1109/hicss.2016.250">http://dx.doi.org/10.1109/hicss.2016.250</a>
+
+
+</div>
+
+</li>
+
+<li>
+
+<a data-toggle="collapse" data-parent="#accordion" href="#bernardini2006constructing">
+   <h3>Constructing ensembles of symbolic classifiers</h3>
+</a>
+<h4>Flávia Cristina Bernardini, Maria Carolina Monard, Ronaldo C. Prati</h4>
+
+<div id="bernardini2006constructing" class="collapse">
+<h4>Publication date: May 13, 2016</h4>
+<h4>Journal/Conference: International Journal of Hybrid Intelligent Systems</h4>
+  <p><p>Learning algorithms are an integral part of the Data Mining (DM) process. However, DM deals with a large amount of data and most learning algorithms do not operate in massive datasets. A technique often used to ease this problem is related to data sampling and the construction of ensembles of classifiers. Several methods to construct such ensembles have been proposed. However, these methods often lack an explanation facility. This work proposes methods to construct ensembles of symbolic classifiers. These ensembles can be …</p></p>
+
+More info: <a href="http://dx.doi.org/10.3233/his-2006-3304">http://dx.doi.org/10.3233/his-2006-3304</a>
+
+
+</div>
+
+</li>
+
+<li>
+
+<a data-toggle="collapse" data-parent="#accordion" href="#boccato2016analysis">
+   <h3>Analysis of ITL Criteria in the Context of FIR Channel Equalization</h3>
+</a>
+<h4>Levy Boccato, Denis Fantinato, Daniel Silva, Rafael Ferrari, Aline Neves, Romis Attux</h4>
+
+<div id="boccato2016analysis" class="collapse">
+<h4>Publication date: May  6, 2016</h4>
+<h4>Journal/Conference: Journal of Communication and Information Systems</h4>
+  <p><p>In this work, we perform an analysis, in the context of channel equalization, of two criteria that can be considered central to the field of information theoretic learning (ITL): the minimum error entropy criterion (MEEC) and the maximum correntropy criterion (MCC). An original derivation of the exact cost function of these criteria in the scenario of interest is provided and used to analyze their robustness and efficiency from a number of relevant standpoints. Another important feature of the paper is an study of the estimated versions of …</p></p>
+
+More info: <a href="http://dx.doi.org/10.14209/jcis.2016.1">http://dx.doi.org/10.14209/jcis.2016.1</a>
+
+
+</div>
+
+</li>
+
+<li>
+
+<a data-toggle="collapse" data-parent="#accordion" href="#silva2016introduction">
+   <h3>An Introduction to Information Theoretic Learning, Part I: Foundations</h3>
+</a>
+<h4>Daniel Silva, Denis Fantinato, Janio Canuto, Leonardo Duarte, Aline Neves, Ricardo Suyama, Jugurta Montalvão, Romis Attux</h4>
+
+<div id="silva2016introduction" class="collapse">
+<h4>Publication date: April  9, 2016</h4>
+<h4>Journal/Conference: Journal of Communication and Information Systems</h4>
+  <p><p>With the increasing number of machine learning problems that are out of the linear and Gaussian paradigm, information theoretic learning (ITL) rises as a research field that proposes a modeling method with a wealthier statistical treatment of the adaptation criterion. In the first part of this tutorial, we introduce the main concepts of ITL and a key set of estimators that enable the implementation of algorithms, in the context of a wider view independent of the differentiability property.</p></p>
+
+More info: <a href="http://dx.doi.org/10.14209/jcis.2016.6">http://dx.doi.org/10.14209/jcis.2016.6</a>
+
+
+</div>
+
+</li>
+
+<li>
+
+<a data-toggle="collapse" data-parent="#accordion" href="#weitzel2016comprehension">
+   <h3>The Comprehension of Figurative Language: What Is the Influence of Irony and Sarcasm on NLP Techniques?</h3>
+</a>
+<h4>Leila Weitzel, Ronaldo Cristiano Prati, Raul Freire Aguiar</h4>
+
+<div id="weitzel2016comprehension" class="collapse">
+<h4>Publication date: March 22, 2016</h4>
+<h4>Journal/Conference: Sentiment Analysis and Ontology Engineering</h4>
+  <p><p>Due to the growing volume of available textual information, there is a great demand for Natural Language Processing (NLP) techniques that can automatically process and manage texts, supporting the information retrieval and communication in core areas of society (e.g. healthcare, business, and science). NLP techniques have to tackle the often ambiguous and linguistic structures that people use in everyday speech. As such, there are many issues that have to be considered, for instance slang, grammatical errors, regional dialects, figurative language , etc. Figurative Language (FL), such as irony , sarcasm , simile, and metaphor, poses a serious challenge to NLP systems. FL is a frequent phenomenon within human communication, occurring both in spoken and written discourse including books, websites, fora, chats, social network posts, news articles and product reviews. Indeed, knowing what people think can help companies, political parties, and other public entities in strategizing and decision-making polices. When people are engaged in an informal conversation, they almost inevitably use irony (or sarcasm) to express something else or different than stated by the literal sentence meaning. Sentiment analysis methods can be easily misled by the presence of words that have a strong polarity but are used sarcastically, which means that the opposite polarity was intended. Several efforts have been recently devoted to detect and tackle FL phenomena in social media. Many of applications rely on task-specific lexicons (e.g. dictionaries, word classifications) or Machine Learning algorithms. Increasingly, numerous companies have begun to leverage automated methods for inferring consumer sentiment from online reviews and other sources. A system capable of interpreting FL would be extremely beneficial to a wide range of practical NLP applications. In this sense, this chapter aims at evaluating how two specific domains of FL, sarcasm and irony, affect Sentiment Analysis (SA) tools. The study’s ultimate goal is to find out if FL hinders the performance (polarity detection) of SA systems due to the presence of ironic context. Our results indicate that computational intelligence approaches are more suitable in presence of irony and sarcasm in Twitter classification.</p></p>
+
+More info: <a href="http://dx.doi.org/10.1007/978-3-319-30319-2_3">http://dx.doi.org/10.1007/978-3-319-30319-2_3</a>
+
+
+</div>
+
+</li>
+
+<li>
+
+<a data-toggle="collapse" data-parent="#accordion" href="#prati2008hybrid">
+   <h3>A Simple Evaluation Model for Feature Subset Selection Algorithms.</h3>
+</a>
+<h4>H.D. Lee, M.C. Monard, R.F. Voltolini, R.C. Prati, W.F. Chung</h4>
+
+<div id="prati2008hybrid" class="collapse">
+<h4>Publication date: November 10, 2015</h4>
+<h4>Journal/Conference: INTELIGENCIA ARTIFICIAL</h4>
+  <p></p>
+
+More info: <a href="http://dx.doi.org/10.4114/ia.v10i32.923">http://dx.doi.org/10.4114/ia.v10i32.923</a>
+
+
+</div>
+
+</li>
+
+<li>
+
+<a data-toggle="collapse" data-parent="#accordion" href="#lee2006simple">
+   <h3>A Simple Evaluation Model for Feature Subset Selection Algorithms.</h3>
+</a>
+<h4>H.D. Lee, M.C. Monard, R.F. Voltolini, R.C. Prati, W.F. Chung</h4>
+
+<div id="lee2006simple" class="collapse">
+<h4>Publication date: November 10, 2015</h4>
+<h4>Journal/Conference: INTELIGENCIA ARTIFICIAL</h4>
+  <p><p>Artículo en PDF. How to cite. Complete issue. More information about this article. Journal’shomepage in redalyc.org. Sistema de Información Científica. Red de Revistas Científicasde América Latina y el Caribe, España y Portugal. ´. ´. ART. ´. ICULO. A Simple EvaluationModel for Feature Subset Selection Algorithms. Huei Diana Lee, Maria Carolina Monard,Richardson Floriani Voltolini,. Ronaldo Cristiano Prati, Wu Feng Chung. Laboratory ofComputational Intelligence – LABIC,. Department of Computer Science,. ICMC – USP …</p></p>
+
+More info: <a href="http://dx.doi.org/10.4114/ia.v10i32.923">http://dx.doi.org/10.4114/ia.v10i32.923</a>
+
+
+</div>
+
+</li>
+
+</ul>
+
+<div class="story twocol-story newer">
+
+<a href="../../../pub/page/11/index.html">◀ Previous</a>
+&nbsp;
+</div>
+<div class="story twocol-story older" style="text-align:right;">
+
+<a href="../../../pub/page/13/index.html">Next ▶</a>
+&nbsp;
+</div>
+
+</div></div></div>
+		</div>
+
+        
+	</div>
+</div>
+
+
+
+<hr>
+
+        </div>
+        <div id="footer">
+        </div>
+      <!-- Footer -->
+<footer>
+    Phone contact: (11) 3356-7689<br>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    <li>
+                        <a class="navbar-brand" href="http://www.ufabc.edu.br/" id="blog-title-left-top"><img src="../../../static/img/Logo_UFABC.jpg" height="160" width="120"></a>
+                           
+                    </li>
+                    <li>
+                        <a class="navbar-brand" href="http://cmcc.ufabc.edu.br/" id="blog-title-left-top"><img src="../../../static/img/logotipo.jpg" height="80" width="290"></a>
+                    </li>
+		   
+                </ul>
+                <br>
+<div class="col-md-12">
+     <p class="copyright text-muted">
+            Site generated by
+            <a href="http://jaspervdj.be/hakyll">Hakyll</a>. Modified theme by &copy; katychuang 2015 and inspired by
+      <!-- ICE AND FIRE THEME https://github.com/SpaceG/iceandfire -->
+      <a href="https://github.com/SpaceG/CleanMagicMedium-Jekyll">CleanMagic.</a> available from <a href="http://katychuang.com/hakyll-themes/">Hakyll Themes</a> </p>
+    </div>
+    
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="https://ufabc-hal.github.io/static/js/jquery.min.js"></script>
+<script src="https://ufabc-hal.github.io/static/js/spaceg.stylesheets.min.js"></script> 
+<script src="https://ufabc-hal.github.io/static/js/bootstrap.min.js"></script>
+<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+<script src="https://ufabc-hal.github.io/static/js/scripts.js"></script>
+
+
+
+    </body>
+</html>

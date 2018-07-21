@@ -1,0 +1,435 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+    
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+ <!-- 
+      loads the http over https ssl - 
+      welcome to my website! 
+
+	this theme is based off the Ice & Fire theme created by Lucas Gatsas
+      https://www.twitter.com/LucasGatsas
+      www.lucasgatsas.ch - switzerland. 
+                                                    --> 
+
+<!--
+<script type="text/javascript">
+var host = "https://katychuang.me/";
+if ((host == window.location.host) && (window.location.protocol != "https:"))
+    window.location.protocol = "https";
+</script>
+-->
+<!-- Microsoft Internet Explorer documentMode compatMode setting IE Modus --> 
+<script type="text/javascript">
+var IE = null;
+if (window.navigator.appName == "Microsoft Internet Explorer") {
+  if (document.documentMode) {
+  
+    IE = document.documentMode; 
+    } else {
+   
+        IE = 5; 
+          if (document.compatMode) {
+      if (document.compatMode == "CSS1Compat")
+      IE = 11; 
+      }
+    }
+  }
+</script>
+
+    <meta charset="utf-8">
+    <!-- X-UA --> 
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="X-UA-Compatible" content="IE=11" />
+    <link rel="author" title="Katy Chuang" href="https://plus.google.com/u/0/111391719267336703432/posts" />
+
+
+    <meta name="google" content="notranslate" />
+    <!-- Viewport --> 
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- index ROBOTS follow --> 
+    <meta name="robots" content="index, follow" />
+    <!-- Site Desciption --> 
+    <meta name="description" content="Heuristics, Analysis and Learning Laboratory (HAL)">
+        <!-- Site Desciption --> 
+    <meta name="keywords" content="Katy Chuang, katychuang, data science, Web Developer, Front End Engineer">
+    <!-- Favicon --> 
+    <link rel="shortcut icon" href="https://ufabc-hal.github.io/static/img/ico.png" type="image/x-icon" />
+    <!-- Blog Title -->
+    <title>HAL Research Group</title>
+
+    <!--     <title>{% if page.title %}{{ page.title }} - {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
+--> 
+    <!-- Property Metas --> 
+    <meta property="og:image" content="https://ufabc-hal.github.io/static/img/ix.png" />
+    <meta property="og:title" content="Heuristics, Analysis and Learning Laboratory (HAL)" />
+    <meta property="og:site_name" content="Heuristics, Analysis and Learning Laboratory (HAL)" />
+    <!-- Canonical -->
+    <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
+    <!-- StyleSheet -->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://ufabc-hal.github.io/static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://ufabc-hal.github.io/static/css/spaceg.stylesheets.css">
+    <link rel="stylesheet" href="https://ufabc-hal.github.io/static/css/syntax.css">
+    <link rel="stylesheet" href="../../../static/css/custom.css">
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic" rel="stylesheet" type="text/css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900,400italic,700italic,900italic" rel="stylesheet" type="text/css">    
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style>
+	#preloader {position:fixed;top:0;left:0;right:0;bottom:0;background-color:#fff; /* change if the mask should have another color then white */z-index:99; /* makes sure it stays on top */}
+	#status {width:200px;height:200px;position:absolute;left:50%; /* centers the loading animation horizontally one the screen */top:50%; /* centers the loading animation vertically one the screen */background-image:url("/static/img/preloader.gif"); /* path to your loading animation */background-repeat:no-repeat;background-position:center;margin:-100px 0 0 -100px; /* is width and height divided by two */}
+	ul, ol {margin-top: 0;margin-bottom: 10px;}
+	.navbar-inverse {background-color: #FFF;border-color: #FFFFFF;}
+</style> 
+<!--link rel="stylesheet" href="https://ufabc-hal.github.io/static/css/prettify.css"-->
+<style>
+	header.intro-header {background: #6f5499;background: no-repeat center center;background-attachment: scroll;-webkit-background-size: cover;-moz-background-size: cover;background-size: cover;-o-background-size: cover;}
+	/* Preloader */#preloader {position:fixed;top:0;left:0;right:0;bottom:0;background-color:#fff; /* change if the mask should have another color then white */z-index:99; /* makes sure it stays on top */}
+	#status {width:200px;height:200px;position:absolute;left:50%; /* centers the loading animation horizontally one the screen */top:50%; /* centers the loading animation vertically one the screen */background-image:; /* path to your loading animation */background-repeat:no-repeat;background-position:center;margin:-100px 0 0 -100px; /* is width and height divided by two */} 
+	li {list-style: none;}
+            body.modal-open 
+            {overflow: hidden;padding-right: 0px;
+        }
+	article li {list-style: inherit;}
+	article .figure {text-align: center}
+    </style>
+    <!-- end Loading front stylesheet here --> 
+    </head>
+
+    <body>
+	<div id="preloader">
+	    <div id="status">
+
+	    </div>
+
+	</div>  
+	<!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="https://ufabc-hal.github.io" id="blog-title-left-top">HAL</a>                        
+        </div>   
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+               
+                <li><a href="https://ufabc-hal.github.io/people.html">People</a></li>
+                <li><a href="https://ufabc-hal.github.io/pub/page/1/index.html">Publications</a></li>
+                <li><a href="https://ufabc-hal.github.io/projects.html">Projects</a></li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+
+
+
+        <div id="content">
+            <!-- Main Content -->
+<div class="container front-end">
+	<div class="row">
+		<div class="posts">
+        <article>
+            <header class="intro-header" style="background-image: url('https://ufabc-hal.github.io/static/img/sky.jpg')">  
+                <div class="post-meta"> 
+                </div>
+                <h1 class="post-title"><a href="#" id="post-title-h1" rel="bookmark" title="link" itemprop="url">Heuristics, Analysis and Learning Laboratory (HAL)</a></h1>
+            </header>
+
+            </article>
+            
+<div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <img src="https://ufabc-hal.github.io/static/img/pubs.png" width="50%"><img src="https://ufabc-hal.github.io/static/img/cites.png" width="50%">
+            </div>
+        </div>
+</div>
+            
+<div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
+
+
+<ul>
+
+
+<li>
+
+<a data-toggle="collapse" data-parent="#accordion" href="#de2007applying">
+   <h3>Applying Biclustering to Text Mining: An Immune-Inspired Approach</h3>
+</a>
+<h4>Pablo A. D. de Castro, Fabrício O. de França, Hamilton M. Ferreira, Fernando J. Von Zuben</h4>
+
+<div id="de2007applying" class="collapse">
+<h4>Publication date: July 30, 2014</h4>
+<h4>Journal/Conference: Lecture Notes in Computer Science</h4>
+  <p><p>With the rapid development of information technology, computers are proving to be a fundamental tool for the organization and classification of electronic texts, given the huge amount of available information. The existent methodologies for text mining apply standard clustering algorithms to group similar texts. However, these algorithms generally take into account only the global similarities between the texts and assign each one to only one cluster, limiting the amount of information that can be extracted from the texts. An alternative …</p></p>
+
+More info: <a href="http://dx.doi.org/10.1007/978-3-540-73922-7_8">http://dx.doi.org/10.1007/978-3-540-73922-7_8</a>
+
+
+</div>
+
+</li>
+
+<li>
+
+<a data-toggle="collapse" data-parent="#accordion" href="#de2005max">
+   <h3>Definition of Capacited p-Medians by a Modified Max Min Ant System with Local Search</h3>
+</a>
+<h4>Fabrício Olivetti de França, Fernando J. Von Zuben, Leandro Nunes de Castro</h4>
+
+<div id="de2005max" class="collapse">
+<h4>Publication date: July 29, 2014</h4>
+<h4>Journal/Conference: Neural Information Processing</h4>
+  <p><p>This work introduces a modified MAX MIN Ant System (MMAS) designed to solve the Capacitated p-Medians Problem (CPMP). It presents the most relevant steps towards the implementation of an MMAS to solve the CPMP, including some improvements on the original MMAS algorithm, such as the use of a density model in the information heuristics and a local search adapted from the uncapacitated p-medians problem. Extensions to a recently proposed updating rule for the pheromone level, aiming at improving the MMAS …</p></p>
+
+More info: <a href="http://dx.doi.org/10.1007/978-3-540-30499-9_170">http://dx.doi.org/10.1007/978-3-540-30499-9_170</a>
+
+
+</div>
+
+</li>
+
+<li>
+
+<a data-toggle="collapse" data-parent="#accordion" href="#de2004definition">
+   <h3>Definition of Capacited p-Medians by a Modified Max Min Ant System with Local Search</h3>
+</a>
+<h4>Fabrício Olivetti de França, Fernando J. Von Zuben, Leandro Nunes de Castro</h4>
+
+<div id="de2004definition" class="collapse">
+<h4>Publication date: July 29, 2014</h4>
+<h4>Journal/Conference: Neural Information Processing</h4>
+  <p><p>This work introduces a modified MAX MIN Ant System (MMAS) designed to solve the Capacitated p-Medians Problem (CPMP). It presents the most relevant steps towards the implementation of an MMAS to solve the CPMP, including some improvements on the original MMAS algorithm, such as the use of a density model in the information heuristics and a local search adapted from the uncapacitated p-medians problem. Extensions to a recently proposed updating rule for the pheromone level, aiming at improving the MMAS …</p></p>
+
+More info: <a href="http://dx.doi.org/10.1007/978-3-540-30499-9_170">http://dx.doi.org/10.1007/978-3-540-30499-9_170</a>
+
+
+</div>
+
+</li>
+
+<li>
+
+<a data-toggle="collapse" data-parent="#accordion" href="#lorena2008potential">
+   <h3>Potential Distribution Modelling Using Machine Learning</h3>
+</a>
+<h4>Ana C. Lorena, Marinez F. de Siqueira, Renato De Giovanni, André C. P. L. F. de Carvalho, Ronaldo C. Prati</h4>
+
+<div id="lorena2008potential" class="collapse">
+<h4>Publication date: July 28, 2014</h4>
+<h4>Journal/Conference: New Frontiers in Applied Artificial Intelligence</h4>
+  <p><p>Potential distribution modelling has been widely used to predict and to understand the geographical distribution of species. These models are generally produced by retrieving the environmental conditions where the species is known to be present or absent and feeding this data into a modelling algorithm. This paper investigates the use of Machine Learning techniques in the potential distribution modelling of plant species Stryphnodendron obovatum Benth (MIMOSACEAE). Three techniques were used: Support Vector Machines …</p></p>
+
+More info: <a href="http://dx.doi.org/10.1007/978-3-540-69052-8_27">http://dx.doi.org/10.1007/978-3-540-69052-8_27</a>
+
+
+</div>
+
+</li>
+
+<li>
+
+<a data-toggle="collapse" data-parent="#accordion" href="#de2010query">
+   <h3>Query expansion using an immune-inspired biclustering algorithm</h3>
+</a>
+<h4>Pablo A. D. de Castro, Fabrício O. de França, Hamilton M. Ferreira, Guilherme Palermo Coelho, Fernando J. Von Zuben</h4>
+
+<div id="de2010query" class="collapse">
+<h4>Publication date: June 12, 2014</h4>
+<h4>Journal/Conference: Natural Computing</h4>
+  <p><p>Query expansion is a technique utilized to improve the performance of information retrieval systems by automatically adding related terms to the initial query. These additional terms can be obtained from documents stored in a database. Usually, this task is performed by clustering the documents and then extracting representative terms from the clusters. Afterwards, a new search is performed in the whole database using the expanded set of terms. Recently, the authors have proposed an immune-inspired algorithm, namely BIC …</p></p>
+
+More info: <a href="http://dx.doi.org/10.1007/s11047-009-9127-y">http://dx.doi.org/10.1007/s11047-009-9127-y</a>
+
+
+</div>
+
+</li>
+
+<li>
+
+<a data-toggle="collapse" data-parent="#accordion" href="#ENIAC2013_Adaptativo">
+   <h3>Treinamento de Redes Neurais com Algoritmos Imunológicos em Dinâmica da Digitação</h3>
+</a>
+<h4>P.H. Pisani, A.C. Lorena</h4>
+
+<div id="ENIAC2013_Adaptativo" class="collapse">
+<h4>Publication date: May 29, 2014</h4>
+<h4>Journal/Conference: Revista de Tecnologia da Informação e Comunicação</h4>
+  <p><p>O ritmo de desenvolvimento da tecnologia é notável e trouxe diversos avanços como, por exemplo, a identidade digital. Entretanto, a identidade digital potencializou o roubo de identidades devido à maior exposição dos dados. Diante deste cenário, sistemas de detecção de intrusões que analisam o comportamento do usuário mostram-se como uma alternativa promissora para combater este problema. Estes sistemas criam um modelo de comportamento do usuário e, posteriormente, eventos observados que desviem deste …</p></p>
+
+More info: <a href="http://dx.doi.org/10.12721/2237-5112.v02n02a03">http://dx.doi.org/10.12721/2237-5112.v02n02a03</a>
+
+
+</div>
+
+</li>
+
+<li>
+
+<a data-toggle="collapse" data-parent="#accordion" href="#deotimizaccao">
+   <h3>Otimização em ambientes incertos</h3>
+</a>
+<h4>Fabríıcio O. de França</h4>
+
+<div id="deotimizaccao" class="collapse">
+<h4>Publication date: May 12, 2014</h4>
+<h4>Journal/Conference: Manual de computação evolutiva e metaheurística</h4>
+  <p></p>
+
+More info: <a href="http://dx.doi.org/10.14195/978-989-26-0583-8_14">http://dx.doi.org/10.14195/978-989-26-0583-8_14</a>
+
+
+</div>
+
+</li>
+
+<li>
+
+<a data-toggle="collapse" data-parent="#accordion" href="#prati2009data">
+   <h3>Learning with Class Skews and Small Disjuncts</h3>
+</a>
+<h4>Ronaldo C. Prati, Gustavo E. A. P. A. Batista, Maria Carolina Monard</h4>
+
+<div id="prati2009data" class="collapse">
+<h4>Publication date: January 16, 2014</h4>
+<h4>Journal/Conference: Advances in Artificial Intelligence – SBIA 2004</h4>
+  <p><p>One of the main objectives of a Machine Learning – ML – system is to induce a classifier that minimizes classification errors. Two relevant topics in ML are the understanding of which domain characteristics and inducer limitations might cause an increase in misclassification. In this sense, this work analyzes two important issues that might influence the performance of ML systems: class imbalance and error-prone small disjuncts. Our main objective is to investigate how these two important aspects are related to each other. Aiming at overcoming both problems we analyzed the behavior of two over-sampling methods we have proposed, namely Smote + Tomek links and Smote + ENN. Our results suggest that these methods are effective for dealing with class imbalance and, in some cases, might help in ruling out some undesirable disjuncts. However, in some cases a simpler method, Random over-sampling, provides compatible results requiring less computational resources.</p></p>
+
+More info: <a href="http://dx.doi.org/10.1007/978-3-540-28645-5_30">http://dx.doi.org/10.1007/978-3-540-28645-5_30</a>
+
+
+</div>
+
+</li>
+
+<li>
+
+<a data-toggle="collapse" data-parent="#accordion" href="#prati2004learning">
+   <h3>Learning with Class Skews and Small Disjuncts</h3>
+</a>
+<h4>Ronaldo C. Prati, Gustavo E. A. P. A. Batista, Maria Carolina Monard</h4>
+
+<div id="prati2004learning" class="collapse">
+<h4>Publication date: January 16, 2014</h4>
+<h4>Journal/Conference: Advances in Artificial Intelligence – SBIA 2004</h4>
+  <p><p>One of the main objectives of a Machine Learning – ML – system is to induce a classifier that minimizes classification errors. Two relevant topics in ML are the understanding of which domain characteristics and inducer limitations might cause an increase in misclassification. In this sense, this work analyzes two important issues that might influence the performance of ML systems: class imbalance and error-prone small disjuncts. Our main objective is to investigate how these two important aspects are related to each other. Aiming at overcoming both problems we analyzed the behavior of two over-sampling methods we have proposed, namely Smote + Tomek links and Smote + ENN. Our results suggest that these methods are effective for dealing with class imbalance and, in some cases, might help in ruling out some undesirable disjuncts. However, in some cases a simpler method, Random over-sampling, provides compatible results requiring less computational resources.</p></p>
+
+More info: <a href="http://dx.doi.org/10.1007/978-3-540-28645-5_30">http://dx.doi.org/10.1007/978-3-540-28645-5_30</a>
+
+
+</div>
+
+</li>
+
+<li>
+
+<a data-toggle="collapse" data-parent="#accordion" href="#prati2010class">
+   <h3>On the Class Distribution Labelling Step Sensitivity of CO-TRAINING</h3>
+</a>
+<h4>Edson T. Matsubara, Maria C. Monard, Ronaldo C. Prati</h4>
+
+<div id="prati2010class" class="collapse">
+<h4>Publication date: January  7, 2014</h4>
+<h4>Journal/Conference: IFIP International Federation for Information Processing</h4>
+  <p><p>CO-TRAINING can learn from datasets having a small number of labelled examples and a large number of unlabelled ones. It is an iterative algorithm where examples labelled in previous iterations are used to improve the classification of examples from the unlabelled set. However, as the number of initial labelled examples is often small we do not have reliable estimates regarding the underlying population which generated the data. In this work we make the claim that the proportion in which examples are labelled is a key parameter to CO-TRAINING. Furthermore, we have done a series of experiments to investigate how the proportion in which we label examples in each step influences CO-TRAINING performance. Results show that CO-TRAINING should be used with care in challenging domains.</p></p>
+
+More info: <a href="http://dx.doi.org/10.1007/978-0-387-34747-9_21">http://dx.doi.org/10.1007/978-0-387-34747-9_21</a>
+
+
+</div>
+
+</li>
+
+</ul>
+
+<div class="story twocol-story newer">
+
+<a href="../../../pub/page/13/index.html">◀ Previous</a>
+&nbsp;
+</div>
+<div class="story twocol-story older" style="text-align:right;">
+
+<a href="../../../pub/page/15/index.html">Next ▶</a>
+&nbsp;
+</div>
+
+</div></div></div>
+		</div>
+
+        
+	</div>
+</div>
+
+
+
+<hr>
+
+        </div>
+        <div id="footer">
+        </div>
+      <!-- Footer -->
+<footer>
+    Phone contact: (11) 3356-7689<br>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    <li>
+                        <a class="navbar-brand" href="http://www.ufabc.edu.br/" id="blog-title-left-top"><img src="../../../static/img/Logo_UFABC.jpg" height="160" width="120"></a>
+                           
+                    </li>
+                    <li>
+                        <a class="navbar-brand" href="http://cmcc.ufabc.edu.br/" id="blog-title-left-top"><img src="../../../static/img/logotipo.jpg" height="80" width="290"></a>
+                    </li>
+		   
+                </ul>
+                <br>
+<div class="col-md-12">
+     <p class="copyright text-muted">
+            Site generated by
+            <a href="http://jaspervdj.be/hakyll">Hakyll</a>. Modified theme by &copy; katychuang 2015 and inspired by
+      <!-- ICE AND FIRE THEME https://github.com/SpaceG/iceandfire -->
+      <a href="https://github.com/SpaceG/CleanMagicMedium-Jekyll">CleanMagic.</a> available from <a href="http://katychuang.com/hakyll-themes/">Hakyll Themes</a> </p>
+    </div>
+    
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="https://ufabc-hal.github.io/static/js/jquery.min.js"></script>
+<script src="https://ufabc-hal.github.io/static/js/spaceg.stylesheets.min.js"></script> 
+<script src="https://ufabc-hal.github.io/static/js/bootstrap.min.js"></script>
+<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+<script src="https://ufabc-hal.github.io/static/js/scripts.js"></script>
+
+
+
+    </body>
+</html>

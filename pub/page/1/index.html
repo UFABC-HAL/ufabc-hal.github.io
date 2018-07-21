@@ -1,0 +1,433 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+    
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+ <!-- 
+      loads the http over https ssl - 
+      welcome to my website! 
+
+	this theme is based off the Ice & Fire theme created by Lucas Gatsas
+      https://www.twitter.com/LucasGatsas
+      www.lucasgatsas.ch - switzerland. 
+                                                    --> 
+
+<!--
+<script type="text/javascript">
+var host = "https://katychuang.me/";
+if ((host == window.location.host) && (window.location.protocol != "https:"))
+    window.location.protocol = "https";
+</script>
+-->
+<!-- Microsoft Internet Explorer documentMode compatMode setting IE Modus --> 
+<script type="text/javascript">
+var IE = null;
+if (window.navigator.appName == "Microsoft Internet Explorer") {
+  if (document.documentMode) {
+  
+    IE = document.documentMode; 
+    } else {
+   
+        IE = 5; 
+          if (document.compatMode) {
+      if (document.compatMode == "CSS1Compat")
+      IE = 11; 
+      }
+    }
+  }
+</script>
+
+    <meta charset="utf-8">
+    <!-- X-UA --> 
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="X-UA-Compatible" content="IE=11" />
+    <link rel="author" title="Katy Chuang" href="https://plus.google.com/u/0/111391719267336703432/posts" />
+
+
+    <meta name="google" content="notranslate" />
+    <!-- Viewport --> 
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- index ROBOTS follow --> 
+    <meta name="robots" content="index, follow" />
+    <!-- Site Desciption --> 
+    <meta name="description" content="Heuristics, Analysis and Learning Laboratory (HAL)">
+        <!-- Site Desciption --> 
+    <meta name="keywords" content="Katy Chuang, katychuang, data science, Web Developer, Front End Engineer">
+    <!-- Favicon --> 
+    <link rel="shortcut icon" href="https://ufabc-hal.github.io/static/img/ico.png" type="image/x-icon" />
+    <!-- Blog Title -->
+    <title>HAL Research Group</title>
+
+    <!--     <title>{% if page.title %}{{ page.title }} - {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
+--> 
+    <!-- Property Metas --> 
+    <meta property="og:image" content="https://ufabc-hal.github.io/static/img/ix.png" />
+    <meta property="og:title" content="Heuristics, Analysis and Learning Laboratory (HAL)" />
+    <meta property="og:site_name" content="Heuristics, Analysis and Learning Laboratory (HAL)" />
+    <!-- Canonical -->
+    <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
+    <!-- StyleSheet -->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://ufabc-hal.github.io/static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://ufabc-hal.github.io/static/css/spaceg.stylesheets.css">
+    <link rel="stylesheet" href="https://ufabc-hal.github.io/static/css/syntax.css">
+    <link rel="stylesheet" href="../../../static/css/custom.css">
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic" rel="stylesheet" type="text/css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900,400italic,700italic,900italic" rel="stylesheet" type="text/css">    
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style>
+	#preloader {position:fixed;top:0;left:0;right:0;bottom:0;background-color:#fff; /* change if the mask should have another color then white */z-index:99; /* makes sure it stays on top */}
+	#status {width:200px;height:200px;position:absolute;left:50%; /* centers the loading animation horizontally one the screen */top:50%; /* centers the loading animation vertically one the screen */background-image:url("/static/img/preloader.gif"); /* path to your loading animation */background-repeat:no-repeat;background-position:center;margin:-100px 0 0 -100px; /* is width and height divided by two */}
+	ul, ol {margin-top: 0;margin-bottom: 10px;}
+	.navbar-inverse {background-color: #FFF;border-color: #FFFFFF;}
+</style> 
+<!--link rel="stylesheet" href="https://ufabc-hal.github.io/static/css/prettify.css"-->
+<style>
+	header.intro-header {background: #6f5499;background: no-repeat center center;background-attachment: scroll;-webkit-background-size: cover;-moz-background-size: cover;background-size: cover;-o-background-size: cover;}
+	/* Preloader */#preloader {position:fixed;top:0;left:0;right:0;bottom:0;background-color:#fff; /* change if the mask should have another color then white */z-index:99; /* makes sure it stays on top */}
+	#status {width:200px;height:200px;position:absolute;left:50%; /* centers the loading animation horizontally one the screen */top:50%; /* centers the loading animation vertically one the screen */background-image:; /* path to your loading animation */background-repeat:no-repeat;background-position:center;margin:-100px 0 0 -100px; /* is width and height divided by two */} 
+	li {list-style: none;}
+            body.modal-open 
+            {overflow: hidden;padding-right: 0px;
+        }
+	article li {list-style: inherit;}
+	article .figure {text-align: center}
+    </style>
+    <!-- end Loading front stylesheet here --> 
+    </head>
+
+    <body>
+	<div id="preloader">
+	    <div id="status">
+
+	    </div>
+
+	</div>  
+	<!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="https://ufabc-hal.github.io" id="blog-title-left-top">HAL</a>                        
+        </div>   
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+               
+                <li><a href="https://ufabc-hal.github.io/people.html">People</a></li>
+                <li><a href="https://ufabc-hal.github.io/pub/page/1/index.html">Publications</a></li>
+                <li><a href="https://ufabc-hal.github.io/projects.html">Projects</a></li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+
+
+
+        <div id="content">
+            <!-- Main Content -->
+<div class="container front-end">
+	<div class="row">
+		<div class="posts">
+        <article>
+            <header class="intro-header" style="background-image: url('https://ufabc-hal.github.io/static/img/sky.jpg')">  
+                <div class="post-meta"> 
+                </div>
+                <h1 class="post-title"><a href="#" id="post-title-h1" rel="bookmark" title="link" itemprop="url">Heuristics, Analysis and Learning Laboratory (HAL)</a></h1>
+            </header>
+
+            </article>
+            
+<div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <img src="https://ufabc-hal.github.io/static/img/pubs.png" width="50%"><img src="https://ufabc-hal.github.io/static/img/cites.png" width="50%">
+            </div>
+        </div>
+</div>
+            
+<div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
+
+
+<ul>
+
+
+<li>
+
+<a data-toggle="collapse" data-parent="#accordion" href="#Ensemble2018">
+   <h3>Adaptive Biometric Systems using Ensembles</h3>
+</a>
+<h4>Paulo Henrique Pisani, Ana Carolina Lorena, Andre C.P.L.F. de Carvalho</h4>
+
+<div id="Ensemble2018" class="collapse">
+<h4>Publication date: June 22, 2018</h4>
+<h4>Journal/Conference: IEEE Intelligent Systems</h4>
+  <p><p>With the increased availability of online services, enhanced authentication mechanisms-including biometric systems-are necessary. However, recent studies show that biometric features can change. Consequently, recognition performance can be affected over time …</p></p>
+
+More info: <a href="http://dx.doi.org/10.1109/mis.2018.111144956">http://dx.doi.org/10.1109/mis.2018.111144956</a>
+
+
+</div>
+
+</li>
+
+<li>
+
+<a data-toggle="collapse" data-parent="#accordion" href="#fantinato2018using">
+   <h3>Using Taylor Series Expansions and Second-Order Statistics for Blind Source Separation in Post-Nonlinear Mixtures</h3>
+</a>
+<h4>Denis G. Fantinato, Leonardo T. Duarte, Yannick Deville, Christian Jutten, Romis Attux, Aline Neves</h4>
+
+<div id="fantinato2018using" class="collapse">
+<h4>Publication date: June  5, 2018</h4>
+<h4>Journal/Conference: Latent Variable Analysis and Signal Separation</h4>
+  <p><p>In the context of Post-Nonlinear (PNL) mixtures, source separation based on Second-Order Statistics (SOS) is a challenging topic due to the inherent difficulties when dealing with nonlinear transformations. Under the assumption that sources are temporally colored, the existing SOS-inspired methods require the use of Higher-Order Statistics (HOS) as a complement in certain stages of PNL demixing. However, a recent study has shown that the sole use of SOS is sufficient for separation if certain constraints on the separation system are …</p></p>
+
+More info: <a href="http://dx.doi.org/10.1007/978-3-319-93764-9_19">http://dx.doi.org/10.1007/978-3-319-93764-9_19</a>
+
+
+</div>
+
+</li>
+
+<li>
+
+<a data-toggle="collapse" data-parent="#accordion" href="#de2018greedy">
+   <h3>A greedy search tree heuristic for symbolic regression</h3>
+</a>
+<h4>Fabrício Olivetti de França</h4>
+
+<div id="de2018greedy" class="collapse">
+<h4>Publication date: March 19, 2018</h4>
+<h4>Journal/Conference: Information Sciences</h4>
+  <p><p>Symbolic Regression tries to find a mathematical expression that describes the relationship of a set of explanatory variables to a measured variable. The main objective is to find a model that minimizes the error and, optionally, that also minimizes the expression size. A smaller expression can be seen as an interpretable model considered a reliable decision model. This is often performed with Genetic Programming, which represents their solution as expression trees. The shortcoming of this algorithm lies on this representation that defines a rugged search space and contains expressions of any size and difficulty. These pose as a challenge to find the optimal solution under computational constraints. This paper introduces a new data structure, called Interaction-Transformation (IT), that constrains the search space in order to exclude a region of larger and more complicated expressions. In order to test this data structure, it was also introduced an heuristic called SymTree. The obtained results show evidence that SymTree are capable of obtaining the optimal solution whenever the target function is within the search space of the IT data structure and competitive results when it is not. Overall, the algorithm found a good compromise between accuracy and simplicity for all the generated models.</p></p>
+
+More info: <a href="http://dx.doi.org/10.1016/j.ins.2018.02.040">http://dx.doi.org/10.1016/j.ins.2018.02.040</a>
+
+
+</div>
+
+</li>
+
+<li>
+
+<a data-toggle="collapse" data-parent="#accordion" href="#de2018analysis">
+   <h3>Analysis of the Twitter Interactions during the Impeachment of Brazilian President</h3>
+</a>
+<h4>Fabrício Olivetti de França, Denise Goya, Claudio Camargo Penteado</h4>
+
+<div id="de2018analysis" class="collapse">
+<h4>Publication date: February 24, 2018</h4>
+<h4>Journal/Conference: Proceedings of the 51st Hawaii International Conference on System Sciences</h4>
+  <p><p>The impeachment process that took place in Brazil on April, 2016, generated a large amount of posts on Internet Social Networks. These posts came from ordinary people, journalists, traditional and independent media, politicians and supporters. Interactions among users, by sharing news or opinions, can show the dynamics of communication inter and intra groups. This paper proposes a method for social networks interactions analysis by using motifs, frequent interactions patterns in network. This method is then applied to analyze data extracted from Twitter during the voting for the impeachment of the Brazilian president. Results of this analysis highlight the behavior of some users by retweeting each other to increase the importance of their opinion or to reach visibility. In addition, interaction patterns reveal that messages from one group (against/in favor of impeachment) rarely propagate to the opposing group. As such, this brings evidence that Social Networks may not stimulate a debate, but reaffirm users’ beliefs.</p></p>
+
+More info: <a href="http://dx.doi.org/10.24251/hicss.2018.253">http://dx.doi.org/10.24251/hicss.2018.253</a>
+
+
+</div>
+
+</li>
+
+<li>
+
+<a data-toggle="collapse" data-parent="#accordion" href="#claure2018polywatt">
+   <h3>PolyWaTT: A polynomial water travel time estimator based on Derivative Dynamic Time Warping and Perceptually Important Points</h3>
+</a>
+<h4>Yuri Navarro Claure, Edson Takashi Matsubara, Carlos Padovani, Ronaldo Cristiano Prati</h4>
+
+<div id="claure2018polywatt" class="collapse">
+<h4>Publication date: February  6, 2018</h4>
+<h4>Journal/Conference: Computers & Geosciences</h4>
+  <p><p>Traditional methods for estimating timing parameters in hydrological science require a rigorous study of the relations of flow resistance, slope, flow regime, watershed size, water velocity, and other local variables. These studies are mostly based on empirical observations, where the timing parameter is estimated using empirically derived formulas. The application of these studies to other locations is not always direct. The locations in which equations are used should have comparable characteristics to the locations from …</p></p>
+
+More info: <a href="http://dx.doi.org/10.1016/j.cageo.2017.12.002">http://dx.doi.org/10.1016/j.cageo.2017.12.002</a>
+
+
+</div>
+
+</li>
+
+<li>
+
+<a data-toggle="collapse" data-parent="#accordion" href="#prati2016analysis">
+   <h3>An Analysis of Novelty Dynamics in News Media Coverage</h3>
+</a>
+<h4>Prati, Ronaldo Cristiano and Junior, Walter Teixeira Lima</h4>
+
+<div id="prati2016analysis" class="collapse">
+<h4>Publication date: January 24, 2018</h4>
+<h4>Journal/Conference: First International Workshop on Recent Trends in News Information Retrieval</h4>
+  <p><p>Computer Science has affected almost all fields of human knowledge, contributing to scientific advances in many branches of Natural and Social Sciences. Journalism is one of the fields that is benefiting of the advance of computer science. Among the journalistic concepts that can be analyzed computationally is News Value. Novelty is one of the most important news value. A possible approach to get novelty elements in a story considers word frequency, through of the capacity to collect and analyze massive amounts of data. In this paper, we use the News Coverage Index dataset (NCI), maintained by the Pew Research Center, to analyze the novelty dynamics of news coverage, using the novelty signatures proposed by [12]. As a definition of novelty, we used the first appearance of a new lead newsmaker. Results show a good fit of the model to the dataset. Furthermore, an analysis by media sector and broad topic shows interesting insights for the analysis of media coverage.</p></p>
+
+More info: <a href="http://ceur-ws.org/Vol-1568/paper2.pdf">http://ceur-ws.org/Vol-1568/paper2.pdf</a>
+
+
+</div>
+
+</li>
+
+<li>
+
+<a data-toggle="collapse" data-parent="#accordion" href="#prati2012complexity">
+   <h3>A Complexity-Invariant Measure Based on Fractal Dimension for Time Series Classification</h3>
+</a>
+<h4>Ronaldo C. Prati, Gustavo E. A. P. A. Batista</h4>
+
+<div id="prati2012complexity" class="collapse">
+<h4>Publication date: January 18, 2018</h4>
+<h4>Journal/Conference: International Journal of Natural Computing Research</h4>
+  <p><p>Classification is an important task in time series mining. It is often reported in the literature that nearest neighbor classifiers perform quite well in time series classification, especially if the distance measure properly deals with invariances required by the domain. Complexity invariance was recently introduced, aiming to compensate from a bias towards classes with simple time series representatives in nearest neighbor classification. To this end, a complexity correcting factor based on the ratio of the more complex to the simpler series was proposed. The original formulation uses the length of the rectified time series to estimate its complexity. In this paper the authors investigate an alternative complexity estimate, based on fractal dimension. Results show that this alternative is very competitive with the original proposal, and has a broader application as it does neither depend on the number of points in the series nor on a previous normalization. Furthermore, these results also verify, using a different formulation, the validity of complexity invariance in time series classification.</p></p>
+
+More info: <a href="http://dx.doi.org/10.4018/jncr.2012070104">http://dx.doi.org/10.4018/jncr.2012070104</a>
+
+
+</div>
+
+</li>
+
+<li>
+
+<a data-toggle="collapse" data-parent="#accordion" href="#fantinato2012optimal">
+   <h3>Blind channel equalization of encoded data over galois fields</h3>
+</a>
+<h4>Denis G. Fantinato, Aline Neves, Daniel G. Silva, Romis Attux</h4>
+
+<div id="fantinato2012optimal" class="collapse">
+<h4>Publication date: January 17, 2018</h4>
+<h4>Journal/Conference: 2017 IEEE 27th International Workshop on Machine Learning for Signal Processing (MLSP)</h4>
+  <p><p>In communication systems, the study of elements and structures defined over Galois fields are generally limited to data coding. However, in this work, a novel perspective that combines data coding and channel equalization is considered to compose a simplified communication system over the field. Besides the coding advantages, this framework is able to restore distortions or malfunctioning processes, and can be potentially applied in network coding models. Interestingly, the operation of the equalizer is possible from a blind …</p></p>
+
+More info: <a href="http://dx.doi.org/10.1109/mlsp.2017.8168135">http://dx.doi.org/10.1109/mlsp.2017.8168135</a>
+
+
+</div>
+
+</li>
+
+<li>
+
+<a data-toggle="collapse" data-parent="#accordion" href="#de2018user">
+   <h3>User profiling of the Twitter Social Network during the impeachment of Brazilian President</h3>
+</a>
+<h4>Fabrício Olivetti de França, Denise Hideko Goya, Claudio Luís de Camargo Penteado</h4>
+
+<div id="de2018user" class="collapse">
+<h4>Publication date: January 11, 2018</h4>
+<h4>Journal/Conference: Social Network Analysis and Mining</h4>
+  <p><p>The impeachment process that took place in Brazil in April, 2016, has generated a large amount of posts on the Social Networks. These posts came from ordinary people, journalists, traditional and independent media, politicians and supporters. The identification of the impact of this subject on each group of users can be an important analysis to verify the real interest of common Brazilian citizens on this matter. As such, we propose a way to segment the users into popular, activists and observers in order to filter out information and help us give a more detailed analysis of the event. The proposed segmentation may also help other studies related to the usage of Twitter during important events.</p></p>
+
+More info: <a href="http://dx.doi.org/10.1007/s13278-017-0482-x">http://dx.doi.org/10.1007/s13278-017-0482-x</a>
+
+
+</div>
+
+</li>
+
+<li>
+
+<a data-toggle="collapse" data-parent="#accordion" href="#de2012conceptual">
+   <h3>Conceptual and Practical Aspects of the aiNet Family of Algorithms</h3>
+</a>
+<h4>Fabrício O. de França, Guilherme P. Coelho, Pablo A.D. Castro, Fernando J. Von Zuben</h4>
+
+<div id="de2012conceptual" class="collapse">
+<h4>Publication date: January 10, 2018</h4>
+<h4>Journal/Conference: Nature-Inspired Computing Design, Development, and Applications</h4>
+  <p><p>In this paper, a review of the conceptual and practical aspects of the aiNet (Artificial Immune Network) family of algorithms will be provided. This family of algorithms started with the aiNet algorithm, proposed in 2002 for data clustering and, since then, several variations have been developed for data clustering, biclustering and optimization in general. Although the algorithms will be positioned with respect to other pertinent approaches from the literature, the emphasis of this paper will be on the formalization and critical analysis of the set of …</p></p>
+
+More info: <a href="http://dx.doi.org/10.4018/978-1-4666-1574-8.ch001">http://dx.doi.org/10.4018/978-1-4666-1574-8.ch001</a>
+
+
+</div>
+
+</li>
+
+</ul>
+
+<div class="story twocol-story newer">
+&nbsp;
+</div>
+<div class="story twocol-story older" style="text-align:right;">
+
+<a href="../../../pub/page/2/index.html">Next ▶</a>
+&nbsp;
+</div>
+
+</div></div></div>
+		</div>
+
+        
+	</div>
+</div>
+
+
+
+<hr>
+
+        </div>
+        <div id="footer">
+        </div>
+      <!-- Footer -->
+<footer>
+    Phone contact: (11) 3356-7689<br>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    <li>
+                        <a class="navbar-brand" href="http://www.ufabc.edu.br/" id="blog-title-left-top"><img src="../../../static/img/Logo_UFABC.jpg" height="160" width="120"></a>
+                           
+                    </li>
+                    <li>
+                        <a class="navbar-brand" href="http://cmcc.ufabc.edu.br/" id="blog-title-left-top"><img src="../../../static/img/logotipo.jpg" height="80" width="290"></a>
+                    </li>
+		   
+                </ul>
+                <br>
+<div class="col-md-12">
+     <p class="copyright text-muted">
+            Site generated by
+            <a href="http://jaspervdj.be/hakyll">Hakyll</a>. Modified theme by &copy; katychuang 2015 and inspired by
+      <!-- ICE AND FIRE THEME https://github.com/SpaceG/iceandfire -->
+      <a href="https://github.com/SpaceG/CleanMagicMedium-Jekyll">CleanMagic.</a> available from <a href="http://katychuang.com/hakyll-themes/">Hakyll Themes</a> </p>
+    </div>
+    
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="https://ufabc-hal.github.io/static/js/jquery.min.js"></script>
+<script src="https://ufabc-hal.github.io/static/js/spaceg.stylesheets.min.js"></script> 
+<script src="https://ufabc-hal.github.io/static/js/bootstrap.min.js"></script>
+<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+<script src="https://ufabc-hal.github.io/static/js/scripts.js"></script>
+
+
+
+    </body>
+</html>

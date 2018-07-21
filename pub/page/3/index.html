@@ -1,0 +1,435 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+    
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+ <!-- 
+      loads the http over https ssl - 
+      welcome to my website! 
+
+	this theme is based off the Ice & Fire theme created by Lucas Gatsas
+      https://www.twitter.com/LucasGatsas
+      www.lucasgatsas.ch - switzerland. 
+                                                    --> 
+
+<!--
+<script type="text/javascript">
+var host = "https://katychuang.me/";
+if ((host == window.location.host) && (window.location.protocol != "https:"))
+    window.location.protocol = "https";
+</script>
+-->
+<!-- Microsoft Internet Explorer documentMode compatMode setting IE Modus --> 
+<script type="text/javascript">
+var IE = null;
+if (window.navigator.appName == "Microsoft Internet Explorer") {
+  if (document.documentMode) {
+  
+    IE = document.documentMode; 
+    } else {
+   
+        IE = 5; 
+          if (document.compatMode) {
+      if (document.compatMode == "CSS1Compat")
+      IE = 11; 
+      }
+    }
+  }
+</script>
+
+    <meta charset="utf-8">
+    <!-- X-UA --> 
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="X-UA-Compatible" content="IE=11" />
+    <link rel="author" title="Katy Chuang" href="https://plus.google.com/u/0/111391719267336703432/posts" />
+
+
+    <meta name="google" content="notranslate" />
+    <!-- Viewport --> 
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- index ROBOTS follow --> 
+    <meta name="robots" content="index, follow" />
+    <!-- Site Desciption --> 
+    <meta name="description" content="Heuristics, Analysis and Learning Laboratory (HAL)">
+        <!-- Site Desciption --> 
+    <meta name="keywords" content="Katy Chuang, katychuang, data science, Web Developer, Front End Engineer">
+    <!-- Favicon --> 
+    <link rel="shortcut icon" href="https://ufabc-hal.github.io/static/img/ico.png" type="image/x-icon" />
+    <!-- Blog Title -->
+    <title>HAL Research Group</title>
+
+    <!--     <title>{% if page.title %}{{ page.title }} - {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
+--> 
+    <!-- Property Metas --> 
+    <meta property="og:image" content="https://ufabc-hal.github.io/static/img/ix.png" />
+    <meta property="og:title" content="Heuristics, Analysis and Learning Laboratory (HAL)" />
+    <meta property="og:site_name" content="Heuristics, Analysis and Learning Laboratory (HAL)" />
+    <!-- Canonical -->
+    <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
+    <!-- StyleSheet -->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://ufabc-hal.github.io/static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://ufabc-hal.github.io/static/css/spaceg.stylesheets.css">
+    <link rel="stylesheet" href="https://ufabc-hal.github.io/static/css/syntax.css">
+    <link rel="stylesheet" href="../../../static/css/custom.css">
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic" rel="stylesheet" type="text/css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900,400italic,700italic,900italic" rel="stylesheet" type="text/css">    
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style>
+	#preloader {position:fixed;top:0;left:0;right:0;bottom:0;background-color:#fff; /* change if the mask should have another color then white */z-index:99; /* makes sure it stays on top */}
+	#status {width:200px;height:200px;position:absolute;left:50%; /* centers the loading animation horizontally one the screen */top:50%; /* centers the loading animation vertically one the screen */background-image:url("/static/img/preloader.gif"); /* path to your loading animation */background-repeat:no-repeat;background-position:center;margin:-100px 0 0 -100px; /* is width and height divided by two */}
+	ul, ol {margin-top: 0;margin-bottom: 10px;}
+	.navbar-inverse {background-color: #FFF;border-color: #FFFFFF;}
+</style> 
+<!--link rel="stylesheet" href="https://ufabc-hal.github.io/static/css/prettify.css"-->
+<style>
+	header.intro-header {background: #6f5499;background: no-repeat center center;background-attachment: scroll;-webkit-background-size: cover;-moz-background-size: cover;background-size: cover;-o-background-size: cover;}
+	/* Preloader */#preloader {position:fixed;top:0;left:0;right:0;bottom:0;background-color:#fff; /* change if the mask should have another color then white */z-index:99; /* makes sure it stays on top */}
+	#status {width:200px;height:200px;position:absolute;left:50%; /* centers the loading animation horizontally one the screen */top:50%; /* centers the loading animation vertically one the screen */background-image:; /* path to your loading animation */background-repeat:no-repeat;background-position:center;margin:-100px 0 0 -100px; /* is width and height divided by two */} 
+	li {list-style: none;}
+            body.modal-open 
+            {overflow: hidden;padding-right: 0px;
+        }
+	article li {list-style: inherit;}
+	article .figure {text-align: center}
+    </style>
+    <!-- end Loading front stylesheet here --> 
+    </head>
+
+    <body>
+	<div id="preloader">
+	    <div id="status">
+
+	    </div>
+
+	</div>  
+	<!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="https://ufabc-hal.github.io" id="blog-title-left-top">HAL</a>                        
+        </div>   
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+               
+                <li><a href="https://ufabc-hal.github.io/people.html">People</a></li>
+                <li><a href="https://ufabc-hal.github.io/pub/page/1/index.html">Publications</a></li>
+                <li><a href="https://ufabc-hal.github.io/projects.html">Projects</a></li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+
+
+
+        <div id="content">
+            <!-- Main Content -->
+<div class="container front-end">
+	<div class="row">
+		<div class="posts">
+        <article>
+            <header class="intro-header" style="background-image: url('https://ufabc-hal.github.io/static/img/sky.jpg')">  
+                <div class="post-meta"> 
+                </div>
+                <h1 class="post-title"><a href="#" id="post-title-h1" rel="bookmark" title="link" itemprop="url">Heuristics, Analysis and Learning Laboratory (HAL)</a></h1>
+            </header>
+
+            </article>
+            
+<div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <img src="https://ufabc-hal.github.io/static/img/pubs.png" width="50%"><img src="https://ufabc-hal.github.io/static/img/cites.png" width="50%">
+            </div>
+        </div>
+</div>
+            
+<div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
+
+
+<ul>
+
+
+<li>
+
+<a data-toggle="collapse" data-parent="#accordion" href="#dos2017analise">
+   <h3>ANÁLISE DO NÍVEL DE LEGENDA DE CLASSIFICAÇÃO DE AREAS URBANAS EMPREGANDO IMAGENS MULTIESPECTRAIS E HIPERESPECTRAIS COM OS MÉTODOS ÁRVORE DE DECISÃO C4.5 E FLORESTA RANDÔMICA</h3>
+</a>
+<h4>Camila Souza dos Anjos, Cláudia Maria de Almeida, Lênio Soares Galvão, Carlos Roberto Souza Filho, Marielcio Gonçalves Lacerda, Ronaldo Cristiano Prati</h4>
+
+<div id="dos2017analise" class="collapse">
+<h4>Publication date: August  2, 2017</h4>
+<h4>Journal/Conference: Boletim de Ciências Geodésicas</h4>
+  <p><p><jats:p>Ambientes urbanos representam uma das áreas mais desafiadoras do sensoriamento remoto devido à grande diversidade encontrada nos materiais presentes na sua superfície. O uso de imagens com alta resolução espacial e alta resolução espectral surge como uma alternativa para aplicações urbanas, pois a combinação destas duas características permite uma melhor detecção e discriminação de alvos. O presente trabalho tem um duplo objetivo: i) avaliar dois conjuntos de dados na classificação fina de alvos urbanos para dois níveis de legenda (com 11 e 38 classes de cobertura do solo): um deles composto exclusivamente por uma imagem orbital multiespectral (WV-2) e o outro conjunto composto exclusivamente por uma imagem aerotransportada hiperespectral (SpecTIR), ii) bem como testar o desempenho de dois métodos diferentes de classificação de imagens, Árvore de Decisão C4.5 e Floresta Randômica (Random Forest), para ambos os níveis de legenda. Oito experimentos de classificação foram realizados para atender a tais objetivos de investigar a eficácia dos sensores e dos métodos em dois níveis de detalhamento. Foram obtidas classificações de elevada acurácia. Demonstrou-se para todos os níveis de detalhamento e métodos que as classificações obtidas com dados do sensor SpecTIR apresentaram resultados significantemente superiores aos das classificações com dados do sensor WV-2.</jats:p></p></p>
+
+More info: <a href="http://dx.doi.org/10.1590/s1982-21702017000200024">http://dx.doi.org/10.1590/s1982-21702017000200024</a>
+
+
+</div>
+
+</li>
+
+<li>
+
+<a data-toggle="collapse" data-parent="#accordion" href="#covoes2017low">
+   <h3>Low and high level classification using stacking</h3>
+</a>
+<h4>Thiago Ferreira Covoes, Zhao Liang</h4>
+
+<div id="covoes2017low" class="collapse">
+<h4>Publication date: July 21, 2017</h4>
+<h4>Journal/Conference: 2017 International Joint Conference on Neural Networks (IJCNN)</h4>
+  <p><p>High Level Classification seeks to identify class patterns based not only on physical features, such as distances among objects. For such, one of the recent approaches used is based on complex networks and its’ topological properties. This approach has as advantage the capability to discriminate between highly complex class structures. However, from previous studies, it is known that a combination of high and low level classifiers is better than the use of the classifiers separately. In this work, we propose the use of a stacking procedure …</p></p>
+
+More info: <a href="http://dx.doi.org/10.1109/ijcnn.2017.7966163">http://dx.doi.org/10.1109/ijcnn.2017.7966163</a>
+
+
+</div>
+
+</li>
+
+<li>
+
+<a data-toggle="collapse" data-parent="#accordion" href="#fantinato2017joint">
+   <h3>A Joint Second-Order Statistics and Density Matching-Based Approach for Separation of Post-Nonlinear Mixtures</h3>
+</a>
+<h4>Denis G. Fantinato, Leonardo T. Duarte, Paolo Zanini, Bertrand Rivet, Romis Attux, Christian Jutten</h4>
+
+<div id="fantinato2017joint" class="collapse">
+<h4>Publication date: June 25, 2017</h4>
+<h4>Journal/Conference: Latent Variable Analysis and Signal Separation</h4>
+  <p><p>In the context of Post-Nonlinear (PNL) mixtures, source separation can be performed in a two-stage approach, which encompasses a nonlinear and a linear compensation part. In the former part, it is usually required the knowledge of all the source distributions. In this work, we propose a less restrictive approach, where only one source distribution is needed to be known–here, chosen to be a colored Gaussian. The other sources are only required to present a time structure. The method combines, in a joint-based approach, the use of the …</p></p>
+
+More info: <a href="http://dx.doi.org/10.1007/978-3-319-53547-0_47">http://dx.doi.org/10.1007/978-3-319-53547-0_47</a>
+
+
+</div>
+
+</li>
+
+<li>
+
+<a data-toggle="collapse" data-parent="#accordion" href="#fantinato2017gaussian">
+   <h3>Gaussian Processes for Source Separation in Overdetermined Bilinear Mixtures</h3>
+</a>
+<h4>Denis G. Fantinato, Leonardo T. Duarte, Bertrand Rivet, Bahram Ehsandoust, Romis Attux, Christian Jutten</h4>
+
+<div id="fantinato2017gaussian" class="collapse">
+<h4>Publication date: June 25, 2017</h4>
+<h4>Journal/Conference: Latent Variable Analysis and Signal Separation</h4>
+  <p><p>In this work, we consider the nonlinear Blind Source Separation (BSS) problem in the context of overdetermined Bilinear Mixtures, in which a linear structure can be employed for performing separation. Based on the Gaussian Process (GP) framework, two approaches are proposed: the predictive distribution and the maximization of the marginal likelihood. In both cases, separation can be achieved by assuming that the sources are Gaussian and temporally correlated. The results with synthetic data are favorable to the proposal.</p></p>
+
+More info: <a href="http://dx.doi.org/10.1007/978-3-319-53547-0_29">http://dx.doi.org/10.1007/978-3-319-53547-0_29</a>
+
+
+</div>
+
+</li>
+
+<li>
+
+<a data-toggle="collapse" data-parent="#accordion" href="#IDA2017">
+   <h3>Adaptive algorithms applied to accelerometer biometrics in a data stream context</h3>
+</a>
+<h4>Paulo Henrique Pisani, Ana Carolina Lorena, André C.P.L.F. de Carvalho</h4>
+
+<div id="IDA2017" class="collapse">
+<h4>Publication date: June 25, 2017</h4>
+<h4>Journal/Conference: Intelligent Data Analysis</h4>
+  <p><p>The use of smartphone devices has increased over the last years, as illustrated by the growth in smartphone sales. These devices are currently used for several services, such as bank account access, social networks and storage of personal information. In view of this scenario, an important question arises: does authentication mechanisms already present in these devices provide enough security? Recently, a new authentication method, named accelerometer biometrics, has been proposed. This method allows the authentication of …</p></p>
+
+More info: <a href="http://dx.doi.org/10.3233/ida-150403">http://dx.doi.org/10.3233/ida-150403</a>
+
+
+</div>
+
+</li>
+
+<li>
+
+<a data-toggle="collapse" data-parent="#accordion" href="#de2016hash">
+   <h3>A hash-based co-clustering algorithm for categorical data</h3>
+</a>
+<h4>Fabrício Olivetti de França</h4>
+
+<div id="de2016hash" class="collapse">
+<h4>Publication date: June 24, 2017</h4>
+<h4>Journal/Conference: Expert Systems with Applications</h4>
+  <p><p>Cluster analysis, or clustering, refers to the analysis of the structural organization of a data set. This analysis is performed by grouping together objects of the data that are more similar among themselves than to objects of different groups. The sampled data may be described by numerical features or by a symbolic representation, known as categorical features. These features often require a transformation into numerical data in order to be properly handled by clustering algorithms. The transformation usually assigns a weight for each feature …</p></p>
+
+More info: <a href="http://dx.doi.org/10.1016/j.eswa.2016.07.024">http://dx.doi.org/10.1016/j.eswa.2016.07.024</a>
+
+
+</div>
+
+</li>
+
+<li>
+
+<a data-toggle="collapse" data-parent="#accordion" href="#de2016brazilians">
+   <h3>Brazilians Divided: Political Protests as Told by Twitter</h3>
+</a>
+<h4>Cássia de Souza Carvalho, Fabrício Olivetti de França, Denise Hideko Goya, Claudio Luis de Camargo Penteado</h4>
+
+<div id="de2016brazilians" class="collapse">
+<h4>Publication date: June 24, 2017</h4>
+<h4>Journal/Conference: Transactions on Large-Scale Data- and Knowledge-Centered Systems XXVII</h4>
+  <p><p>After a fierce presidential election campaign in 2014, the re-elected president Dilma Rousseff became a target of protests in 2015 asking for her impeachment. This sentiment of dissatisfaction was fomented by the tight results between the two favorite runners-up and the accusations of corruption in the media. Two main protests in March were organized and largely reported with the use of Social Networks like Twitter: one pro-government and other against it, separated by two days. In this work, we apply two supervised learning algorithms …</p></p>
+
+More info: <a href="http://dx.doi.org/10.1007/978-3-662-53416-8_1">http://dx.doi.org/10.1007/978-3-662-53416-8_1</a>
+
+
+</div>
+
+</li>
+
+<li>
+
+<a data-toggle="collapse" data-parent="#accordion" href="#de2014debate">
+   <h3>Brazilians Divided: Political Protests as Told by Twitter</h3>
+</a>
+<h4>Cássia de Souza Carvalho, Fabrício Olivetti de França, Denise Hideko Goya, Claudio Luis de Camargo Penteado</h4>
+
+<div id="de2014debate" class="collapse">
+<h4>Publication date: June 24, 2017</h4>
+<h4>Journal/Conference: Transactions on Large-Scale Data- and Knowledge-Centered Systems XXVII</h4>
+  <p><p>After a fierce presidential election campaign in 2014, the re-elected president Dilma Rousseff became a target of protests in 2015 asking for her impeachment. This sentiment of dissatisfaction was fomented by the tight results between the two favorite runners-up and the accusations of corruption in the media. Two main protests in March were organized and largely reported with the use of Social Networks like Twitter: one pro-government and other against it, separated by two days. In this work, we apply two supervised learning algorithms …</p></p>
+
+More info: <a href="http://dx.doi.org/10.1007/978-3-662-53416-8_1">http://dx.doi.org/10.1007/978-3-662-53416-8_1</a>
+
+
+</div>
+
+</li>
+
+<li>
+
+<a data-toggle="collapse" data-parent="#accordion" href="#suyamasome">
+   <h3>A volterra filtering approach for the polynomial formulation of the constant modulus criterion</h3>
+</a>
+<h4>Denis G. Fantinato, Romis Attux, J.M.T. Romano, Ricardo Suyama, Aline Neves</h4>
+
+<div id="suyamasome" class="collapse">
+<h4>Publication date: June 23, 2017</h4>
+<h4>Journal/Conference: 2014 International Telecommunications Symposium (ITS)</h4>
+  <p><p>In this work, an extended polynomial formulation of the constant modulus (CM) criterion under quadratic constraints is presented. Based on the method of Lagrange Multipliers, this `Volterra-CM formulation’ brings very relevant information about the structure of the null-gradient CM solutions in the equalizer parameter space, including a conjecture regarding the relationship between the smallest multiplier and the optimal CM receiver. In the case of a two-tap filter, the proposed formulation allows that the solutions be obtained in terms of a single parameter, the corresponding Lagrange multiplier. For filters with more than two taps, the problem requires that a nonlinear system be solved, which is done with the aid of an iterative algorithm. The obtained global convergence rates show that the formulation is an effective tool to describe the structure of the optimal CM solution.</p></p>
+
+More info: <a href="http://dx.doi.org/10.1109/its.2014.6947963">http://dx.doi.org/10.1109/its.2014.6947963</a>
+
+
+</div>
+
+</li>
+
+<li>
+
+<a data-toggle="collapse" data-parent="#accordion" href="#rampazzo2015evolutionary">
+   <h3>Evolutionary Approaches for the Multi-objective Reservoir Operation Problem</h3>
+</a>
+<h4>Priscila C. Berbert Rampazzo, Akebo Yamakami, Fabrício O. de França</h4>
+
+<div id="rampazzo2015evolutionary" class="collapse">
+<h4>Publication date: June 23, 2017</h4>
+<h4>Journal/Conference: Journal of Control, Automation and Electrical Systems</h4>
+  <p><p>The Operation Planning of Hydroelectric Systems is a large, time-coupled, stochastic, space-coupled and nonlinear optimization problem. The formulation of such problem can have several conflicting objectives in the representation of different aspects of the problem. In this work, we propose two approaches for the study and resolution of this problem. The proposals are based on two Evolutionary Metaheuristics—Genetic Algorithms and Differential Evolution. The methods work simultaneously with a set of solutions in order to perform exploration and exploitation of the search space. The intent is to find a set of solutions obtained in a single round of the algorithm, considering explicitly the different criteria of the problem. The proposed algorithms are applied to Brazilian hydropower case studies and successfully generated a wide range of cost-benefit solutions that can be applied in real planning.</p></p>
+
+More info: <a href="http://dx.doi.org/10.1007/s40313-015-0177-3">http://dx.doi.org/10.1007/s40313-015-0177-3</a>
+
+
+</div>
+
+</li>
+
+</ul>
+
+<div class="story twocol-story newer">
+
+<a href="../../../pub/page/2/index.html">◀ Previous</a>
+&nbsp;
+</div>
+<div class="story twocol-story older" style="text-align:right;">
+
+<a href="../../../pub/page/4/index.html">Next ▶</a>
+&nbsp;
+</div>
+
+</div></div></div>
+		</div>
+
+        
+	</div>
+</div>
+
+
+
+<hr>
+
+        </div>
+        <div id="footer">
+        </div>
+      <!-- Footer -->
+<footer>
+    Phone contact: (11) 3356-7689<br>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    <li>
+                        <a class="navbar-brand" href="http://www.ufabc.edu.br/" id="blog-title-left-top"><img src="../../../static/img/Logo_UFABC.jpg" height="160" width="120"></a>
+                           
+                    </li>
+                    <li>
+                        <a class="navbar-brand" href="http://cmcc.ufabc.edu.br/" id="blog-title-left-top"><img src="../../../static/img/logotipo.jpg" height="80" width="290"></a>
+                    </li>
+		   
+                </ul>
+                <br>
+<div class="col-md-12">
+     <p class="copyright text-muted">
+            Site generated by
+            <a href="http://jaspervdj.be/hakyll">Hakyll</a>. Modified theme by &copy; katychuang 2015 and inspired by
+      <!-- ICE AND FIRE THEME https://github.com/SpaceG/iceandfire -->
+      <a href="https://github.com/SpaceG/CleanMagicMedium-Jekyll">CleanMagic.</a> available from <a href="http://katychuang.com/hakyll-themes/">Hakyll Themes</a> </p>
+    </div>
+    
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="https://ufabc-hal.github.io/static/js/jquery.min.js"></script>
+<script src="https://ufabc-hal.github.io/static/js/spaceg.stylesheets.min.js"></script> 
+<script src="https://ufabc-hal.github.io/static/js/bootstrap.min.js"></script>
+<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+<script src="https://ufabc-hal.github.io/static/js/scripts.js"></script>
+
+
+
+    </body>
+</html>

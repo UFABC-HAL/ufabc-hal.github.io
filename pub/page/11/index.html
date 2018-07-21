@@ -1,0 +1,435 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+    
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+ <!-- 
+      loads the http over https ssl - 
+      welcome to my website! 
+
+	this theme is based off the Ice & Fire theme created by Lucas Gatsas
+      https://www.twitter.com/LucasGatsas
+      www.lucasgatsas.ch - switzerland. 
+                                                    --> 
+
+<!--
+<script type="text/javascript">
+var host = "https://katychuang.me/";
+if ((host == window.location.host) && (window.location.protocol != "https:"))
+    window.location.protocol = "https";
+</script>
+-->
+<!-- Microsoft Internet Explorer documentMode compatMode setting IE Modus --> 
+<script type="text/javascript">
+var IE = null;
+if (window.navigator.appName == "Microsoft Internet Explorer") {
+  if (document.documentMode) {
+  
+    IE = document.documentMode; 
+    } else {
+   
+        IE = 5; 
+          if (document.compatMode) {
+      if (document.compatMode == "CSS1Compat")
+      IE = 11; 
+      }
+    }
+  }
+</script>
+
+    <meta charset="utf-8">
+    <!-- X-UA --> 
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="X-UA-Compatible" content="IE=11" />
+    <link rel="author" title="Katy Chuang" href="https://plus.google.com/u/0/111391719267336703432/posts" />
+
+
+    <meta name="google" content="notranslate" />
+    <!-- Viewport --> 
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- index ROBOTS follow --> 
+    <meta name="robots" content="index, follow" />
+    <!-- Site Desciption --> 
+    <meta name="description" content="Heuristics, Analysis and Learning Laboratory (HAL)">
+        <!-- Site Desciption --> 
+    <meta name="keywords" content="Katy Chuang, katychuang, data science, Web Developer, Front End Engineer">
+    <!-- Favicon --> 
+    <link rel="shortcut icon" href="https://ufabc-hal.github.io/static/img/ico.png" type="image/x-icon" />
+    <!-- Blog Title -->
+    <title>HAL Research Group</title>
+
+    <!--     <title>{% if page.title %}{{ page.title }} - {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
+--> 
+    <!-- Property Metas --> 
+    <meta property="og:image" content="https://ufabc-hal.github.io/static/img/ix.png" />
+    <meta property="og:title" content="Heuristics, Analysis and Learning Laboratory (HAL)" />
+    <meta property="og:site_name" content="Heuristics, Analysis and Learning Laboratory (HAL)" />
+    <!-- Canonical -->
+    <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
+    <!-- StyleSheet -->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://ufabc-hal.github.io/static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://ufabc-hal.github.io/static/css/spaceg.stylesheets.css">
+    <link rel="stylesheet" href="https://ufabc-hal.github.io/static/css/syntax.css">
+    <link rel="stylesheet" href="../../../static/css/custom.css">
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic" rel="stylesheet" type="text/css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900,400italic,700italic,900italic" rel="stylesheet" type="text/css">    
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style>
+	#preloader {position:fixed;top:0;left:0;right:0;bottom:0;background-color:#fff; /* change if the mask should have another color then white */z-index:99; /* makes sure it stays on top */}
+	#status {width:200px;height:200px;position:absolute;left:50%; /* centers the loading animation horizontally one the screen */top:50%; /* centers the loading animation vertically one the screen */background-image:url("/static/img/preloader.gif"); /* path to your loading animation */background-repeat:no-repeat;background-position:center;margin:-100px 0 0 -100px; /* is width and height divided by two */}
+	ul, ol {margin-top: 0;margin-bottom: 10px;}
+	.navbar-inverse {background-color: #FFF;border-color: #FFFFFF;}
+</style> 
+<!--link rel="stylesheet" href="https://ufabc-hal.github.io/static/css/prettify.css"-->
+<style>
+	header.intro-header {background: #6f5499;background: no-repeat center center;background-attachment: scroll;-webkit-background-size: cover;-moz-background-size: cover;background-size: cover;-o-background-size: cover;}
+	/* Preloader */#preloader {position:fixed;top:0;left:0;right:0;bottom:0;background-color:#fff; /* change if the mask should have another color then white */z-index:99; /* makes sure it stays on top */}
+	#status {width:200px;height:200px;position:absolute;left:50%; /* centers the loading animation horizontally one the screen */top:50%; /* centers the loading animation vertically one the screen */background-image:; /* path to your loading animation */background-repeat:no-repeat;background-position:center;margin:-100px 0 0 -100px; /* is width and height divided by two */} 
+	li {list-style: none;}
+            body.modal-open 
+            {overflow: hidden;padding-right: 0px;
+        }
+	article li {list-style: inherit;}
+	article .figure {text-align: center}
+    </style>
+    <!-- end Loading front stylesheet here --> 
+    </head>
+
+    <body>
+	<div id="preloader">
+	    <div id="status">
+
+	    </div>
+
+	</div>  
+	<!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="https://ufabc-hal.github.io" id="blog-title-left-top">HAL</a>                        
+        </div>   
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+               
+                <li><a href="https://ufabc-hal.github.io/people.html">People</a></li>
+                <li><a href="https://ufabc-hal.github.io/pub/page/1/index.html">Publications</a></li>
+                <li><a href="https://ufabc-hal.github.io/projects.html">Projects</a></li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+
+
+
+        <div id="content">
+            <!-- Main Content -->
+<div class="container front-end">
+	<div class="row">
+		<div class="posts">
+        <article>
+            <header class="intro-header" style="background-image: url('https://ufabc-hal.github.io/static/img/sky.jpg')">  
+                <div class="post-meta"> 
+                </div>
+                <h1 class="post-title"><a href="#" id="post-title-h1" rel="bookmark" title="link" itemprop="url">Heuristics, Analysis and Learning Laboratory (HAL)</a></h1>
+            </header>
+
+            </article>
+            
+<div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <img src="https://ufabc-hal.github.io/static/img/pubs.png" width="50%"><img src="https://ufabc-hal.github.io/static/img/cites.png" width="50%">
+            </div>
+        </div>
+</div>
+            
+<div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
+
+
+<ul>
+
+
+<li>
+
+<a data-toggle="collapse" data-parent="#accordion" href="#said2017orientacion">
+   <h3>La orientación ideológica de los mensajes publicados en Twitter durante el 24M en España</h3>
+</a>
+<h4>Elías Manuel Said-Hung, Ronaldo Cristiano Prati, Andrea Cancino-Borbón</h4>
+
+<div id="said2017orientacion" class="collapse">
+<h4>Publication date: February 10, 2017</h4>
+<h4>Journal/Conference: Palabra Clave - Revista de Comunicación</h4>
+  <p></p>
+
+More info: <a href="http://dx.doi.org/10.5294/pacla.2017.20.1.10">http://dx.doi.org/10.5294/pacla.2017.20.1.10</a>
+
+
+</div>
+
+</li>
+
+<li>
+
+<a data-toggle="collapse" data-parent="#accordion" href="#matsubara2008missing">
+   <h3>Missing Value Imputation Using a Semi-supervised Rank Aggregation Approach</h3>
+</a>
+<h4>Edson T. Matsubara, Ronaldo C. Prati, Gustavo E. A. P. A. Batista, Maria C. Monard</h4>
+
+<div id="matsubara2008missing" class="collapse">
+<h4>Publication date: January 31, 2017</h4>
+<h4>Journal/Conference: Lecture Notes in Computer Science</h4>
+  <p><p>One relevant problem in data quality is the presence of missing data. In cases where missing data are abundant, effective ways to deal with these absences could improve the performance of machine learning algorithms. Missing data can be treated using imputation. Imputation methods replace the missing data by values estimated from the available data. This paper presents Corai, an imputation algorithm which is an adaption of Co-training, a multi-view semi-supervised learning algorithm. The comparison of Corai with other imputation methods found in the literature in three data sets from UCI with different levels of missingness inserted into up to three attributes, shows that Corai tends to perform well in data sets at greater percentages of missingness and number of attributes with missing values.</p></p>
+
+More info: <a href="http://dx.doi.org/10.1007/978-3-540-88190-2_27">http://dx.doi.org/10.1007/978-3-540-88190-2_27</a>
+
+
+</div>
+
+</li>
+
+<li>
+
+<a data-toggle="collapse" data-parent="#accordion" href="#de2016evolving">
+   <h3>Evolving a generalized strategy for an action-platformer video game framework</h3>
+</a>
+<h4>Karine da Silva Miras de Araujo, Fabricio Olivetti de Franca</h4>
+
+<div id="de2016evolving" class="collapse">
+<h4>Publication date: December 20, 2016</h4>
+<h4>Journal/Conference: 2016 IEEE Congress on Evolutionary Computation (CEC)</h4>
+  <p><p>Computational Intelligence in Games comprises many challenges such as the procedural level generation, evolving adversary difficulty and the learning of autonomous playing agents. This last challenge has the objective of creating an autonomous playing agent capable of winning against an opponent on an specific game. Whereas a human being can learn a general winning strategy (ie, avoid the obstacles and defeat the enemies), learning algorithms have a tendency to overspecialize for a given training scenario (ie, perform an …</p></p>
+
+More info: <a href="http://dx.doi.org/10.1109/cec.2016.7743938">http://dx.doi.org/10.1109/cec.2016.7743938</a>
+
+
+</div>
+
+</li>
+
+<li>
+
+<a data-toggle="collapse" data-parent="#accordion" href="#de2016electronic">
+   <h3>Evolving a generalized strategy for an action-platformer video game framework</h3>
+</a>
+<h4>Karine da Silva Miras de Araujo, Fabricio Olivetti de Franca</h4>
+
+<div id="de2016electronic" class="collapse">
+<h4>Publication date: December 20, 2016</h4>
+<h4>Journal/Conference: 2016 IEEE Congress on Evolutionary Computation (CEC)</h4>
+  <p><p>Computational Intelligence in Games comprises many challenges such as the procedural level generation, evolving adversary difficulty and the learning of autonomous playing agents. This last challenge has the objective of creating an autonomous playing agent capable of winning against an opponent on an specific game. Whereas a human being can learn a general winning strategy (ie, avoid the obstacles and defeat the enemies), learning algorithms have a tendency to overspecialize for a given training scenario (ie, perform an …</p></p>
+
+More info: <a href="http://dx.doi.org/10.1109/cec.2016.7743938">http://dx.doi.org/10.1109/cec.2016.7743938</a>
+
+
+</div>
+
+</li>
+
+<li>
+
+<a data-toggle="collapse" data-parent="#accordion" href="#de2008multivariate">
+   <h3>Multivariate ant colony optimization in continuous search spaces</h3>
+</a>
+<h4>Fabricio Olivetti de Franca, Guilherme Palermo Coelho, Fernando J. Von Zuben, Romis R. de Faissol Attux</h4>
+
+<div id="de2008multivariate" class="collapse">
+<h4>Publication date: December 16, 2016</h4>
+<h4>Journal/Conference: Proceedings of the 10th annual conference on Genetic and evolutionary computation - GECCO '08</h4>
+  <p><p>This work introduces an ant-inspired algorithm for optimization in continuous search spaces that is based on the generation of random vectors with multivariate Gaussian pdf. The proposed approach is called MACACO–Multivariate Ant Colony Algorithm for Continuous Optimization–and is able to simultaneously adapt all the dimensions of the random distribution employed to generate the new individuals at each iteration. In order to analyze MACACO’s search efficiency, the approach was compared to a pair of counterparts: the …</p></p>
+
+More info: <a href="http://dx.doi.org/10.1145/1389095.1389098">http://dx.doi.org/10.1145/1389095.1389098</a>
+
+
+</div>
+
+</li>
+
+<li>
+
+<a data-toggle="collapse" data-parent="#accordion" href="#de2005artificial">
+   <h3>An artificial immune network for multimodal function optimization on dynamic environments</h3>
+</a>
+<h4>Fabricio Olivetti de França, Fernando J. Von Zuben, Leandro Nunes de Castro</h4>
+
+<div id="de2005artificial" class="collapse">
+<h4>Publication date: December 16, 2016</h4>
+<h4>Journal/Conference: Proceedings of the 2005 conference on Genetic and evolutionary computation  - GECCO '05</h4>
+  <p><p>Multimodal optimization algorithms inspired by the immune system are generally characterized by a dynamic control of the population size and by diversity maintenance along the search. One of the most popular proposals is denoted opt-aiNet (artificial immune network for optimization) and is extended here to deal with time-varying fitness functions. Additional procedures are designed to improve the overall performance and the robustness of the immune-inspired approach, giving rise to a version for dynamic optimization, denoted …</p></p>
+
+More info: <a href="http://dx.doi.org/10.1145/1068009.1068057">http://dx.doi.org/10.1145/1068009.1068057</a>
+
+
+</div>
+
+</li>
+
+<li>
+
+<a data-toggle="collapse" data-parent="#accordion" href="#batista2004study">
+   <h3>A study of the behavior of several methods for balancing machine learning training data</h3>
+</a>
+<h4>Gustavo E. A. P. A. Batista, Ronaldo C. Prati, Maria Carolina Monard</h4>
+
+<div id="batista2004study" class="collapse">
+<h4>Publication date: December 16, 2016</h4>
+<h4>Journal/Conference: ACM SIGKDD Explorations Newsletter</h4>
+  <p><p>There are several aspects that might influence the performance achieved by existing learning systems. It has been reported that one of these aspects is related to class imbalance in which examples in training data belonging to one class heavily outnumber the examples in the other class. In this situation, which is found in real world data describing an infrequent but important event, the learning system may have difficulties to learn the concept related to the minority class. In this work we perform a broad experimental evaluation …</p></p>
+
+More info: <a href="http://dx.doi.org/10.1145/1007730.1007735">http://dx.doi.org/10.1145/1007730.1007735</a>
+
+
+</div>
+
+</li>
+
+<li>
+
+<a data-toggle="collapse" data-parent="#accordion" href="#covoes2016evolving">
+   <h3>Evolving Gaussian Mixture Models with Splitting and Merging Mutation Operators</h3>
+</a>
+<h4>Thiago Ferreira Covões, Eduardo Raul Hruschka, Joydeep Ghosh</h4>
+
+<div id="covoes2016evolving" class="collapse">
+<h4>Publication date: December  6, 2016</h4>
+<h4>Journal/Conference: Evolutionary Computation</h4>
+  <p><p>This paper describes the evolutionary split and merge for expectation maximization (ESM-EM) algorithm and eight of its variants, which are based on the use of split and merge operations to evolve Gaussian mixture models. Asymptotic time complexity analysis shows that the proposed algorithms are competitive with the state-of-the-art genetic-based expectation maximization (GA-EM) algorithm. Experiments performed in 35 data sets showed that ESM-EM can be computationally more efficient than the widely used multiple …</p></p>
+
+More info: <a href="http://dx.doi.org/10.1162/evco_a_00152">http://dx.doi.org/10.1162/evco_a_00152</a>
+
+
+</div>
+
+</li>
+
+<li>
+
+<a data-toggle="collapse" data-parent="#accordion" href="#hruschka2006bayesian">
+   <h3>Bayesian Feature Selection for Clustering Problems</h3>
+</a>
+<h4>Eduardo R. Hruschka, Estevam R. Hruschka, Thiago F. Covões, Nelson F. F. Ebecken</h4>
+
+<div id="hruschka2006bayesian" class="collapse">
+<h4>Publication date: December  2, 2016</h4>
+<h4>Journal/Conference: Journal of Information & Knowledge Management</h4>
+  <p><p>Bayesian methods have been successfully used for feature selection in many supervised learning tasks. In this paper, the adaptation of such methods for unsupervised learning (clustering) is investigated. We adopt an algorithm that iterates between clustering (assuming that the number of clusters is unknown a priori) and feature selection. From this standpoint, two Bayesian approaches for feature selection are addressed:(i) Naïve Bayes Wrapper (NBW), and (ii) Markov Blanket Filter (MBF) obtained from the construction of …</p></p>
+
+More info: <a href="http://dx.doi.org/10.1142/s0219649206001578">http://dx.doi.org/10.1142/s0219649206001578</a>
+
+
+</div>
+
+</li>
+
+<li>
+
+<a data-toggle="collapse" data-parent="#accordion" href="#carraro2012fuzzy">
+   <h3>A FUZZY INFERENCE SYSTEM TO DETERMINE THE NUMBER OF CLONES IN A CLASS OF ARTIFICIAL IMMUNE SYSTEMS</h3>
+</a>
+<h4>LUIZ ANTONIO CARRARO, LEANDRO NUNES DE CASTRO, ANGELITA MARIA DE RE, FABRĹCIO OLIVETTI DE FRANÇA</h4>
+
+<div id="carraro2012fuzzy" class="collapse">
+<h4>Publication date: December  1, 2016</h4>
+<h4>Journal/Conference: International Journal of Computational Intelligence and Applications</h4>
+  <p><p>Artificial immune systems are composed of techniques inspired by immunology. The clonal selection principle ensures the organism adaptation to fight invading antigens by an immune response activated by the binding of antigens and antibodies. Since the immune response must correctly allocate the available resources in order to attack an antigen with its best available antibody while trying to learning an even better one, the reproduction rate of each immune cell must be carefully determined. This paper presents a novel fuzzy inference …</p></p>
+
+More info: <a href="http://dx.doi.org/10.1142/s1469026812500058">http://dx.doi.org/10.1142/s1469026812500058</a>
+
+
+</div>
+
+</li>
+
+</ul>
+
+<div class="story twocol-story newer">
+
+<a href="../../../pub/page/10/index.html">◀ Previous</a>
+&nbsp;
+</div>
+<div class="story twocol-story older" style="text-align:right;">
+
+<a href="../../../pub/page/12/index.html">Next ▶</a>
+&nbsp;
+</div>
+
+</div></div></div>
+		</div>
+
+        
+	</div>
+</div>
+
+
+
+<hr>
+
+        </div>
+        <div id="footer">
+        </div>
+      <!-- Footer -->
+<footer>
+    Phone contact: (11) 3356-7689<br>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    <li>
+                        <a class="navbar-brand" href="http://www.ufabc.edu.br/" id="blog-title-left-top"><img src="../../../static/img/Logo_UFABC.jpg" height="160" width="120"></a>
+                           
+                    </li>
+                    <li>
+                        <a class="navbar-brand" href="http://cmcc.ufabc.edu.br/" id="blog-title-left-top"><img src="../../../static/img/logotipo.jpg" height="80" width="290"></a>
+                    </li>
+		   
+                </ul>
+                <br>
+<div class="col-md-12">
+     <p class="copyright text-muted">
+            Site generated by
+            <a href="http://jaspervdj.be/hakyll">Hakyll</a>. Modified theme by &copy; katychuang 2015 and inspired by
+      <!-- ICE AND FIRE THEME https://github.com/SpaceG/iceandfire -->
+      <a href="https://github.com/SpaceG/CleanMagicMedium-Jekyll">CleanMagic.</a> available from <a href="http://katychuang.com/hakyll-themes/">Hakyll Themes</a> </p>
+    </div>
+    
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="https://ufabc-hal.github.io/static/js/jquery.min.js"></script>
+<script src="https://ufabc-hal.github.io/static/js/spaceg.stylesheets.min.js"></script> 
+<script src="https://ufabc-hal.github.io/static/js/bootstrap.min.js"></script>
+<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+<script src="https://ufabc-hal.github.io/static/js/scripts.js"></script>
+
+
+
+    </body>
+</html>

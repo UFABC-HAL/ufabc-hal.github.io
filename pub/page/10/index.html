@@ -1,0 +1,435 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+    
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+ <!-- 
+      loads the http over https ssl - 
+      welcome to my website! 
+
+	this theme is based off the Ice & Fire theme created by Lucas Gatsas
+      https://www.twitter.com/LucasGatsas
+      www.lucasgatsas.ch - switzerland. 
+                                                    --> 
+
+<!--
+<script type="text/javascript">
+var host = "https://katychuang.me/";
+if ((host == window.location.host) && (window.location.protocol != "https:"))
+    window.location.protocol = "https";
+</script>
+-->
+<!-- Microsoft Internet Explorer documentMode compatMode setting IE Modus --> 
+<script type="text/javascript">
+var IE = null;
+if (window.navigator.appName == "Microsoft Internet Explorer") {
+  if (document.documentMode) {
+  
+    IE = document.documentMode; 
+    } else {
+   
+        IE = 5; 
+          if (document.compatMode) {
+      if (document.compatMode == "CSS1Compat")
+      IE = 11; 
+      }
+    }
+  }
+</script>
+
+    <meta charset="utf-8">
+    <!-- X-UA --> 
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="X-UA-Compatible" content="IE=11" />
+    <link rel="author" title="Katy Chuang" href="https://plus.google.com/u/0/111391719267336703432/posts" />
+
+
+    <meta name="google" content="notranslate" />
+    <!-- Viewport --> 
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- index ROBOTS follow --> 
+    <meta name="robots" content="index, follow" />
+    <!-- Site Desciption --> 
+    <meta name="description" content="Heuristics, Analysis and Learning Laboratory (HAL)">
+        <!-- Site Desciption --> 
+    <meta name="keywords" content="Katy Chuang, katychuang, data science, Web Developer, Front End Engineer">
+    <!-- Favicon --> 
+    <link rel="shortcut icon" href="https://ufabc-hal.github.io/static/img/ico.png" type="image/x-icon" />
+    <!-- Blog Title -->
+    <title>HAL Research Group</title>
+
+    <!--     <title>{% if page.title %}{{ page.title }} - {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
+--> 
+    <!-- Property Metas --> 
+    <meta property="og:image" content="https://ufabc-hal.github.io/static/img/ix.png" />
+    <meta property="og:title" content="Heuristics, Analysis and Learning Laboratory (HAL)" />
+    <meta property="og:site_name" content="Heuristics, Analysis and Learning Laboratory (HAL)" />
+    <!-- Canonical -->
+    <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
+    <!-- StyleSheet -->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://ufabc-hal.github.io/static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://ufabc-hal.github.io/static/css/spaceg.stylesheets.css">
+    <link rel="stylesheet" href="https://ufabc-hal.github.io/static/css/syntax.css">
+    <link rel="stylesheet" href="../../../static/css/custom.css">
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic" rel="stylesheet" type="text/css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900,400italic,700italic,900italic" rel="stylesheet" type="text/css">    
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style>
+	#preloader {position:fixed;top:0;left:0;right:0;bottom:0;background-color:#fff; /* change if the mask should have another color then white */z-index:99; /* makes sure it stays on top */}
+	#status {width:200px;height:200px;position:absolute;left:50%; /* centers the loading animation horizontally one the screen */top:50%; /* centers the loading animation vertically one the screen */background-image:url("/static/img/preloader.gif"); /* path to your loading animation */background-repeat:no-repeat;background-position:center;margin:-100px 0 0 -100px; /* is width and height divided by two */}
+	ul, ol {margin-top: 0;margin-bottom: 10px;}
+	.navbar-inverse {background-color: #FFF;border-color: #FFFFFF;}
+</style> 
+<!--link rel="stylesheet" href="https://ufabc-hal.github.io/static/css/prettify.css"-->
+<style>
+	header.intro-header {background: #6f5499;background: no-repeat center center;background-attachment: scroll;-webkit-background-size: cover;-moz-background-size: cover;background-size: cover;-o-background-size: cover;}
+	/* Preloader */#preloader {position:fixed;top:0;left:0;right:0;bottom:0;background-color:#fff; /* change if the mask should have another color then white */z-index:99; /* makes sure it stays on top */}
+	#status {width:200px;height:200px;position:absolute;left:50%; /* centers the loading animation horizontally one the screen */top:50%; /* centers the loading animation vertically one the screen */background-image:; /* path to your loading animation */background-repeat:no-repeat;background-position:center;margin:-100px 0 0 -100px; /* is width and height divided by two */} 
+	li {list-style: none;}
+            body.modal-open 
+            {overflow: hidden;padding-right: 0px;
+        }
+	article li {list-style: inherit;}
+	article .figure {text-align: center}
+    </style>
+    <!-- end Loading front stylesheet here --> 
+    </head>
+
+    <body>
+	<div id="preloader">
+	    <div id="status">
+
+	    </div>
+
+	</div>  
+	<!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="https://ufabc-hal.github.io" id="blog-title-left-top">HAL</a>                        
+        </div>   
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+               
+                <li><a href="https://ufabc-hal.github.io/people.html">People</a></li>
+                <li><a href="https://ufabc-hal.github.io/pub/page/1/index.html">Publications</a></li>
+                <li><a href="https://ufabc-hal.github.io/projects.html">Projects</a></li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+
+
+
+        <div id="content">
+            <!-- Main Content -->
+<div class="container front-end">
+	<div class="row">
+		<div class="posts">
+        <article>
+            <header class="intro-header" style="background-image: url('https://ufabc-hal.github.io/static/img/sky.jpg')">  
+                <div class="post-meta"> 
+                </div>
+                <h1 class="post-title"><a href="#" id="post-title-h1" rel="bookmark" title="link" itemprop="url">Heuristics, Analysis and Learning Laboratory (HAL)</a></h1>
+            </header>
+
+            </article>
+            
+<div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <img src="https://ufabc-hal.github.io/static/img/pubs.png" width="50%"><img src="https://ufabc-hal.github.io/static/img/cites.png" width="50%">
+            </div>
+        </div>
+</div>
+            
+<div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
+
+
+<ul>
+
+
+<li>
+
+<a data-toggle="collapse" data-parent="#accordion" href="#de2010diversity">
+   <h3>On the diversity mechanisms of opt-aiNet: A comparative study with fitness sharing</h3>
+</a>
+<h4>Fabricio O. de Franca, Guilherme P. Coelho, Fernando J. Von Zuben</h4>
+
+<div id="de2010diversity" class="collapse">
+<h4>Publication date: March 19, 2017</h4>
+<h4>Journal/Conference: IEEE Congress on Evolutionary Computation</h4>
+  <p><p>Immune-inspired algorithms based on the Immune Network theory have been frequently claimed to be capable of maintaining diversity among the candidate solutions in their population. However, no specific study on this aspect to verify how the intrinsic diversity mechanisms of such immune algorithms behave, when compared to other approaches from the literature, has been made yet. Therefore, in this work we have addressed this issue, by taking the opt-aiNet algorithm (a popular immune-inspired algorithm developed for …</p></p>
+
+More info: <a href="http://dx.doi.org/10.1109/cec.2010.5585964">http://dx.doi.org/10.1109/cec.2010.5585964</a>
+
+
+</div>
+
+</li>
+
+<li>
+
+<a data-toggle="collapse" data-parent="#accordion" href="#BRACIS2015">
+   <h3>Ensemble of Adaptive Algorithms for Keystroke Dynamics</h3>
+</a>
+<h4>Paulo Henrique Pisani, Ana Carolina Lorena, Andre C.P.L.F. de Carvalho</h4>
+
+<div id="BRACIS2015" class="collapse">
+<h4>Publication date: March 19, 2017</h4>
+<h4>Journal/Conference: 2015 Brazilian Conference on Intelligent Systems (BRACIS)</h4>
+  <p><p>Biometric systems have been applied to improve the security of several computational systems. These systems analyse physiological or behavioural features obtained from the users in order to perform authentication. Biometric features should ideally meet a number of requirements, including permanence. In biometrics, permanence means that the analysed biometric feature will not change over time. However, recent studies have shown that this is not the case for several biometric modalities. Adaptive biometric systems deal with this issue …</p></p>
+
+More info: <a href="http://dx.doi.org/10.1109/bracis.2015.29">http://dx.doi.org/10.1109/bracis.2015.29</a>
+
+
+</div>
+
+</li>
+
+<li>
+
+<a data-toggle="collapse" data-parent="#accordion" href="#soares2009improvement">
+   <h3>Improvement on the Porter's Stemming Algorithm for Portuguese</h3>
+</a>
+<h4>M.V.B. Soares, R.C. Prati, M.C. Monard</h4>
+
+<div id="soares2009improvement" class="collapse">
+<h4>Publication date: March 18, 2017</h4>
+<h4>Journal/Conference: IEEE Latin America Transactions</h4>
+  <p><p>The amount of textual information digitally stored is growing every day. However, our capability of processing and analyzing that information is not growing at the same pace. To overcome this limitation, it is important to develop semi-automatic processes to extract relevant knowledge from textual information, such as the text mining process. One of the main and most expensive stages of the text mining process is the text pre-processing stage, where the unstructured text should be transformed to structured format such as an attribute-value table. The stemming process, i.e. linguistics normalization, is usually used to find the attributes of this table. However, the stemming process is strongly dependent on the language in which the original textual information is given. Furthermore, for most languages, the stemming algorithms proposed in the literature are computationally expensive. In this work, several improvements of the well know Porter stemming algorithm for the Portuguese language, which explore the characteristics of this language, are proposed. Experimental results show that the proposed algorithm executes in far less time without affecting the quality of the generated stems.</p></p>
+
+More info: <a href="http://dx.doi.org/10.1109/tla.2009.5349047">http://dx.doi.org/10.1109/tla.2009.5349047</a>
+
+
+</div>
+
+</li>
+
+<li>
+
+<a data-toggle="collapse" data-parent="#accordion" href="#giusti2008evaluating">
+   <h3>Evaluating Ranking Composition Methods for Multi-Objective Optimization of Knowledge Rules</h3>
+</a>
+<h4>Rafael Giusti, Gustavo E.A.P.A. Batista, Ronaldo Cristiano Prati</h4>
+
+<div id="giusti2008evaluating" class="collapse">
+<h4>Publication date: March 17, 2017</h4>
+<h4>Journal/Conference: 2008 Eighth International Conference on Hybrid Intelligent Systems</h4>
+  <p><p>Most symbolic classi¿ ers aim at building sets of rules with good coverage and precision. While this is suitable for most applications, they tend to neglect other desirable properties, such as the ability to induce novel knowledge or to show new points of view of well-established concepts. An approach to overcome these limitations involves using a multi-objective evolutionary algorithm to build knowledge rules with speci¿ c properties speci¿ ed by the user. In this paper, we report a research work that combined evolutionary algorithms …</p></p>
+
+More info: <a href="http://dx.doi.org/10.1109/his.2008.154">http://dx.doi.org/10.1109/his.2008.154</a>
+
+
+</div>
+
+</li>
+
+<li>
+
+<a data-toggle="collapse" data-parent="#accordion" href="#dealgoritmo">
+   <h3>A dynamic artificial immune algorithm applied to challenging benchmarking problems</h3>
+</a>
+<h4>Fabricio Olivetti de Franca, Fernando J. Von Zuben</h4>
+
+<div id="dealgoritmo" class="collapse">
+<h4>Publication date: March 17, 2017</h4>
+<h4>Journal/Conference: 2009 IEEE Congress on Evolutionary Computation</h4>
+  <p><p>In many real-world scenarios, in contrast to standard benchmark optimization problems, we may face some uncertainties regarding the objective function. One source of these uncertainties is a constantly changing environment in which the optima change their location over time. New heuristics or adaptations to already available algorithms must be conceived in order to deal with such problems. Among the desirable features that a search strategy should exhibit to deal with dynamic optimization are diversity maintenance, a memory of past solutions, and a multipopulation structure of candidate solutions. In this paper, an immune-inspired algorithm that presents these features, called dopt-aiNet, is properly adapted to deal with six newly proposed benchmark instances, and the obtained results are outlined according to the available specifications for the competition at the Congress on Evolutionary Computation 2009.</p></p>
+
+More info: <a href="http://dx.doi.org/10.1109/cec.2009.4982977">http://dx.doi.org/10.1109/cec.2009.4982977</a>
+
+
+</div>
+
+</li>
+
+<li>
+
+<a data-toggle="collapse" data-parent="#accordion" href="#de2009dynamic">
+   <h3>A dynamic artificial immune algorithm applied to challenging benchmarking problems</h3>
+</a>
+<h4>Fabricio Olivetti de Franca, Fernando J. Von Zuben</h4>
+
+<div id="de2009dynamic" class="collapse">
+<h4>Publication date: March 17, 2017</h4>
+<h4>Journal/Conference: 2009 IEEE Congress on Evolutionary Computation</h4>
+  <p><p>In many real-world scenarios, in contrast to standard benchmark optimization problems, we may face some uncertainties regarding the objective function. One source of these uncertainties is a constantly changing environment in which the optima change their location over time. New heuristics or adaptations to already available algorithms must be conceived in order to deal with such problems. Among the desirable features that a search strategy should exhibit to deal with dynamic optimization are diversity maintenance, a memory of …</p></p>
+
+More info: <a href="http://dx.doi.org/10.1109/cec.2009.4982977">http://dx.doi.org/10.1109/cec.2009.4982977</a>
+
+
+</div>
+
+</li>
+
+<li>
+
+<a data-toggle="collapse" data-parent="#accordion" href="#de2004max">
+   <h3>A max min ant system applied to the capacitated clustering problem</h3>
+</a>
+<h4>F. Olivetti de Franga, F.J. Von Zuben, L. Nunes de Castro</h4>
+
+<div id="de2004max" class="collapse">
+<h4>Publication date: March 16, 2017</h4>
+<h4>Journal/Conference: Proceedings of the 2004 14th IEEE Signal Processing Society Workshop Machine Learning for Signal Processing, 2004.</h4>
+  <p><p>This work introduces a modified max min ant system (MMAS) designed to solve the capacitated clustering problem (CCP). Some improvements on the original MMAS algorithm are proposed, such as the use of a density model on the information heuristic and a local search adapted from the uncapacitated p-medians problem. Also the MMAS ability to deal with large scale instances is improved by means of a new proposal for the pheromone updating rule. Some simulations are performed using instances available from the literature …</p></p>
+
+More info: <a href="http://dx.doi.org/10.1109/mlsp.2004.1423042">http://dx.doi.org/10.1109/mlsp.2004.1423042</a>
+
+
+</div>
+
+</li>
+
+<li>
+
+<a data-toggle="collapse" data-parent="#accordion" href="#junqueira2006immune">
+   <h3>Immune-inspired Dynamic Optimization for Blind Spatial Equalization in Undermodeled Channels</h3>
+</a>
+<h4>C. Junqueira, F.O. de Franca, R.R.F. Attux, C.M. Panazio, L.N. de Castro, F.J. von Zuben, J.M.T. Romano</h4>
+
+<div id="junqueira2006immune" class="collapse">
+<h4>Publication date: March 15, 2017</h4>
+<h4>Journal/Conference: 2006 IEEE International Conference on Evolutionary Computation</h4>
+  <p><p>In this work, we propose an evolutionary-like approach to the problem of blind adaptive spatial filtering that is based on the decision-directed criterion and on the dopt-aiNet, an artificial immune network conceived to perform multimodal search in dynamic environments. The proposal was tested under static and time-varying undermodeled channel models, and, in all cases, its ability to find and track a solution close to the Wiener global optimum was attested. The obtained results reveal that the dopt-aiNet may decisively enhance the performance of adaptive arrays in scenarios built from elements that are representative of some aspects of real-world communication systems.</p></p>
+
+More info: <a href="http://dx.doi.org/10.1109/cec.2006.1688673">http://dx.doi.org/10.1109/cec.2006.1688673</a>
+
+
+</div>
+
+</li>
+
+<li>
+
+<a data-toggle="collapse" data-parent="#accordion" href="#covoesalgoritmos">
+   <h3>Algoritmos evolutivos para modelos de mistura de gaussianas em problemas com e sem restrições</h3>
+</a>
+<h4>Thiago Ferreira Covões</h4>
+
+<div id="covoesalgoritmos" class="collapse">
+<h4>Publication date: February 23, 2017</h4>
+<h4>Journal/Conference: </h4>
+  <p><p>Nesta tese, são estudados algoritmos para agrupamento de dados, com particular ênfase em Agrupamento de Dados com Restrições, no qual, além dos objetos a serem agrupados, são fornecidos pelo usuário algumas informações sobre o agrupamento desejado. Como fundamentação para o agrupamento, são considerados os modelos de mistura finitos, em especial, com componentes gaussianos, usualmente chamados de modelos de mistura de gaussianas. Dentre os principais problemas que os algoritmos desenvolvidos nesta tese de …</p></p>
+
+More info: <a href="http://dx.doi.org/10.11606/t.55.2014.tde-24062015-150217">http://dx.doi.org/10.11606/t.55.2014.tde-24062015-150217</a>
+
+
+</div>
+
+</li>
+
+<li>
+
+<a data-toggle="collapse" data-parent="#accordion" href="#batistaclassificacao">
+   <h3>Descoberta de regras de conhecimento utilizando computação evolutiva multiobjetivo</h3>
+</a>
+<h4>Rafael Giusti</h4>
+
+<div id="batistaclassificacao" class="collapse">
+<h4>Publication date: February 23, 2017</h4>
+<h4>Journal/Conference: </h4>
+  <p><p>Na área de inteligência artificial existem algoritmos de aprendizado, notavelmente aqueles pertencentes à área de aprendizado de máquina AM, capazes de automatizar a extração do conhecimento implícito de um conjunto de dados. Dentre estes, os algoritmos de AM simbólico são aqueles que extraem um modelo de conhecimento inteligível, isto é, que pode ser facilmente interpretado pelo usuário. A utilização de AM simbólico é comum no contexto de classificação, no qual o modelo de conhecimento extraído é tal que descreve …</p></p>
+
+More info: <a href="http://dx.doi.org/10.11606/d.55.2010.tde-17082010-112927">http://dx.doi.org/10.11606/d.55.2010.tde-17082010-112927</a>
+
+
+</div>
+
+</li>
+
+</ul>
+
+<div class="story twocol-story newer">
+
+<a href="../../../pub/page/9/index.html">◀ Previous</a>
+&nbsp;
+</div>
+<div class="story twocol-story older" style="text-align:right;">
+
+<a href="../../../pub/page/11/index.html">Next ▶</a>
+&nbsp;
+</div>
+
+</div></div></div>
+		</div>
+
+        
+	</div>
+</div>
+
+
+
+<hr>
+
+        </div>
+        <div id="footer">
+        </div>
+      <!-- Footer -->
+<footer>
+    Phone contact: (11) 3356-7689<br>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    <li>
+                        <a class="navbar-brand" href="http://www.ufabc.edu.br/" id="blog-title-left-top"><img src="../../../static/img/Logo_UFABC.jpg" height="160" width="120"></a>
+                           
+                    </li>
+                    <li>
+                        <a class="navbar-brand" href="http://cmcc.ufabc.edu.br/" id="blog-title-left-top"><img src="../../../static/img/logotipo.jpg" height="80" width="290"></a>
+                    </li>
+		   
+                </ul>
+                <br>
+<div class="col-md-12">
+     <p class="copyright text-muted">
+            Site generated by
+            <a href="http://jaspervdj.be/hakyll">Hakyll</a>. Modified theme by &copy; katychuang 2015 and inspired by
+      <!-- ICE AND FIRE THEME https://github.com/SpaceG/iceandfire -->
+      <a href="https://github.com/SpaceG/CleanMagicMedium-Jekyll">CleanMagic.</a> available from <a href="http://katychuang.com/hakyll-themes/">Hakyll Themes</a> </p>
+    </div>
+    
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="https://ufabc-hal.github.io/static/js/jquery.min.js"></script>
+<script src="https://ufabc-hal.github.io/static/js/spaceg.stylesheets.min.js"></script> 
+<script src="https://ufabc-hal.github.io/static/js/bootstrap.min.js"></script>
+<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+<script src="https://ufabc-hal.github.io/static/js/scripts.js"></script>
+
+
+
+    </body>
+</html>

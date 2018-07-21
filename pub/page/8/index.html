@@ -1,0 +1,435 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+    
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+ <!-- 
+      loads the http over https ssl - 
+      welcome to my website! 
+
+	this theme is based off the Ice & Fire theme created by Lucas Gatsas
+      https://www.twitter.com/LucasGatsas
+      www.lucasgatsas.ch - switzerland. 
+                                                    --> 
+
+<!--
+<script type="text/javascript">
+var host = "https://katychuang.me/";
+if ((host == window.location.host) && (window.location.protocol != "https:"))
+    window.location.protocol = "https";
+</script>
+-->
+<!-- Microsoft Internet Explorer documentMode compatMode setting IE Modus --> 
+<script type="text/javascript">
+var IE = null;
+if (window.navigator.appName == "Microsoft Internet Explorer") {
+  if (document.documentMode) {
+  
+    IE = document.documentMode; 
+    } else {
+   
+        IE = 5; 
+          if (document.compatMode) {
+      if (document.compatMode == "CSS1Compat")
+      IE = 11; 
+      }
+    }
+  }
+</script>
+
+    <meta charset="utf-8">
+    <!-- X-UA --> 
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="X-UA-Compatible" content="IE=11" />
+    <link rel="author" title="Katy Chuang" href="https://plus.google.com/u/0/111391719267336703432/posts" />
+
+
+    <meta name="google" content="notranslate" />
+    <!-- Viewport --> 
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- index ROBOTS follow --> 
+    <meta name="robots" content="index, follow" />
+    <!-- Site Desciption --> 
+    <meta name="description" content="Heuristics, Analysis and Learning Laboratory (HAL)">
+        <!-- Site Desciption --> 
+    <meta name="keywords" content="Katy Chuang, katychuang, data science, Web Developer, Front End Engineer">
+    <!-- Favicon --> 
+    <link rel="shortcut icon" href="https://ufabc-hal.github.io/static/img/ico.png" type="image/x-icon" />
+    <!-- Blog Title -->
+    <title>HAL Research Group</title>
+
+    <!--     <title>{% if page.title %}{{ page.title }} - {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
+--> 
+    <!-- Property Metas --> 
+    <meta property="og:image" content="https://ufabc-hal.github.io/static/img/ix.png" />
+    <meta property="og:title" content="Heuristics, Analysis and Learning Laboratory (HAL)" />
+    <meta property="og:site_name" content="Heuristics, Analysis and Learning Laboratory (HAL)" />
+    <!-- Canonical -->
+    <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
+    <!-- StyleSheet -->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://ufabc-hal.github.io/static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://ufabc-hal.github.io/static/css/spaceg.stylesheets.css">
+    <link rel="stylesheet" href="https://ufabc-hal.github.io/static/css/syntax.css">
+    <link rel="stylesheet" href="../../../static/css/custom.css">
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic" rel="stylesheet" type="text/css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900,400italic,700italic,900italic" rel="stylesheet" type="text/css">    
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style>
+	#preloader {position:fixed;top:0;left:0;right:0;bottom:0;background-color:#fff; /* change if the mask should have another color then white */z-index:99; /* makes sure it stays on top */}
+	#status {width:200px;height:200px;position:absolute;left:50%; /* centers the loading animation horizontally one the screen */top:50%; /* centers the loading animation vertically one the screen */background-image:url("/static/img/preloader.gif"); /* path to your loading animation */background-repeat:no-repeat;background-position:center;margin:-100px 0 0 -100px; /* is width and height divided by two */}
+	ul, ol {margin-top: 0;margin-bottom: 10px;}
+	.navbar-inverse {background-color: #FFF;border-color: #FFFFFF;}
+</style> 
+<!--link rel="stylesheet" href="https://ufabc-hal.github.io/static/css/prettify.css"-->
+<style>
+	header.intro-header {background: #6f5499;background: no-repeat center center;background-attachment: scroll;-webkit-background-size: cover;-moz-background-size: cover;background-size: cover;-o-background-size: cover;}
+	/* Preloader */#preloader {position:fixed;top:0;left:0;right:0;bottom:0;background-color:#fff; /* change if the mask should have another color then white */z-index:99; /* makes sure it stays on top */}
+	#status {width:200px;height:200px;position:absolute;left:50%; /* centers the loading animation horizontally one the screen */top:50%; /* centers the loading animation vertically one the screen */background-image:; /* path to your loading animation */background-repeat:no-repeat;background-position:center;margin:-100px 0 0 -100px; /* is width and height divided by two */} 
+	li {list-style: none;}
+            body.modal-open 
+            {overflow: hidden;padding-right: 0px;
+        }
+	article li {list-style: inherit;}
+	article .figure {text-align: center}
+    </style>
+    <!-- end Loading front stylesheet here --> 
+    </head>
+
+    <body>
+	<div id="preloader">
+	    <div id="status">
+
+	    </div>
+
+	</div>  
+	<!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="https://ufabc-hal.github.io" id="blog-title-left-top">HAL</a>                        
+        </div>   
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+               
+                <li><a href="https://ufabc-hal.github.io/people.html">People</a></li>
+                <li><a href="https://ufabc-hal.github.io/pub/page/1/index.html">Publications</a></li>
+                <li><a href="https://ufabc-hal.github.io/projects.html">Projects</a></li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+
+
+
+        <div id="content">
+            <!-- Main Content -->
+<div class="container front-end">
+	<div class="row">
+		<div class="posts">
+        <article>
+            <header class="intro-header" style="background-image: url('https://ufabc-hal.github.io/static/img/sky.jpg')">  
+                <div class="post-meta"> 
+                </div>
+                <h1 class="post-title"><a href="#" id="post-title-h1" rel="bookmark" title="link" itemprop="url">Heuristics, Analysis and Learning Laboratory (HAL)</a></h1>
+            </header>
+
+            </article>
+            
+<div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <img src="https://ufabc-hal.github.io/static/img/pubs.png" width="50%"><img src="https://ufabc-hal.github.io/static/img/cites.png" width="50%">
+            </div>
+        </div>
+</div>
+            
+<div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
+
+
+<ul>
+
+
+<li>
+
+<a data-toggle="collapse" data-parent="#accordion" href="#coelho2009improving">
+   <h3>Improving a multi-objective multipopulation artificial immune network for biclustering</h3>
+</a>
+<h4>Guilherme Palermo Coelho, Fabricio Olivetti de Franca, Fernando J. Von Zuben</h4>
+
+<div id="coelho2009improving" class="collapse">
+<h4>Publication date: June 19, 2017</h4>
+<h4>Journal/Conference: 2009 IEEE Congress on Evolutionary Computation</h4>
+  <p><p>The biclustering technique was developed to avoid some of the drawbacks presented by standard clustering techniques. Given that biclustering requires the optimization of at least two conflicting objectives and that multiple independent solutions are desirable as the outcome, a few multi-objective evolutionary algorithms for biclustering were proposed in the literature. However, apart from the individual characteristics of the biclusters that should be optimized during their construction, several other global aspects should also be considered …</p></p>
+
+More info: <a href="http://dx.doi.org/10.1109/cec.2009.4983287">http://dx.doi.org/10.1109/cec.2009.4983287</a>
+
+
+</div>
+
+</li>
+
+<li>
+
+<a data-toggle="collapse" data-parent="#accordion" href="#coelho2009multi">
+   <h3>Multi-Objective Biclustering: When Non-dominated Solutions are not Enough</h3>
+</a>
+<h4>Guilherme Palermo Coelho, Fabrício Olivetti de França, Fernando J. Von Zuben</h4>
+
+<div id="coelho2009multi" class="collapse">
+<h4>Publication date: June 18, 2017</h4>
+<h4>Journal/Conference: Journal of Mathematical Modelling and Algorithms</h4>
+  <p><p>The biclustering technique was developed to avoid some of the drawbacks presented by standard clustering techniques, such as their impossibility of finding correlating data under a subset of features, and, consequently, to allow the extraction of more accurate information from datasets. Given that biclustering requires the optimization of at least two conflicting objectives (residue and volume) and that multiple independent solutions are desirable as the outcome, a few multi-objective evolutionary algorithms for biclustering were proposed in …</p></p>
+
+More info: <a href="http://dx.doi.org/10.1007/s10852-009-9102-8">http://dx.doi.org/10.1007/s10852-009-9102-8</a>
+
+
+</div>
+
+</li>
+
+<li>
+
+<a data-toggle="collapse" data-parent="#accordion" href="#bernardini2008evolving">
+   <h3>Evolving Sets of Symbolic Classifiers into a Single Symbolic Classifier Using Genetic Algorithms</h3>
+</a>
+<h4>Flávia Cristina Bernardini, Ronaldo C. Prati, Maria Carolina Monard</h4>
+
+<div id="bernardini2008evolving" class="collapse">
+<h4>Publication date: June 18, 2017</h4>
+<h4>Journal/Conference: 2008 Eighth International Conference on Hybrid Intelligent Systems</h4>
+  <p><p>For a given data set, different learning algorithms typically provide different classifiers. Although it is possible to simply select the most successful classifier, the less successful classifiers could have potentially valuable information that may be wasted. This work proposes GAESC, an algorithm for evolving a set of classifiers into a single symbolic classifier using genetic algorithms. Individuals are formed by rules collected from symbolic classifiers and rules from association classification rules. Experimental results in three data …</p></p>
+
+More info: <a href="http://dx.doi.org/10.1109/his.2008.158">http://dx.doi.org/10.1109/his.2008.158</a>
+
+
+</div>
+
+</li>
+
+<li>
+
+<a data-toggle="collapse" data-parent="#accordion" href="#pila2006multi">
+   <h3>A Multi-Objective Evolutionary Algorithm to Build Knowledge Classification Rules with Specific Properties</h3>
+</a>
+<h4>Adriano Pila, Rafael Giusti, Ronaldo Prati, Maria Monard</h4>
+
+<div id="pila2006multi" class="collapse">
+<h4>Publication date: June 17, 2017</h4>
+<h4>Journal/Conference: 2006 Sixth International Conference on Hybrid Intelligent Systems (HIS'06)</h4>
+  <p><p>This work proposes the use of evolutionary algorithms to build individual knowledge rules with specific properties that are usually neglected when conducted by traditional supervised learning methods. The proposed evolutionary algorithm uses a rank-based, multi-objective fitness function that enables the arrangement of any set of measures. Experimental results that show the suitability of our proposal are also presented.</p></p>
+
+More info: <a href="http://dx.doi.org/10.1109/his.2006.264924">http://dx.doi.org/10.1109/his.2006.264924</a>
+
+
+</div>
+
+</li>
+
+<li>
+
+<a data-toggle="collapse" data-parent="#accordion" href="#junqueira2005proposal">
+   <h3>A Proposal for Blind Fir Equalization of Time-Varying Channels</h3>
+</a>
+<h4>C. Junqueira, F.O. de Franca, R.R.F. Attux, R. Suyama, L.N. de Castro, F.J. von Zuben, J.M.T. Romano</h4>
+
+<div id="junqueira2005proposal" class="collapse">
+<h4>Publication date: June 17, 2017</h4>
+<h4>Journal/Conference: 2005 IEEE Workshop on Machine Learning for Signal Processing</h4>
+  <p><p>The multimodal and time-varying aspects of blind equalization problems in communication systems are treated here by means of an immune-inspired strategy capable of estimating the coefficients of the FIR equalization filter in an unsupervised manner. The associated optimization problem is solved by means of a population-based search technique characterized by a dynamic control of the population size and diversity maintenance. Static and time-varying channels have been proposed in simulated scenarios, aiming at indicating the tracking capability derived from the adaptive adjustment of the coefficients of the blind equalizer</p></p>
+
+More info: <a href="http://dx.doi.org/10.1109/mlsp.2005.1532866">http://dx.doi.org/10.1109/mlsp.2005.1532866</a>
+
+
+</div>
+
+</li>
+
+<li>
+
+<a data-toggle="collapse" data-parent="#accordion" href="#hruschka2005feature">
+   <h3>Feature Selection for Cluster Analysis: an Approach Based on the Simplified Silhouette Criterion</h3>
+</a>
+<h4>E.R. Hruschka, T.F. Covoes</h4>
+
+<div id="hruschka2005feature" class="collapse">
+<h4>Publication date: June 17, 2017</h4>
+<h4>Journal/Conference: International Conference on Computational Intelligence for Modelling, Control and Automation and International Conference on Intelligent Agents, Web Technologies and Internet Commerce (CIMCA-IAWTIC'06)</h4>
+  <p><p>This paper explores the problem of selecting relevant features for clustering, assuming that the number of clusters is not known a priori. The number of clusters and the subset of relevant features are usually inter-related. From this standpoint, we propose an exploratory data analysis method that considers the relationships between these two aspects. Empirical results in a number of synthetic and bioinformatics datasets show that the proposed approach can allow both reducing the number of features and providing good estimations of …</p></p>
+
+More info: <a href="http://dx.doi.org/10.1109/cimca.2005.1631238">http://dx.doi.org/10.1109/cimca.2005.1631238</a>
+
+
+</div>
+
+</li>
+
+<li>
+
+<a data-toggle="collapse" data-parent="#accordion" href="#de2006new">
+   <h3>New Perspectives for the Biclustering Problem</h3>
+</a>
+<h4>F.O. de Franca, G. Bezerra, F.J. von Zuben</h4>
+
+<div id="de2006new" class="collapse">
+<h4>Publication date: June 17, 2017</h4>
+<h4>Journal/Conference: 2006 IEEE International Conference on Evolutionary Computation</h4>
+  <p><p>Multimodal optimization algorithms inspired by the immune system are generally characterized by a dynamic control of the population size and by diversity maintenance along the search. One of these proposals, denoted copt-aiNet (artificial immune network for combinatorial optimization), is used to deal with combinatorial problems like the Traveling Salesman Problem (TSP) and other permutation problems. In this paper, the copt-aiNet algorithm is extended and adapted to be applied to an important issue of modern data …</p></p>
+
+More info: <a href="http://dx.doi.org/10.1109/cec.2006.1688387">http://dx.doi.org/10.1109/cec.2006.1688387</a>
+
+
+</div>
+
+</li>
+
+<li>
+
+<a data-toggle="collapse" data-parent="#accordion" href="#de2006handling">
+   <h3>Handling Time-Varying TSP Instances</h3>
+</a>
+<h4>F.O. de Franca, L.C.T. Gomes, L.N. de Castro, F.J. von Zuben</h4>
+
+<div id="de2006handling" class="collapse">
+<h4>Publication date: June 17, 2017</h4>
+<h4>Journal/Conference: 2006 IEEE International Conference on Evolutionary Computation</h4>
+  <p><p>Multimodal optimization algorithms are being adapted to deal with dynamic optimization, mainly due to their ability to provide a faster reaction to unexpected changes in the optimization surface. The faster reaction may be associated with the existence of two …</p></p>
+
+More info: <a href="http://dx.doi.org/10.1109/cec.2006.1688664">http://dx.doi.org/10.1109/cec.2006.1688664</a>
+
+
+</div>
+
+</li>
+
+<li>
+
+<a data-toggle="collapse" data-parent="#accordion" href="#boccato2009otimizaccao">
+   <h3>Um estudo da aplicação de algoritmos bio-inspirados ao problema de estimação de direção de chegada</h3>
+</a>
+<h4>Levy Boccato, Romis Ribeiro de Faissol Attux, Rafael Krummenauer, Amauri Lopes</h4>
+
+<div id="boccato2009otimizaccao" class="collapse">
+<h4>Publication date: May 26, 2017</h4>
+<h4>Journal/Conference: Sba: Controle & Automação Sociedade Brasileira de Automatica</h4>
+  <p><p><jats:p>A solução clássica para o problema de estimação dos ângulos de chegada (DOA) de sinais incidindo em um arranjo de sensores é a aplicação do método de máxima verossimilhança. Este método leva ao problema de otimização de uma função custo não-linear, não-quadrática, multimodal e variante com a relação sinal-ruído (SNR). Os métodos propostos para tal tarefa, presentes na literatura, falham em uma ampla gama de valores de SNR. Este trabalho apresenta os resultados de um estudo sobre a aplicação de ferramentas pertencentes à computação natural ao problema de estimação DOA. Simulações demonstram que quatro dos algoritmos analisados alcançam o ótimo global para uma ampla faixa de valores de SNR, com esforços computacionais inferiores àquele exigido por uma busca exaustiva.</jats:p></p></p>
+
+More info: <a href="http://dx.doi.org/10.1590/s0103-17592009000400012">http://dx.doi.org/10.1590/s0103-17592009000400012</a>
+
+
+</div>
+
+</li>
+
+<li>
+
+<a data-toggle="collapse" data-parent="#accordion" href="#prati2004looking">
+   <h3>Looking for exceptions on knowledge rules induced from HIV cleavage data set</h3>
+</a>
+<h4>Ronaldo Cristiano Prati, Maria Carolina Monard, André C. P. L. F. de Carvalho</h4>
+
+<div id="prati2004looking" class="collapse">
+<h4>Publication date: May 25, 2017</h4>
+<h4>Journal/Conference: Genetics and Molecular Biology</h4>
+  <p><p>The aim of data mining is to find useful knowledge inout of databases. In order to extract such knowledge, several methods can be used, among them machine learning (ML) algorithms. In this work we focus on ML algorithms that express the extracted knowledge in a symbolic form, such as rules. This representation may allow us to ‘’explain’’ the data. Rule learning algorithms are mainly designed to induce classification rules that can predict new cases with high accuracy. However, these sorts of rules generally express common sense knowledge, resulting in many interesting and useful rules not being discovered. Furthermore, the domain independent biases, especially those related to the language used to express the induced knowledge, could induce rules that are difficult to understand. Exceptions might be used in order to overcome these drawbacks. Exceptions are defined as rules that contradict common believebeliefs. This kind of rules can play an important role in the process of understanding the underlying data as well as in making critical decisions. By contradicting the user’s common beliefves, exceptions are bound to be interesting. This work proposes a method to find exceptions. In order to illustrate the potential of our approach, we apply the method in a real world data set to discover rules and exceptions in the HIV virus protein cleavage process. A good understanding of the process that generates this data plays an important role oin the research of cleavage inhibitors. We consider believe that the proposed approach may help the domain expert to further understand this process.</p></p>
+
+More info: <a href="http://dx.doi.org/10.1590/s1415-47572004000400027">http://dx.doi.org/10.1590/s1415-47572004000400027</a>
+
+
+</div>
+
+</li>
+
+</ul>
+
+<div class="story twocol-story newer">
+
+<a href="../../../pub/page/7/index.html">◀ Previous</a>
+&nbsp;
+</div>
+<div class="story twocol-story older" style="text-align:right;">
+
+<a href="../../../pub/page/9/index.html">Next ▶</a>
+&nbsp;
+</div>
+
+</div></div></div>
+		</div>
+
+        
+	</div>
+</div>
+
+
+
+<hr>
+
+        </div>
+        <div id="footer">
+        </div>
+      <!-- Footer -->
+<footer>
+    Phone contact: (11) 3356-7689<br>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    <li>
+                        <a class="navbar-brand" href="http://www.ufabc.edu.br/" id="blog-title-left-top"><img src="../../../static/img/Logo_UFABC.jpg" height="160" width="120"></a>
+                           
+                    </li>
+                    <li>
+                        <a class="navbar-brand" href="http://cmcc.ufabc.edu.br/" id="blog-title-left-top"><img src="../../../static/img/logotipo.jpg" height="80" width="290"></a>
+                    </li>
+		   
+                </ul>
+                <br>
+<div class="col-md-12">
+     <p class="copyright text-muted">
+            Site generated by
+            <a href="http://jaspervdj.be/hakyll">Hakyll</a>. Modified theme by &copy; katychuang 2015 and inspired by
+      <!-- ICE AND FIRE THEME https://github.com/SpaceG/iceandfire -->
+      <a href="https://github.com/SpaceG/CleanMagicMedium-Jekyll">CleanMagic.</a> available from <a href="http://katychuang.com/hakyll-themes/">Hakyll Themes</a> </p>
+    </div>
+    
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="https://ufabc-hal.github.io/static/js/jquery.min.js"></script>
+<script src="https://ufabc-hal.github.io/static/js/spaceg.stylesheets.min.js"></script> 
+<script src="https://ufabc-hal.github.io/static/js/bootstrap.min.js"></script>
+<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+<script src="https://ufabc-hal.github.io/static/js/scripts.js"></script>
+
+
+
+    </body>
+</html>
